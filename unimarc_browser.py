@@ -23,7 +23,12 @@ DOM_PRODUCTS = r"""
       }
     }
     if (!card) continue;
-    const money=(text.match(/\$\s*([0-9.]{3,})/)||[])[1]||"";
+    // La tarjeta muestra varios montos: "2 x $3.000" (oferta por cantidad), "($16.304 x kg)" (precio por kilo)
+    // y el precio de una unidad ("$1.990 c/u" o "$1.000" si está en oferta). Se toma el primero que sea de una unidad.
+    const montos=[...card.querySelectorAll('*')].filter(x=>x.children.length===0 && /\$\s*[0-9.]{3,}/.test(x.textContent||''))
+      .map(x=>(x.textContent||'').replace(/\s+/g,' ').trim())
+      .filter(t=>!/\d+\s*x\s*\$/i.test(t) && !/x\s*(kg|kilo|lt|l|litro|un|g|gr|ml|cc)\b/i.test(t));
+    const money=((montos[0]||'').match(/\$\s*([0-9.]{3,})/)||[])[1]||"";
     const price=Number(money.replace(/\./g,''));
     const name=(el.innerText||'').trim();
     if (!name || !price || price>1000000) continue;

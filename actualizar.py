@@ -201,6 +201,8 @@ LIDER_CATEGORIAS = {
     "nueces": "nueces-mariposa",
     "papas": "papas",
     "platano": "platano",
+    "zanahoria": "zanahoria-bolsa-del-valle",
+    "brocoli": "brocoli-unidad",
     "manzana": "manzana",
     "tomate": "tomate",
     "lechuga": "lechuga",
@@ -265,7 +267,6 @@ def lider_nombre_valido(pid, nombre):
         "lechuga": [r"\blechuga\b", r"\b1\s*un\b"],
         "papas": [r"\bpapas?\s+malla\b", r"\b2\s*kg\b"],
         "nueces": [r"\bmariposas?\b"],
-        "platano": [r"\b1\s*kg\b"],
     }
     if pid == "fideos" and re.search(r"\bmix\b|\btricolor\b", t):
         return False
