@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ["diagnostico_navegador.py", ".github/workflows/diagnostico-navegador.yml"]
+    paths: ["diagnostico_navegador.py", "actualizar.py", ".github/workflows/diagnostico-navegador.yml"]
 
 permissions:
   contents: read
