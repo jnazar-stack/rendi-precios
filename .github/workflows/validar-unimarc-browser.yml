@@ -6,6 +6,10 @@ on:
     branches: [feature/unimarc-browser]
     paths:
       - "unimarc_browser.py"
+      - "actualizar.py"
+      - "prueba_unimarc_catalogo.py"
+      - "tests/**"
+      - ".github/workflows/diario.yml"
       - ".github/workflows/validar-unimarc-browser.yml"
 
 permissions:
@@ -14,7 +18,7 @@ permissions:
 jobs:
   prueba:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -22,5 +26,7 @@ jobs:
           python-version: "3.12"
       - run: pip install requests playwright
       - run: python -m playwright install --with-deps chromium
-      - name: Probar seis productos de Unimarc
-        run: python unimarc_browser.py
+      - name: Pruebas unitarias
+        run: python -m unittest discover -s tests -v
+      - name: Validar catálogo completo de Unimarc
+        run: python prueba_unimarc_catalogo.py
