@@ -29,6 +29,22 @@ class TestLiderCategoria(unittest.TestCase):
         self.assertTrue(items[0]["n"].startswith("Papa "))
         self.assertIsNotNone(actualizar.elegir(items,actualizar.CAT["papas"]))
 
+    def test_falsos_positivos(self):
+        ejemplos = [
+            ("salmon", "Rollitos De Salmón Tempura 400 g El Golfo"),
+            ("quinoa", "Avena Quínoa 600 g Vivo"),
+            ("oliva", "Aceite Olivado (mezcla De Oliva Extra Virgen) 500 ml"),
+            ("arroz", "Arroz Grado 1 Largo 1 kg"),
+            ("avena", "Avena Instantanea 500 g Oso"),
+            ("pechuga", "Pollo Pechuga Entera Envasada 1 kg"),
+            ("lechuga", "Lechuga Salanova Hojas Pote 150 g"),
+        ]
+        for pid, nombre in ejemplos:
+            with self.subTest(pid=pid):
+                self.assertFalse(actualizar.lider_nombre_valido(pid,nombre))
+        self.assertTrue(actualizar.lider_nombre_valido("salmon","Salmón Filete Atlántico 500 g"))
+        self.assertTrue(actualizar.lider_nombre_valido("quinoa","Quínoa Bolsa 400 g Banquete"))
+
     def test_bloqueo_y_sin_fuente(self):
         with patch.object(actualizar,"get",return_value=(403,"Access Denied")):
             items,estado=actualizar.lider_categoria("leche")
