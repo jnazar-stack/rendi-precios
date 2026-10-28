@@ -57,6 +57,21 @@ UNIMARC_BUSQUEDAS = {
 BLOCK = ("robot or human", "captcha", "access denied", "px-captcha", "perimeterx")
 
 
+def filtrar_unimarc(pid, items):
+    """Quita presentaciones incompatibles con la unidad de compra de Rendi."""
+    if not items:
+        return items
+    out=[]
+    for it in items:
+        name=str(it.get("n") or "").lower()
+        if pid == "fideos" and re.search(r"\b(?:tricolor|mix)\b", name):
+            continue
+        if pid == "lechuga" and re.search(r"\b(?:[2-9]|[1-9]\d+)\s*(?:un|unidad|unidades)\b", name):
+            continue
+        out.append(it)
+    return out
+
+
 class UnimarcBrowser:
     def __init__(self):
         self.manager = None
