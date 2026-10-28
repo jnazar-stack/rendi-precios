@@ -4,7 +4,7 @@ y de categoría, y escribe precios.json para la app Rendi.
 Solo lee páginas públicas, a ritmo lento (una página cada ~1,5 s). Si una cadena responde con una
 verificación anti-robots, se marca como "bloqueada" ese día y no se intenta saltar.
 
-Índices de cadena (mismo orden que la app): 0 Lider, 1 Unimarc, 2 Jumbo, 3 Santa Isabel, 4 Tottus, 5 Alvi.
+Índices históricos de cadena: 0 Lider, 1 Unimarc, 2 Jumbo, 3 Santa Isabel, 4 reservado (Tottus retirado del piloto), 5 Alvi.
 """
 import html
 import json
@@ -25,6 +25,8 @@ S.headers.update({"User-Agent": UA, "Accept-Language": "es-CL,es;q=0.9",
                   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
 PAUSA = 1.5
 LOG = []
+# Índices históricos fijos: 4 (Tottus) queda reservado pero no participa en el piloto.
+CADENAS_ACTIVAS = {0: "lider", 1: "unimarc", 2: "jumbo", 3: "sisa", 5: "alvi"}
 
 
 def log(*a):
@@ -545,7 +547,7 @@ def main():
             anterior = json.load(f)
     except (OSError, ValueError):
         anterior = {}
-    cadenas = {0: "lider", 1: "unimarc", 2: "jumbo", 3: "sisa", 5: "alvi"}  # índice 4 reservado; Tottus retirado del piloto
+    cadenas = CADENAS_ACTIVAS
     estado = {k: {} for k in cadenas}
     res = {pid: {} for pid in CAT}
     # Conservar el último dato verificado durante 7 días, sin llamarlo precio de hoy.
