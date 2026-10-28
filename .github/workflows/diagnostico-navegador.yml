@@ -2,6 +2,9 @@ name: Diagnóstico navegador (manual)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["diagnostico_navegador.py", ".github/workflows/diagnostico-navegador.yml"]
 
 permissions:
   contents: read
