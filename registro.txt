@@ -1,0 +1,146 @@
+huevo      lider    bloqueado        0 leídos   —
+huevo      unimarc  http 403         0 leídos   —
+huevo      jumbo    ok              11 leídos   eq $9,950 Huevos Coliumo Premium Grandes Blancos 30 un. | eco $8,690 Huevos Cuisine & Co Medianos Blanco
+huevo      sisa     ok               2 leídos   eq $9,975 Huevos de Gallina La Granja de Zenón Blancos  | eco $9,950 Huevos Cuisine & Co Grandes Blancos
+huevo      tottus   http 403         0 leídos   —
+huevo      alvi     http 403         0 leídos   —
+leche      unimarc  http 403         0 leídos   —
+leche      jumbo    ok              28 leídos   eq $1,190 Leche Colun Descremada 1 L | eco $1,000 Leche Cuisine & Co Descremada 1 L
+leche      sisa     ok              12 leídos   eq $1,180 Leche Colun Descremada 1 L | eco $990 Leche Cuisine & Co Descremada 1 L
+leche      tottus   http 403         0 leídos   —
+leche      alvi     http 403         0 leídos   —
+yogurt     unimarc  http 403         0 leídos   —
+yogurt     jumbo    ok              40 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
+yogurt     sisa     ok              18 leídos   —
+yogurt     tottus   http 403         0 leídos   —
+yogurt     alvi     http 403         0 leídos   —
+pechuga    unimarc  http 403         0 leídos   —
+pechuga    jumbo    ok              19 leídos   eq $10,244 Pechuga de Pollo Deshuesada Sin Piel Al Natur | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
+pechuga    sisa     ok               5 leídos   eq $7,528 Bistec de Pechuga Deshuesada 530 g | eco $7,528 Bistec de Pechuga Deshuesada 530 g
+pechuga    tottus   http 403         0 leídos   —
+pechuga    alvi     http 403         0 leídos   —
+trutro     unimarc  http 403         0 leídos   —
+trutro     jumbo    ok               9 leídos   eq $3,195 Trutro Entero de Pollo Super Pollo 2 kg | eco $3,195 Trutro Entero de Pollo Super Pollo 
+trutro     sisa     ok               6 leídos   eq $3,890 Trutro Corto de Pollo Sin Marinar Congelado M | eco $3,890 Trutro Corto de Pollo Sin Marinar C
+trutro     tottus   http 403         0 leídos   —
+trutro     alvi     http 403         0 leídos   —
+molida     unimarc  http 403         0 leídos   —
+molida     jumbo    ok              21 leídos   eq $5,590 Molida Fiesta ATM 500 g | eco $5,590 Molida Fiesta ATM 500 g
+molida     sisa     ok               7 leídos   eq $6,180 Carne Molida Vacuno 10% Grasa 250 gr | eco $6,180 Carne Molida Vacuno 10% Grasa 250 g
+molida     tottus   http 403         0 leídos   —
+molida     alvi     http 403         0 leídos   —
+atun       unimarc  http 403         0 leídos   —
+atun       jumbo    ok              16 leídos   eq $1,290 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,290 Atún Lomitos en Agua 104 g drenado,
+atun       sisa     ok              12 leídos   eq $1,670 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,670 Atún Lomitos en Agua 104 g drenado,
+atun       tottus   http 403         0 leídos   —
+atun       alvi     http 403         0 leídos   —
+salmon     unimarc  http 403         0 leídos   —
+salmon     jumbo    ok               7 leídos   eq $11,990 Salmón Filete Aqua 500 g | eco $11,990 Salmón Filete Aqua 500 g
+salmon     sisa     ok              17 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $9,990 Salmón Filete Congelado 500 g
+salmon     tottus   http 403         0 leídos   —
+salmon     alvi     http 403         0 leídos   —
+lentejas   unimarc  http 403         0 leídos   —
+lentejas   jumbo    ok              11 leídos   eq $2,490 Lentejas 6 mm Máxima 1 kg | eco $2,490 Lentejas 6 mm Máxima 1 kg
+lentejas   sisa     ok              11 leídos   eq $2,830 Lentejas 6 mm Máxima 1 kg | eco $2,690 Lentejas 6 mm Cuisine & Co 1 kg
+lentejas   tottus   http 403         0 leídos   —
+lentejas   alvi     http 403         0 leídos   —
+porotos    unimarc  http 403         0 leídos   —
+porotos    jumbo    ok              12 leídos   eq $2,750 Porotos Hallados Banquete 1 kg | eco $2,176 Porotos Negros Cuisine & Co 1 kg
+porotos    sisa     ok              11 leídos   eq $3,170 Porotos Hallados Coliseo 1 kg | eco $2,200 Porotos Negros Cuisine & Co 1 kg
+porotos    tottus   http 403         0 leídos   —
+porotos    alvi     http 403         0 leídos   —
+garbanzos  unimarc  http 403         0 leídos   —
+garbanzos  jumbo    ok               7 leídos   eq $2,990 Garbanzos Pelados 1 kg | eco $2,990 Garbanzos Pelados 1 kg
+garbanzos  sisa     ok               7 leídos   eq $2,890 Garbanzos Pelados 1 kg | eco $2,890 Garbanzos Pelados 1 kg
+garbanzos  tottus   http 403         0 leídos   —
+garbanzos  alvi     http 403         0 leídos   —
+avena      unimarc  http 403         0 leídos   —
+avena      jumbo    ok              12 leídos   eq $2,843 Avena Vivo Tradicional 700 g | eco $2,843 Avena Vivo Tradicional 700 g
+avena      sisa     ok               7 leídos   eq $3,929 Avena Quaker Tradicional 700 g | eco $3,000 Avena Tradicional Cuisine & Co 750 
+avena      tottus   http 403         0 leídos   —
+avena      alvi     http 403         0 leídos   —
+arroz      unimarc  http 403         0 leídos   —
+arroz      jumbo    ok               9 leídos   eq $1,810 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Máxima Grano Largo An
+arroz      sisa     ok              11 leídos   eq $1,900 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $950 Arroz Grado 2 Máxima Grano Largo An
+arroz      tottus   http 403         0 leídos   —
+arroz      alvi     http 403         0 leídos   —
+fideos     unimarc  http 403         0 leídos   —
+fideos     jumbo    ok              16 leídos   eq $450 Spaghetti N° 5 Máxima 400 g | eco $450 Spaghetti N° 5 Máxima 400 g
+fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima 400 g | eco $430 Spaghetti N° 5 Máxima 400 g
+fideos     tottus   http 403         0 leídos   —
+fideos     alvi     http 403         0 leídos   —
+quinoa     unimarc  http 403         0 leídos   —
+quinoa     jumbo    ok              18 leídos   eq $5,338 Quinoa Mediterránea Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     sisa     ok              40 leídos   eq $4,500 Quinoa Tricolor Banquete 250 g | eco $3,780 Quinoa Tricolor Cuisine & Co 250 g
+quinoa     tottus   http 403         0 leídos   —
+quinoa     alvi     http 403         0 leídos   —
+pan        unimarc  http 403         0 leídos   —
+pan        jumbo    ok              40 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
+pan        sisa     ok              40 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
+pan        tottus   http 403         0 leídos   —
+pan        alvi     http 403         0 leídos   —
+aceite     unimarc  http 403         0 leídos   —
+aceite     jumbo    ok              13 leídos   eq $2,925 Aceite Vegetal Belmont 1 L | eco $1,690 Aceite Vegetal 900 ml
+aceite     sisa     ok               6 leídos   eq $1,590 Aceite Vegetal 900 ml | eco $1,590 Aceite Vegetal 900 ml
+aceite     tottus   http 403         0 leídos   —
+aceite     alvi     http 403         0 leídos   —
+oliva      unimarc  http 403         0 leídos   —
+oliva      jumbo    ok              22 leídos   eq $6,146 Aceite de Oliva Montecristo Extra Virgen 500  | eco $6,146 Aceite de Oliva Montecristo Extra V
+oliva      sisa     ok               8 leídos   eq $6,431 Aceite de Oliva Montecristo Extra Virgen 500  | eco $6,431 Aceite de Oliva Montecristo Extra V
+oliva      tottus   http 403         0 leídos   —
+oliva      alvi     http 403         0 leídos   —
+mani       unimarc  http 403         0 leídos   —
+mani       jumbo    ok              17 leídos   eq $2,587 Pasta de Maní Natural King 485 g | eco $2,587 Pasta de Maní Natural King 485 g
+mani       sisa     ok              10 leídos   eq $2,324 Mantequilla de Maní Crunchy King 350 g | eco $2,324 Mantequilla de Maní Crunchy King 35
+mani       tottus   http 403         0 leídos   —
+mani       alvi     http 403         0 leídos   —
+nueces     unimarc  http 403         0 leídos   —
+nueces     jumbo    ok              16 leídos   eq $2,860 Harina de Nuez Libre de Gluten 500 g | eco $2,860 Harina de Nuez Libre de Gluten 500 
+nueces     sisa     ok               3 leídos   eq $6,100 Nuez Mariposa 200 g | eco $6,100 Nuez Mariposa 200 g
+nueces     tottus   http 403         0 leídos   —
+nueces     alvi     http 403         0 leídos   —
+papas      unimarc  http 403         0 leídos   —
+papas      jumbo    ok               7 leídos   eq $3,450 Papa Malla 2 kg | eco $3,450 Papa Malla 2 kg
+papas      sisa     ok               4 leídos   eq $3,690 Papa Malla 2 kg | eco $3,690 Papa Malla 2 kg
+papas      tottus   http 403         0 leídos   —
+papas      alvi     http 403         0 leídos   —
+platano    unimarc  http 403         0 leídos   —
+platano    jumbo    ok              18 leídos   eq $10,375 Plátano Frito Cuisine & Co 240 g | eco $10,375 Plátano Frito Cuisine & Co 240 g
+platano    sisa     ok              15 leídos   eq $9,958 Plátano Frito Cuisine & Co 240 g | eco $9,958 Plátano Frito Cuisine & Co 240 g
+platano    tottus   http 403         0 leídos   —
+platano    alvi     http 403         0 leídos   —
+manzana    unimarc  http 403         0 leídos   —
+manzana    jumbo    ok              40 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
+manzana    sisa     ok              40 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
+manzana    tottus   http 403         0 leídos   —
+manzana    alvi     http 403         0 leídos   —
+tomate     unimarc  http 403         0 leídos   —
+tomate     jumbo    ok              38 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
+tomate     sisa     ok              40 leídos   eq $6,690 Tomate Cóctel Variedades Granel | eco $6,690 Tomate Cóctel Variedades Granel
+tomate     tottus   http 403         0 leídos   —
+tomate     alvi     http 403         0 leídos   —
+lechuga    unimarc  http 403         0 leídos   —
+lechuga    jumbo    ok              40 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
+lechuga    sisa     ok              11 leídos   eq $1,345 Lechuga Escarola Bandeja 2 un. | eco $1,345 Lechuga Escarola Bandeja 2 un.
+lechuga    tottus   http 403         0 leídos   —
+lechuga    alvi     http 403         0 leídos   —
+zanahoria  unimarc  http 403         0 leídos   —
+zanahoria  jumbo    ok              11 leídos   eq $4,643 Zanahoria Dole Corte Juliana 300 g | eco $4,643 Zanahoria Dole Corte Juliana 300 g
+zanahoria  sisa     ok               5 leídos   eq $6,633 Ensalada Dole Napolitana Repollo Blanco y Zan | eco $6,633 Ensalada Dole Napolitana Repollo Bl
+zanahoria  tottus   http 403         0 leídos   —
+zanahoria  alvi     http 403         0 leídos   —
+brocoli    unimarc  http 403         0 leídos   —
+brocoli    jumbo    ok               2 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
+brocoli    sisa     ok               4 leídos   —
+brocoli    tottus   http 403         0 leídos   —
+brocoli    alvi     http 403         0 leídos   —
+cebolla    unimarc  http 403         0 leídos   —
+cebolla    jumbo    ok              26 leídos   eq $4,500 Cebolla en Cubos Frutos del Maipo 150 g | eco $4,500 Cebolla en Cubos Frutos del Maipo 1
+cebolla    sisa     ok              11 leídos   eq $1,890 Cebolla Granel (1 a 2 un. Aprox) | eco $1,890 Cebolla Granel (1 a 2 un. Aprox)
+cebolla    tottus   http 403         0 leídos   —
+cebolla    alvi     http 403         0 leídos   —
+palta      unimarc  http 403         0 leídos   —
+palta      jumbo    ok               5 leídos   eq $3,690 Palta Hass Malla 1 kg | eco $3,690 Palta Hass Malla 1 kg
+palta      sisa     ok               4 leídos   eq $3,590 Palta Hass Malla 1 kg | eco $3,590 Palta Hass Malla 1 kg
+palta      tottus   http 403         0 leídos   —
+palta      alvi     http 403         0 leídos   —
