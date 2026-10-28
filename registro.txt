@@ -1,7 +1,7 @@
 huevo      lider    ok              48 leídos   eq $7,490 Huevos Tradicionales Mediano Blanco 30 Un Cin | eco $7,490 Huevos Tradicionales Mediano Blanco
 huevo      unimarc  ok              47 leídos   eq $6,100 Huevos fundo río alegre mediano blanco 30 un  | eco $6,100 Huevos fundo río alegre mediano bla
 huevo      jumbo    ok              11 leídos   eq $9,950 Huevos Coliumo Premium Grandes Blancos 30 un. | eco $8,690 Huevos Cuisine & Co Medianos Blanco
-huevo      sisa     ok               2 leídos   eq $9,975 Huevos de Gallina La Granja de Zenón Blancos  | eco $9,950 Huevos Cuisine & Co Grandes Blancos
+huevo      sisa     ok               3 leídos   eq $9,975 Huevos de Gallina La Granja de Zenón Blancos  | eco $9,950 Huevos Cuisine & Co Grandes Blancos
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Río Alegre mediano blanco 30 un | eco $8,990 Huevos Fundo Río Alegre mediano bla
 leche      lider    ok              48 leídos   eq $1,190 Leche Descremada Natural Caja 1 L 1 L Colun | eco $1,000 Leche Blanca Descremada Caja 1 L Li
 leche      unimarc  ok              35 leídos   eq $1,090 Leche descremada colun 1 l Colun | eco $990 Leche descremada fundo río alegre 1
@@ -111,8 +111,8 @@ papas      jumbo    ok               7 leídos   eq $3,450 Papa Malla 2 kg | eco
 papas      sisa     ok               4 leídos   eq $3,690 Papa Malla 2 kg | eco $3,690 Papa Malla 2 kg
    sin calce en alvi para papas; leídos: Beb. Pap, Lata 6 U X 350 Ml Bebida lata $960 · Toallas femeninas Ladysoft diurnas ultra $1,420 · Toalla higiénica ultrafina malla con ala $3,390 · Toalla femenina nocturna ultradelgadas m $1,090 · Chanfle sufles Fruna sabor papa 350 gr $2,860 · Papas fritas Lapotato sabor queso 10 un  $5,950 · Papas fritas Lapotato original 10 un de  $5,950 · Papas fritas Lapotato sabor cebolla 10 u $5,950
 papas      alvi     ok             100 leídos   —
-   (granel: precio de lista $1,450, precio por kg informado: None)
-platano    lider    ok              48 leídos   eq $2,900 Plátano Granel 500 g (3 a 4 un aprox) | eco $2,900 Plátano Granel 500 g (3 a 4 un apro
+   (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
+platano    lider    ok              48 leídos   eq $1,450 Plátano Granel 500 g (3 a 4 un aprox) | eco $1,450 Plátano Granel 500 g (3 a 4 un apro
    (granel: precio de lista $745, precio por kg informado: None)
 platano    unimarc  ok              15 leídos   eq $1,490 Plátano granel 500 g Frutas Y Verduras | eco $1,490 Plátano granel 500 g Frutas Y Verdu
    (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
@@ -128,7 +128,7 @@ manzana    unimarc  ok              50 leídos   eq $1,990 Manzana royal gala bo
    (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
 manzana    jumbo    ok              40 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
    (granel: precio de lista $1,890, precio por kg informado: (1890.0, 'kg'))
-manzana    sisa     ok              39 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
+manzana    sisa     ok              40 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
    sin calce en alvi para manzana; leídos: Trapero húmedo Virginia con ojal aroma m $2,520 · Shampoo Head and Shoulders control caspa $5,190 · Jabón líquido Kadus manzana miel 900 ml  $1,490 · Shampoo manzana doypack $1,340 · Trapero húmedo desinfectante manzana ver $2,130 · Avena multisemillas pasas, manzana y lin $3,590 · Vinagre de manzana $4,190 · Vinagre de manzana $880
 manzana    alvi     ok              96 leídos   —
    (granel: precio de lista $2,090, precio por kg informado: None)
@@ -137,14 +137,14 @@ tomate     lider    ok              48 leídos   eq $2,090 Tomate Larga Vida Mal
 tomate     unimarc  ok              50 leídos   eq $1,990 Tomate malla 1 kg Frutas Y Verduras | eco $1,990 Tomate malla 1 kg Frutas Y Verduras
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              37 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
-   (granel: precio de lista $995, precio por kg informado: (1990.0, 'kg'))
-tomate     sisa     ok              39 leídos   eq $1,990 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $1,990 Tomate Larga Vida Granel (1 a 2 un.
+   (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
+tomate     sisa     ok              40 leídos   eq $1,990 Tomate Larga Vida Malla 1 kg | eco $1,990 Tomate Larga Vida Malla 1 kg
    sin calce en alvi para tomate; leídos: Pack Salsa de tomate Pomarola italiana 6 $3,450 · Salsa de tomate San Remo italiana sachet $380 · Salsa de tomate Pomarola italiana 200 g  $780 · Salsa de tomate Lucchetti italiana 200 g $610 · Salsa de tomate Carozzi Toscana bolognes $880 · Salsa de tomate Maggi Tuco con carne lat $1,690 · Salsa de tomate italiana $3,220 · Salsa de tomate Malloa italiana 200 g Sa $910
 tomate     alvi     ok              82 leídos   —
 lechuga    lider    ok              15 leídos   eq $1,000 Lechuga Española 1 Un | eco $1,000 Lechuga Española 1 Un
 lechuga    unimarc  ok              14 leídos   eq $1,225 Lechuga española hidropónica 1 un Frutas Y Ve | eco $1,225 Lechuga española hidropónica 1 un F
 lechuga    jumbo    ok              40 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
-lechuga    sisa     ok              11 leídos   eq $1,390 Lechuga Escarola 1 un. | eco $1,390 Lechuga Escarola 1 un.
+lechuga    sisa     ok              11 leídos   eq $1,345 Lechuga Escarola Bandeja 2 un. | eco $1,345 Lechuga Escarola Bandeja 2 un.
    sin calce en alvi para lechuga; leídos: Pechuga de pollo deshuesada congelada $23,990 · Pechuga deshuesada de pollo congelado Sa $23,140 · Pechuga cocida pollo pieza granel 2 Kg $17,840 · Pechuga de pollo deshuesada Fundo Río Al $4,340 · Pechuga deshuesada Super Pollo congelada $30,550 · Pechuga de pollo apanada Receta del Abue $1,160 · Pechuga deshuesado Super Pollo congelado $5,290 · Pechuga de Pavo Receta del Abuelo cocida $3,550
 lechuga    alvi     ok              42 leídos   —
    (granel: precio de lista $1,590, precio por kg informado: None)
@@ -157,14 +157,14 @@ zanahoria  jumbo    ok              11 leídos   eq $1,390 Zanahoria Bolsa 1 kg 
 zanahoria  sisa     ok               5 leídos   eq $1,450 Zanahoria Bolsa 1 kg | eco $1,450 Zanahoria Bolsa 1 kg
    sin calce en alvi para zanahoria; leídos: Compota fruta y veggies naranja zanahori $900 · Picado Nestlé Naturnes carne papas zanah $2,290 · Picado naturnes pollo zanahoria y arroz $2,290 · Compota fruta y veggies naranja zanahori $900 · Picado Nestlé Naturnes carne papas zanah $2,290 · Picado naturnes pollo zanahoria y arroz $2,290
 zanahoria  alvi     ok               6 leídos   —
-brocoli    lider    ok              12 leídos   eq $1,090 Brócoli Pote 1 Un | eco $1,090 Brócoli Pote 1 Un
+brocoli    lider    ok              12 leídos   eq $1,590 Brócoli 1 Un | eco $1,590 Brócoli 1 Un
 brocoli    unimarc  ok               2 leídos   eq $1,590 Brócoli nacional 1 un Frutas Y Verduras | eco $1,590 Brócoli nacional 1 un Frutas Y Verd
 brocoli    jumbo    ok               2 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
    sin calce en sisa para brocoli; leídos: Tallarín Cuisine & Co Vitaminizado 400 g $790 · Mix Vegetales Rústicos Marco Polo 150 g $2,250 · Cabellos de Ángel Vitaminizado 400 g $790 · Bebida Vegetal Vilay Arroz Sabor Chocola $2,550
 brocoli    sisa     ok               4 leídos   —
 brocoli    alvi     sin resultados   0 leídos   —
-   (granel: precio de lista $1,890, precio por kg informado: None)
-cebolla    lider    ok              22 leídos   eq $1,890 Cebolla Malla 1 Kg | eco $1,890 Cebolla Malla 1 Kg
+   (granel: precio de lista $1,790, precio por kg informado: (1790.0, 'kg'))
+cebolla    lider    ok              22 leídos   eq $1,790 Cebolla Granel. 500 g (1 a 3 un aprox) | eco $1,790 Cebolla Granel. 500 g (1 a 3 un apr
    (granel: precio de lista $1,950, precio por kg informado: None)
 cebolla    unimarc  ok              40 leídos   eq $1,950 Cebolla malla 1 kg Frutas Y Verduras | eco $1,950 Cebolla malla 1 kg Frutas Y Verdura
    (granel: precio de lista $975, precio por kg informado: (1950.0, 'kg'))
