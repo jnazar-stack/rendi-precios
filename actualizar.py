@@ -285,7 +285,7 @@ def lider_categoria(pid):
             # El catálogo excluye alimentos que no empiezan por su tipo:
             # quitar solo los prefijos conocidos de supermercados, no palabras arbitrarias.
             if CAT[pid].get("start"):
-                nombre = re.sub(r"^(?:multi ?marca|lider)\\s+", "", nombre, flags=re.I)
+                nombre = re.sub(r"^(?:multi ?marca|lider)\s+", "", nombre, flags=re.I)
             foto = producto.get("image")
             if isinstance(foto, list):
                 foto = foto[0] if foto else None
