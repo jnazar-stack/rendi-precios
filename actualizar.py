@@ -174,6 +174,38 @@ def size_of(text):
     return None
 
 
+
+# Rutas de categorías públicas verificadas en el sitio oficial. No son endpoints privados.
+LIDER_CATEGORIAS = {
+    "huevo": "huevos",
+    "leche": "leches-descremadas-1-l",
+    "yogurt": "yogurt-griego-natural",
+    "pechuga": "pechuga-de-pollo",
+    "trutro": "trutro-de-pollo",
+    "molida": "carne-molida-vacuno",
+    "atun": "atun",
+    "salmon": "salmon",
+    "lentejas": "lentejas-1-kg-sin-sello",
+    "porotos": "porotos-1-kg",
+    "garbanzos": "bolsas-de-garbanzos",
+    "avena": "avena-tradicional",
+    "arroz": "arroz",
+    "fideos": "spaghetti",
+    "quinoa": "quinoa",
+    "pan": "pan-integral",
+    "aceite": "aceite-vegetal",
+    "oliva": "aceite-de-oliva",
+    "mani": "mantequilla-de-mani",
+    "nueces": "nueces-mariposa",
+    "papas": "papas",
+    "platano": "platano",
+    "manzana": "manzana",
+    "tomate": "tomate",
+    "lechuga": "lechuga",
+    "cebolla": "cebollas-a-granel",
+    "palta": "palta-hass",
+}
+
 # ---------------------------------------------------------------- lectores por cadena
 # Cada uno devuelve una lista de productos: dict(n=nombre, p=precio, img, u=url, size=texto de tamaño,
 # ppu=(precio, unidad) por kg/L si la cadena lo informa, stock=bool, steps=[[desde, precio_unitario], ...])
@@ -213,6 +245,58 @@ def jumbo_like(base, q):
             x = extra.get(name, {})
             items.append(dict(n=name, p=num(off.get("price")), img=it.get("image"), u=it.get("url"), size=name,
                               ppu=x.get("ppu"), stock=x.get("stock", "InStock" in str(off.get("availability", "InStock")))))
+    return items, "ok" if items else "sin resultados"
+
+
+def lider_categoria(pid):
+    """Lee productos del ItemList público de una categoría de Líder.
+
+    Se limita a las rutas conocidas; si una página rechaza acceso no hace reintentos.
+    """
+    slug = LIDER_CATEGORIAS.get(pid)
+    if not slug:
+        return [], "sin fuente"
+    base = "https://super.lider.cl"
+    st, contenido = get(f"{base}/v/{slug}")
+    if st != 200:
+        return None, f"http {st}"
+    listas = ld_lists(contenido)
+    if not listas:
+        return None, "bloqueado" if BLOQUEO.search(contenido[:20000]) else "sin datos"
+    items = []
+    for lista in listas:
+        for elemento in lista.get("itemListElement", []):
+            if not isinstance(elemento, dict):
+                continue
+            producto = elemento.get("item") or {}
+            if not isinstance(producto, dict):
+                continue
+            ofertas = producto.get("offers") or {}
+            if isinstance(ofertas, list):
+                ofertas = ofertas[0] if ofertas else {}
+            if not isinstance(ofertas, dict):
+                continue
+            p = num(ofertas.get("price"))
+            if not p or p <= 0 or p > 1000000:
+                continue
+            nombre = producto.get("name") or elemento.get("name") or ""
+            if not isinstance(nombre, str) or not nombre:
+                continue
+            # El catálogo excluye alimentos que no empiezan por su tipo:
+            # quitar solo los prefijos conocidos de supermercados, no palabras arbitrarias.
+            if CAT[pid].get("start"):
+                nombre = re.sub(r"^(?:multi ?marca|lider)\\s+", "", nombre, flags=re.I)
+            foto = producto.get("image")
+            if isinstance(foto, list):
+                foto = foto[0] if foto else None
+            if isinstance(foto, dict):
+                foto = foto.get("url")
+            url = producto.get("url")
+            if isinstance(url, str) and url.startswith("/"):
+                url = base + url
+            items.append(dict(n=nombre, p=p, img=foto, u=url or f"{base}/v/{slug}",
+                              size=nombre,
+                              stock="OutOfStock" not in str(ofertas.get("availability", ""))))
     return items, "ok" if items else "sin resultados"
 
 
@@ -468,7 +552,7 @@ def main():
             if ci in cadenas_bloq:
                 continue
             if ci == 0:
-                items, e = lider(spec["q"])
+                items, e = lider_categoria(pid)
             elif ci == 1:
                 items, e = unimarc(spec)
             elif ci == 2:
@@ -481,7 +565,7 @@ def main():
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
             pick = elegir(items, spec) if items else None
-            if not pick and spec.get("q2") and ci != 1 and not es_bloqueo(e):
+            if not pick and spec.get("q2") and ci not in (0, 1) and not es_bloqueo(e):
                 s2 = dict(spec, q=spec["q2"])
                 it2, e2 = (lider(s2["q"]) if ci == 0 else jumbo_like("https://www.jumbo.cl", s2["q"]) if ci == 2 else
                            jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else tottus(s2["q"]) if ci == 4 else alvi(s2["q"]))
@@ -491,7 +575,7 @@ def main():
             if items and not pick:
                 log(f"   sin calce en {cadenas[ci]} para {pid}; leídos: " + " · ".join(f"{i['n'][:40]} ${int(i['p'] or 0):,}{'' if i.get('stock', True) else ' (sin stock)'}" for i in items[:8]))
             if pick:
-                res[pid][str(ci)] = {**pick, "capturado": capturado_hoy}
+                res[pid][str(ci)] = {**pick, "capturado": capturado_hoy, **({"fuente": "categoria_publica"} if ci == 0 else {})}
             if pick and spec["kind"] == "kg":
                 hit = next((i for i in items if i["n"] == pick["eq"]["n"][:90] or i["n"].startswith(pick["eq"]["n"][:60])), {})
                 log(f"   (granel: precio de lista ${pick['eq']['pv']:,}, precio por kg informado: {hit.get('ppu')})")
