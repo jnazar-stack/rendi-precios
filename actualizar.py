@@ -18,8 +18,8 @@ from urllib.parse import quote
 
 import requests
 
-UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
-      "(KHTML, like Gecko) Version/18.0 Safari/605.1.15")
+# Se identifica como lo que es: el lector de precios de Rendi, con un link para saber quién lo opera.
+UA = "RendiBot/1.0 (+https://github.com/jnazar-stack/rendi-precios; lector diario de precios publicos)"
 S = requests.Session()
 S.headers.update({"User-Agent": UA, "Accept-Language": "es-CL,es;q=0.9",
                   "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"})
