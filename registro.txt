@@ -70,8 +70,8 @@ fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima
 fideos     tottus   http 403         0 leídos   —
 fideos     alvi     http 403         0 leídos   —
 quinoa     unimarc  http 403         0 leídos   —
-quinoa     jumbo    ok              18 leídos   eq $5,338 Quinoa Mediterránea Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
-quinoa     sisa     ok              40 leídos   eq $4,500 Quinoa Tricolor Banquete 250 g | eco $3,780 Quinoa Tricolor Cuisine & Co 250 g
+quinoa     jumbo    ok              18 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     sisa     ok              40 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     tottus   http 403         0 leídos   —
 quinoa     alvi     http 403         0 leídos   —
 pan        unimarc  http 403         0 leídos   —
@@ -95,27 +95,35 @@ mani       sisa     ok              10 leídos   eq $2,324 Mantequilla de Maní 
 mani       tottus   http 403         0 leídos   —
 mani       alvi     http 403         0 leídos   —
 nueces     unimarc  http 403         0 leídos   —
-nueces     jumbo    ok              16 leídos   eq $2,860 Harina de Nuez Libre de Gluten 500 g | eco $2,860 Harina de Nuez Libre de Gluten 500 
+nueces     jumbo    ok              16 leídos   eq $5,612 Nueces Trozos 200 g | eco $5,612 Nueces Trozos 200 g
 nueces     sisa     ok               3 leídos   eq $6,100 Nuez Mariposa 200 g | eco $6,100 Nuez Mariposa 200 g
 nueces     tottus   http 403         0 leídos   —
 nueces     alvi     http 403         0 leídos   —
 papas      unimarc  http 403         0 leídos   —
+   (granel: precio de lista $3,450, precio por kg informado: (1725.0, 'kg'))
 papas      jumbo    ok               7 leídos   eq $3,450 Papa Malla 2 kg | eco $3,450 Papa Malla 2 kg
+   (granel: precio de lista $3,690, precio por kg informado: (1845.0, 'kg'))
 papas      sisa     ok               4 leídos   eq $3,690 Papa Malla 2 kg | eco $3,690 Papa Malla 2 kg
 papas      tottus   http 403         0 leídos   —
 papas      alvi     http 403         0 leídos   —
 platano    unimarc  http 403         0 leídos   —
-platano    jumbo    ok              18 leídos   eq $10,375 Plátano Frito Cuisine & Co 240 g | eco $10,375 Plátano Frito Cuisine & Co 240 g
-platano    sisa     ok              15 leídos   eq $9,958 Plátano Frito Cuisine & Co 240 g | eco $9,958 Plátano Frito Cuisine & Co 240 g
+   (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
+platano    jumbo    ok              18 leídos   eq $1,450 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,450 Plátano Extra Granel (1 a 2 un. Apr
+   (granel: precio de lista $745, precio por kg informado: (1490.0, 'kg'))
+platano    sisa     ok              15 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
 platano    tottus   http 403         0 leídos   —
 platano    alvi     http 403         0 leídos   —
 manzana    unimarc  http 403         0 leídos   —
+   (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
 manzana    jumbo    ok              40 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
+   (granel: precio de lista $1,890, precio por kg informado: (1890.0, 'kg'))
 manzana    sisa     ok              40 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
 manzana    tottus   http 403         0 leídos   —
 manzana    alvi     http 403         0 leídos   —
 tomate     unimarc  http 403         0 leídos   —
+   (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              38 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
+   (granel: precio de lista $1,338, precio por kg informado: (6690.0, 'kg'))
 tomate     sisa     ok              40 leídos   eq $6,690 Tomate Cóctel Variedades Granel | eco $6,690 Tomate Cóctel Variedades Granel
 tomate     tottus   http 403         0 leídos   —
 tomate     alvi     http 403         0 leídos   —
@@ -125,8 +133,10 @@ lechuga    sisa     ok              11 leídos   eq $1,345 Lechuga Escarola Band
 lechuga    tottus   http 403         0 leídos   —
 lechuga    alvi     http 403         0 leídos   —
 zanahoria  unimarc  http 403         0 leídos   —
-zanahoria  jumbo    ok              11 leídos   eq $4,643 Zanahoria Dole Corte Juliana 300 g | eco $4,643 Zanahoria Dole Corte Juliana 300 g
-zanahoria  sisa     ok               5 leídos   eq $6,633 Ensalada Dole Napolitana Repollo Blanco y Zan | eco $6,633 Ensalada Dole Napolitana Repollo Bl
+   (granel: precio de lista $1,390, precio por kg informado: (1390.0, 'kg'))
+zanahoria  jumbo    ok              11 leídos   eq $1,390 Zanahoria Bolsa 1 kg | eco $1,390 Zanahoria Bolsa 1 kg
+   (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
+zanahoria  sisa     ok               5 leídos   eq $1,450 Zanahoria Bolsa 1 kg | eco $1,450 Zanahoria Bolsa 1 kg
 zanahoria  tottus   http 403         0 leídos   —
 zanahoria  alvi     http 403         0 leídos   —
 brocoli    unimarc  http 403         0 leídos   —
@@ -135,12 +145,16 @@ brocoli    sisa     ok               4 leídos   —
 brocoli    tottus   http 403         0 leídos   —
 brocoli    alvi     http 403         0 leídos   —
 cebolla    unimarc  http 403         0 leídos   —
-cebolla    jumbo    ok              26 leídos   eq $4,500 Cebolla en Cubos Frutos del Maipo 150 g | eco $4,500 Cebolla en Cubos Frutos del Maipo 1
+   (granel: precio de lista $3,080, precio por kg informado: None)
+cebolla    jumbo    ok              26 leídos   eq $7,700 Anillos de Cebolla Cuisine & Co Tempura 400 g | eco $7,700 Anillos de Cebolla Cuisine & Co Tem
+   (granel: precio de lista $945, precio por kg informado: (1890.0, 'kg'))
 cebolla    sisa     ok              11 leídos   eq $1,890 Cebolla Granel (1 a 2 un. Aprox) | eco $1,890 Cebolla Granel (1 a 2 un. Aprox)
 cebolla    tottus   http 403         0 leídos   —
 cebolla    alvi     http 403         0 leídos   —
 palta      unimarc  http 403         0 leídos   —
+   (granel: precio de lista $3,690, precio por kg informado: (3690.0, 'kg'))
 palta      jumbo    ok               5 leídos   eq $3,690 Palta Hass Malla 1 kg | eco $3,690 Palta Hass Malla 1 kg
+   (granel: precio de lista $3,590, precio por kg informado: (3590.0, 'kg'))
 palta      sisa     ok               4 leídos   eq $3,590 Palta Hass Malla 1 kg | eco $3,590 Palta Hass Malla 1 kg
 palta      tottus   http 403         0 leídos   —
 palta      alvi     http 403         0 leídos   —
