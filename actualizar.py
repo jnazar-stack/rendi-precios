@@ -111,32 +111,32 @@ CAT = {
     "mani": dict(q="mantequilla de mani", kind="g", pkg=340, inc=[r"mani", r"mantequilla|crema|pasta|untable"], lo=0.4,
                  exc=[r"chocolate|galleta|barra|snack|salado|confitado|japones|cacao|bombon|helado|alfajor"],
                  uni=["desayuno-y-dulces/mermelada-y-manjar", "despensa/coctel-y-snacks/frutos-secos"]),
-    "nueces": dict(q="nueces mariposa", kind="g", pkg=250, inc=[r"nuez|nueces"], lo=0.4,
+    "nueces": dict(start=True, q="nueces mariposa", kind="g", pkg=250, inc=[r"nuez|nueces"], lo=0.4,
                    exc=[r"mix|chocolate|confitad|macadamia|pecan|brasil|cascara|moscada|coco|helado|galleta|caramel|miel|harina|aceite|leche|bebida"],
                    uni=["despensa/coctel-y-snacks/frutos-secos"]),
-    "papas": dict(q="papa malla", kind="kg", pkg=2000, inc=[r"\bpapas?\b"],
+    "papas": dict(start=True, q="papa malla", kind="kg", pkg=2000, inc=[r"\bpapas?\b"],
                   exc=[r"frita|chips|congelad|pre ?frit|duquesa|pure|camote|lays|corte|hash|nativa|cocktail|baston|rustica|carozzi|sopa"],
                   uni=["frutas-y-verduras/verduras/verduras"]),
-    "platano": dict(q="platano", kind="kg", pkg=1000, inc=[r"platano"],
+    "platano": dict(start=True, q="platano", kind="kg", pkg=1000, inc=[r"platano"],
                     exc=[r"deshidrat|chips|snack|yogurt|bebida|jugo|helado|nectar|frutos|pure|colado|papilla|harina|barra|galleta|compota|frito|chip|congel|macho|verde"],
                     uni=["frutas-y-verduras/frutas/fruta"]),
-    "manzana": dict(q="manzana", kind="kg", pkg=1000, inc=[r"manzana"],
+    "manzana": dict(start=True, q="manzana", kind="kg", pkg=1000, inc=[r"manzana"],
                     exc=[r"jugo|nectar|compota|deshidrat|chips|snack|vinagre|yogurt|bebida|tarta|pie|sidra|kuchen|papilla|colado|pure|galleta|barra|te |infusion|caramel"],
                     uni=["frutas-y-verduras/frutas/fruta"]),
-    "tomate": dict(q="tomate", kind="kg", pkg=1000, inc=[r"tomate"],
+    "tomate": dict(start=True, q="tomate", kind="kg", pkg=1000, inc=[r"tomate"],
                    exc=[r"salsa|pasta|pure|triturad|cherry|deshidrat|ketchup|conserva|seco|lata|jugo|pelado|cubos|sopa|caja|picad|corte|congel|coctel|cocktail|cherry|uva"],
                    uni=["frutas-y-verduras/verduras/verduras"]),
-    "lechuga": dict(q="lechuga", kind="un", pkg=1, inc=[r"lechuga"], exc=[r"mix|ensalada|bolsa|hidropon.*pack"],
+    "lechuga": dict(start=True, q="lechuga", kind="un", pkg=1, inc=[r"lechuga"], exc=[r"mix|ensalada|bolsa|hidropon.*pack"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
-    "zanahoria": dict(q="zanahoria", kind="kg", pkg=1000, inc=[r"zanahoria"],
+    "zanahoria": dict(start=True, q="zanahoria", kind="kg", pkg=1000, inc=[r"zanahoria"],
                       exc=[r"jugo|baby|rallad|congel|conserva|torta|baston|papilla|colado|pure|crema|corte|juliana|cubos|picad|lista|dole"],
                       uni=["frutas-y-verduras/verduras/verduras"]),
-    "brocoli": dict(q="brocoli", q2="brócoli unidad", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
+    "brocoli": dict(start=True, q="brocoli", q2="brócoli unidad", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
-    "cebolla": dict(q="cebolla", kind="kg", pkg=1000, inc=[r"cebolla"],
+    "cebolla": dict(start=True, q="cebolla", kind="kg", pkg=1000, inc=[r"cebolla"],
                     exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde|cubos|picad|corte|pluma|lista|congel|anillo|tempura|apanad|crut|crouton|sopa|chips|snack"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
-    "palta": dict(q="palta hass", kind="kg", pkg=1000, inc=[r"palta"], exc=[r"aceite|guacamole|congel|pulpa|crema"],
+    "palta": dict(start=True, q="palta hass", kind="kg", pkg=1000, inc=[r"palta"], exc=[r"aceite|guacamole|congel|pulpa|crema"],
                   uni=["frutas-y-verduras/frutas/fruta", "frutas-y-verduras/verduras/verduras"]),
 }
 
@@ -395,6 +395,8 @@ def elegir(items, spec):
             continue
         if any(re.search(r, n) for r in spec.get("exc", [])):
             continue
+        if spec.get("start") and not re.match(r"\s*(?:" + spec["inc"][0] + ")", n):
+            continue  # frutas, verduras y nueces: el nombre tiene que partir con el producto ("Papa malla", no "Sufles de papa")
         pn, q = precio_norm(it, spec)
         if not pn or pn <= 0:
             continue
