@@ -12,6 +12,10 @@ on:
       - ".github/workflows/diario.yml"
       - ".github/workflows/validar-unimarc-browser.yml"
 
+concurrency:
+  group: unimarc-browser-prueba
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
