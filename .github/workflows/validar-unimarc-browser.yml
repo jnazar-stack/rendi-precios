@@ -1,0 +1,26 @@
+name: Validar lectura Unimarc Chromium
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [feature/unimarc-browser]
+    paths:
+      - "unimarc_browser.py"
+      - ".github/workflows/validar-unimarc-browser.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests playwright
+      - run: python -m playwright install --with-deps chromium
+      - name: Probar seis productos de Unimarc
+        run: python unimarc_browser.py
