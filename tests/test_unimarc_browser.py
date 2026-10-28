@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import Mock
 
-from unimarc_browser import UnimarcBrowser
+from unimarc_browser import UnimarcBrowser, filtrar_unimarc
 from actualizar import CAT, elegir
 
 
@@ -22,6 +22,18 @@ class TestUnimarc(unittest.TestCase):
         self.assertEqual(items[0]["p"], 1090)
         self.assertEqual(items[0]["u"], "https://www.unimarc.cl/product/leche-descremada-colun-1-l")
         self.assertIsNotNone(elegir(items, CAT["leche"]))
+
+    def test_excluye_formatos_incorrectos(self):
+        fideos = [
+            {"n":"Pasta spaghetti tricolor 400 g","p":940},
+            {"n":"Pasta spaghetti N5 400 g","p":850}
+        ]
+        self.assertEqual(len(filtrar_unimarc("fideos",fideos)),1)
+        lechugas = [
+            {"n":"Lechuga costina 3 un","p":3490},
+            {"n":"Lechuga escarola 1 un","p":1290}
+        ]
+        self.assertEqual(len(filtrar_unimarc("lechuga",lechugas)),1)
 
     def test_respeta_denegacion(self):
         reader = UnimarcBrowser()
