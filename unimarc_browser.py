@@ -37,6 +37,23 @@ DOM_PRODUCTS = r"""
 }
 """
 
+# Consultas compactas para evitar coincidencias irrelevantes por términos como "litro".
+UNIMARC_BUSQUEDAS = {
+    "huevo": "huevos 30", "leche": "leche descremada",
+    "yogurt": "yogurt griego", "pechuga": "pechuga deshuesada",
+    "trutro": "trutro entero", "molida": "carne molida vacuno",
+    "atun": "atun lomitos agua", "salmon": "salmon filete",
+    "lentejas": "lentejas", "porotos": "porotos", "garbanzos": "garbanzos",
+    "avena": "avena tradicional", "arroz": "arroz grado 2",
+    "fideos": "spaghetti", "quinoa": "quinoa",
+    "pan": "pan molde integral", "aceite": "aceite vegetal",
+    "oliva": "aceite oliva extra virgen", "mani": "mantequilla de mani",
+    "nueces": "nueces mariposa", "papas": "papa malla",
+    "platano": "platano", "manzana": "manzana", "tomate": "tomate",
+    "lechuga": "lechuga", "zanahoria": "zanahoria",
+    "brocoli": "brocoli", "cebolla": "cebolla", "palta": "palta hass"
+}
+
 BLOCK = ("robot or human", "captcha", "access denied", "px-captcha", "perimeterx")
 
 
