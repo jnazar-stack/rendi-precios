@@ -33,6 +33,11 @@ def log(*a):
     print(msg, flush=True)
 
 
+def es_bloqueo(estado):
+    """No insistir ante denegaciones o limitaciones de acceso."""
+    return estado in ("bloqueado", "http 401", "http 403", "http 429")
+
+
 def get(url):
     time.sleep(PAUSA)
     try:
@@ -422,10 +427,39 @@ def elegir(items, spec):
 
 
 # ---------------------------------------------------------------- principal
+def cache_vigente(fecha, ahora):
+    """No reutilizar precios que lleven más de siete días sin verificarse."""
+    try:
+        anterior = datetime.fromisoformat(fecha).replace(tzinfo=ahora.tzinfo)
+        edad = ahora - anterior
+        return timedelta(0) <= edad <= timedelta(days=7)
+    except (ValueError, TypeError):
+        return False
+
+
 def main():
+    from zoneinfo import ZoneInfo
+    ahora = datetime.now(ZoneInfo("America/Santiago"))
+    capturado_hoy = ahora.strftime("%Y-%m-%d %H:%M")
+    try:
+        with open("precios.json", encoding="utf-8") as f:
+            anterior = json.load(f)
+    except (OSError, ValueError):
+        anterior = {}
     cadenas = {0: "lider", 1: "unimarc", 2: "jumbo", 3: "sisa", 4: "tottus", 5: "alvi"}
     estado = {k: {} for k in cadenas}
     res = {pid: {} for pid in CAT}
+    # Conservar el último dato verificado durante 7 días, sin llamarlo precio de hoy.
+    for pid, por_cadena in anterior.get("p", {}).items():
+        if pid not in res or not isinstance(por_cadena, dict):
+            continue
+        for ci, precio in por_cadena.items():
+            if ci not in {str(k) for k in cadenas} or not isinstance(precio, dict):
+                continue
+            fecha_origen = precio.get("capturado") or anterior.get("fecha")
+            if (cache_vigente(fecha_origen, ahora)
+                    and (precio.get("eq") or {}).get("p", 0) > 0):
+                res[pid][ci] = {**precio, "capturado": fecha_origen}
     solo = sys.argv[1:]  # opcional: limitar a algunos productos para probar
     for pid, spec in CAT.items():
         if solo and pid not in solo:
@@ -447,7 +481,7 @@ def main():
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
             pick = elegir(items, spec) if items else None
-            if not pick and spec.get("q2") and ci != 1:
+            if not pick and spec.get("q2") and ci != 1 and not es_bloqueo(e):
                 s2 = dict(spec, q=spec["q2"])
                 it2, e2 = (lider(s2["q"]) if ci == 0 else jumbo_like("https://www.jumbo.cl", s2["q"]) if ci == 2 else
                            jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else tottus(s2["q"]) if ci == 4 else alvi(s2["q"]))
@@ -457,17 +491,17 @@ def main():
             if items and not pick:
                 log(f"   sin calce en {cadenas[ci]} para {pid}; leídos: " + " · ".join(f"{i['n'][:40]} ${int(i['p'] or 0):,}{'' if i.get('stock', True) else ' (sin stock)'}" for i in items[:8]))
             if pick:
-                res[pid][str(ci)] = pick
+                res[pid][str(ci)] = {**pick, "capturado": capturado_hoy}
             if pick and spec["kind"] == "kg":
                 hit = next((i for i in items if i["n"] == pick["eq"]["n"][:90] or i["n"].startswith(pick["eq"]["n"][:60])), {})
                 log(f"   (granel: precio de lista ${pick['eq']['pv']:,}, precio por kg informado: {hit.get('ppu')})")
             log(f"{pid:10s} {cadenas[ci]:8s} {e:14s} {len(items or []):3d} leídos  ",
                 (f"eq ${pick['eq']['p']:,} {pick['eq']['n'][:45]} | eco ${pick['eco']['p']:,} {pick['eco']['n'][:35]}" if pick else "—"))
-            if e == "bloqueado" and ci == 0:
-                # Si Lider bloquea, no seguimos insistiendo ese día.
-                cadenas_bloq.add(0)
-    cl = timezone(timedelta(hours=-3))
-    data = dict(fecha=datetime.now(cl).strftime("%Y-%m-%d %H:%M"),
+            if es_bloqueo(e):
+                # Detener esta cadena en la primera denegación, sin reintentos.
+                cadenas_bloq.add(ci)
+                log(f"   {cadenas[ci]}: acceso denegado; no se harán más consultas hoy")
+    data = dict(fecha=capturado_hoy,
                 estado={cadenas[k]: v for k, v in estado.items()},
                 p={k: v for k, v in res.items() if v})
     with open("precios.json", "w", encoding="utf-8") as f:
