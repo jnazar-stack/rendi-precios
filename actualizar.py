@@ -33,6 +33,11 @@ def log(*a):
     print(msg, flush=True)
 
 
+def es_bloqueo(estado):
+    """No insistir ante denegaciones o limitaciones de acceso."""
+    return estado in ("bloqueado", "http 401", "http 403", "http 429")
+
+
 def get(url):
     time.sleep(PAUSA)
     try:
@@ -447,7 +452,7 @@ def main():
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
             pick = elegir(items, spec) if items else None
-            if not pick and spec.get("q2") and ci != 1:
+            if not pick and spec.get("q2") and ci != 1 and not es_bloqueo(e):
                 s2 = dict(spec, q=spec["q2"])
                 it2, e2 = (lider(s2["q"]) if ci == 0 else jumbo_like("https://www.jumbo.cl", s2["q"]) if ci == 2 else
                            jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else tottus(s2["q"]) if ci == 4 else alvi(s2["q"]))
@@ -463,10 +468,12 @@ def main():
                 log(f"   (granel: precio de lista ${pick['eq']['pv']:,}, precio por kg informado: {hit.get('ppu')})")
             log(f"{pid:10s} {cadenas[ci]:8s} {e:14s} {len(items or []):3d} leídos  ",
                 (f"eq ${pick['eq']['p']:,} {pick['eq']['n'][:45]} | eco ${pick['eco']['p']:,} {pick['eco']['n'][:35]}" if pick else "—"))
-            if e == "bloqueado" and ci == 0:
-                # Si Lider bloquea, no seguimos insistiendo ese día.
-                cadenas_bloq.add(0)
-    cl = timezone(timedelta(hours=-3))
+            if es_bloqueo(e):
+                # Detener esta cadena en la primera denegación, sin reintentos.
+                cadenas_bloq.add(ci)
+                log(f"   {cadenas[ci]}: acceso denegado; no se harán más consultas hoy")
+    from zoneinfo import ZoneInfo
+    cl = ZoneInfo("America/Santiago")
     data = dict(fecha=datetime.now(cl).strftime("%Y-%m-%d %H:%M"),
                 estado={cadenas[k]: v for k, v in estado.items()},
                 p={k: v for k, v in res.items() if v})
