@@ -594,9 +594,9 @@ def main():
             elif ci == 1:
                 try:
                     if uni_navegador is None:
-                        from unimarc_browser import UnimarcBrowser
+                        from unimarc_browser import UnimarcBrowser, UNIMARC_BUSQUEDAS
                         uni_navegador = navegadores.enter_context(UnimarcBrowser())
-                    items, e = uni_navegador.consultar(spec["q"])
+                    items, e = uni_navegador.consultar(UNIMARC_BUSQUEDAS.get(pid, spec["q"]))
                 except Exception as err:
                     items, e = None, "error navegador"
                     log("   Unimarc: fallo al iniciar Chromium:", type(err).__name__)
