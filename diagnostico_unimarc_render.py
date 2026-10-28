@@ -28,7 +28,18 @@ SCRIPT = """
   return {title:document.title, path:location.pathname, sample, count,
      hasPrice, hasColun:/Colun/i.test(txt), hasLeche:/Leche/i.test(txt),
      nextData:!!next, nextProps:props, route,
-     hrefProductCount:document.querySelectorAll('a[href*="/product/"]').length};
+     hrefProductCount:document.querySelectorAll('a[href*="/product/"]').length,
+     muestras:[...document.querySelectorAll('[class*="Shelf_nameProduct"]')].slice(0,3).map(el => {
+       let p=el, niveles=[];
+       for(let n=0;n<6 && p;n++,p=p.parentElement){
+          const links=[...p.querySelectorAll('a[href*="/product/"]')].slice(0,2).map(a=>a.getAttribute('href'));
+          niveles.push({n,tag:p.tagName,cls:String(p.className).slice(0,105),
+            text:(p.innerText||'').replace(/\s+/g,' ').slice(0,240),links});
+       }
+       return {nombre:el.innerText,niveles};
+     }),
+     intelliProps:typeof (next && (() => {try{return JSON.parse(next.textContent).props?.pageProps?.intelliSearchData}catch(e){return null}})()),
+   };
 }
 """
 
