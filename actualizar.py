@@ -265,6 +265,8 @@ def lider_nombre_valido(pid, nombre):
         "nueces": [r"\bmariposas?\b"],
         "platano": [r"\b1\s*kg\b"],
     }
+    if pid == "fideos" and re.search(r"\bmix\b|\btricolor\b", t):
+        return False
     return all(re.search(r, t) for r in required.get(pid, []))
 
 
