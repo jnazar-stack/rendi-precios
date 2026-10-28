@@ -6,6 +6,7 @@ No se guarda HTML, cookies, identidades ni datos del usuario.
 import json
 from urllib.parse import quote
 from playwright.sync_api import sync_playwright, TimeoutError as PlaywrightTimeout
+from actualizar import next_data, walk, smu_item, elegir, CAT
 
 CONSULTA = "leche descremada 1 litro"
 CADENAS = {
@@ -29,8 +30,20 @@ def revisar(page, nombre, url):
             return {"cadena": nombre, "http": codigo, "resultado": "verificacion antibot"}
         ld = page.locator('script[type="application/ld+json"]').count()
         nd = page.locator('script#__NEXT_DATA__').count()
-        return {"cadena": nombre, "http": codigo, "resultado": "pagina accesible",
-                "json_ld_scripts": ld, "next_data_scripts": nd}
+        salida = {"cadena": nombre, "http": codigo, "resultado": "pagina accesible",
+                  "json_ld_scripts": ld, "next_data_scripts": nd}
+        if nombre == "unimarc" and nd:
+            d = next_data(page.content())
+            salida["next_data_roots"] = list(d.keys()) if isinstance(d, dict) else []
+            found = []
+            walk(d, lambda o: "sellers" in o and ("nameComplete" in o or "name" in o) and "detailUrl" in o, found)
+            items = [smu_item(x, "https://www.unimarc.cl") for x in found]
+            items = [x for x in items if x["p"]]
+            salida["productos_leidos"] = len(items)
+            salida["muestra"] = [dict(n=x["n"][:75], p=x["p"]) for x in items[:5]]
+            salida["leche_calza"] = bool(elegir(items, CAT["leche"]))
+            salida["json_data_props"] = list((d.get("props") or {}).keys()) if isinstance(d, dict) else []
+        return salida
     except PlaywrightTimeout:
         return {"cadena": nombre, "resultado": "timeout"}
     except Exception as exc:
