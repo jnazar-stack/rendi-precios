@@ -1,7 +1,7 @@
 """Prueba del catálogo completo de Unimarc sin modificar los datos publicados."""
 import json
 from actualizar import CAT, elegir, es_bloqueo
-from unimarc_browser import UnimarcBrowser, UNIMARC_BUSQUEDAS
+from unimarc_browser import UnimarcBrowser, UNIMARC_BUSQUEDAS, filtrar_unimarc
 
 def main():
     encontrados = 0
@@ -10,6 +10,7 @@ def main():
         for pid, spec in CAT.items():
             query = UNIMARC_BUSQUEDAS.get(pid, spec["q"])
             productos, estado = navegador.consultar(query)
+            productos = filtrar_unimarc(pid, productos)
             pick = elegir(productos, spec) if productos else None
             if pick:
                 encontrados += 1
