@@ -1,0 +1,22 @@
+name: Probar fichas públicas Líder
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [diagnostico_fichas_lider.py, .github/workflows/probar-fichas-lider.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python diagnostico_fichas_lider.py
