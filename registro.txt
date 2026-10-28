@@ -11,6 +11,7 @@ leche      tottus   http 403         0 leídos   —
 leche      alvi     http 403         0 leídos   —
 yogurt     unimarc  http 403         0 leídos   —
 yogurt     jumbo    ok              40 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
+   sin calce en sisa para yogurt; leídos: Yogurt Griego Danone Oikos Natural Sin E $600 · Yogurt Griego Danone Oikos Natural Endul $400 · Yogurt Colun Origen Natural 120 g $390 · Yogurt Natural Soprole Aflanado 155 g $470 · Yogurt Natural Colun Origen 150 g $470 · Yogurt Griego Danone Oikos Papaya 110 g $630 · Yogurt Griego Natural Endulzado Pote 800 $5,250 · Yogurt Griego Danone Oikos Durazno 110 g $630
 yogurt     sisa     ok              18 leídos   —
 yogurt     tottus   http 403         0 leídos   —
 yogurt     alvi     http 403         0 leídos   —
@@ -35,7 +36,7 @@ atun       sisa     ok              12 leídos   eq $1,670 Atún Lomitos en Agua
 atun       tottus   http 403         0 leídos   —
 atun       alvi     http 403         0 leídos   —
 salmon     unimarc  http 403         0 leídos   —
-salmon     jumbo    ok               7 leídos   eq $11,990 Salmón Filete Aqua 500 g | eco $11,990 Salmón Filete Aqua 500 g
+salmon     jumbo    ok               7 leídos   eq $10,590 Salmón Filete Congelado 500 g | eco $10,590 Salmón Filete Congelado 500 g
 salmon     sisa     ok              17 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $9,990 Salmón Filete Congelado 500 g
 salmon     tottus   http 403         0 leídos   —
 salmon     alvi     http 403         0 leídos   —
@@ -76,7 +77,7 @@ quinoa     tottus   http 403         0 leídos   —
 quinoa     alvi     http 403         0 leídos   —
 pan        unimarc  http 403         0 leídos   —
 pan        jumbo    ok              40 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-pan        sisa     ok              38 leídos   eq $1,940 Pan Molde Ideal Integral XL 770 g | eco $1,940 Pan Molde Ideal Integral XL 770 g
+pan        sisa     ok              40 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        tottus   http 403         0 leídos   —
 pan        alvi     http 403         0 leídos   —
 aceite     unimarc  http 403         0 leídos   —
@@ -109,7 +110,8 @@ papas      alvi     http 403         0 leídos   —
 platano    unimarc  http 403         0 leídos   —
    (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
 platano    jumbo    ok              18 leídos   eq $1,450 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,450 Plátano Extra Granel (1 a 2 un. Apr
-platano    sisa     ok              13 leídos   —
+   (granel: precio de lista $745, precio por kg informado: (1490.0, 'kg'))
+platano    sisa     ok              15 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
 platano    tottus   http 403         0 leídos   —
 platano    alvi     http 403         0 leídos   —
 manzana    unimarc  http 403         0 leídos   —
@@ -140,6 +142,7 @@ zanahoria  tottus   http 403         0 leídos   —
 zanahoria  alvi     http 403         0 leídos   —
 brocoli    unimarc  http 403         0 leídos   —
 brocoli    jumbo    ok               2 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
+   sin calce en sisa para brocoli; leídos: Tallarín Cuisine & Co Vitaminizado 400 g $790 · Mix Vegetales Rústicos Marco Polo 150 g $2,250 · Cabellos de Ángel Vitaminizado 400 g $790 · Bebida Vegetal Vilay Arroz Sabor Chocola $2,550
 brocoli    sisa     ok               4 leídos   —
 brocoli    tottus   http 403         0 leídos   —
 brocoli    alvi     http 403         0 leídos   —
