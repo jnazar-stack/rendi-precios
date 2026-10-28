@@ -97,7 +97,7 @@ CAT = {
                    exc=[r"integral|sin gluten|arroz|huevo|instant|ramen|salsa|lenteja|garbanzo|quinoa|verdura|espinaca"],
                    uni=["despensa/fideos-pastas-y-salsas/largos"]),
     "quinoa": dict(q="quinoa", kind="g", pkg=500, inc=[r"quinoa|quinua"], lo=0.3,
-                   exc=[r"barra|snack|galleta|pop|inflad|harina|hamburg|ensalada|fideo|spaghetti|cereal|chips|bebida|mix|lenteja"],
+                   exc=[r"barra|snack|galleta|pop|inflad|harina|hamburg|ensalada|fideo|spaghetti|cereal|chips|bebida|mix|lenteja|mediterran|tricolor|sabor|lista|graneada"],
                    uni=["despensa/arroz-y-legumbres"]),
     "pan": dict(q="pan de molde integral", kind="g", pkg=600, inc=[r"pan", r"integral"], lo=0.6,
                 exc=[r"pita|hamburg|hot ?dog|tostad|rallado|sin gluten|galleta|pascua|marraqueta|hallulla|tortilla|wrap"],
@@ -112,29 +112,29 @@ CAT = {
                  exc=[r"chocolate|galleta|barra|snack|salado|confitado|japones|cacao|bombon|helado|alfajor"],
                  uni=["desayuno-y-dulces/mermelada-y-manjar", "despensa/coctel-y-snacks/frutos-secos"]),
     "nueces": dict(q="nueces mariposa", kind="g", pkg=250, inc=[r"nuez|nueces"], lo=0.4,
-                   exc=[r"mix|chocolate|confitad|macadamia|pecan|brasil|cascara|moscada|coco|helado|galleta|caramel|miel"],
+                   exc=[r"mix|chocolate|confitad|macadamia|pecan|brasil|cascara|moscada|coco|helado|galleta|caramel|miel|harina|aceite|leche|bebida"],
                    uni=["despensa/coctel-y-snacks/frutos-secos"]),
     "papas": dict(q="papa malla", kind="kg", pkg=2000, inc=[r"\bpapas?\b"],
                   exc=[r"frita|chips|congelad|pre ?frit|duquesa|pure|camote|lays|corte|hash|nativa|cocktail|baston|rustica|carozzi|sopa"],
                   uni=["frutas-y-verduras/verduras/verduras"]),
     "platano": dict(q="platano", kind="kg", pkg=1000, inc=[r"platano"],
-                    exc=[r"deshidrat|chips|snack|yogurt|bebida|jugo|helado|nectar|frutos|pure|colado|papilla|harina|barra|galleta|compota"],
+                    exc=[r"deshidrat|chips|snack|yogurt|bebida|jugo|helado|nectar|frutos|pure|colado|papilla|harina|barra|galleta|compota|frito|chip|congel|macho|verde"],
                     uni=["frutas-y-verduras/frutas/fruta"]),
     "manzana": dict(q="manzana", kind="kg", pkg=1000, inc=[r"manzana"],
                     exc=[r"jugo|nectar|compota|deshidrat|chips|snack|vinagre|yogurt|bebida|tarta|pie|sidra|kuchen|papilla|colado|pure|galleta|barra|te |infusion|caramel"],
                     uni=["frutas-y-verduras/frutas/fruta"]),
     "tomate": dict(q="tomate", kind="kg", pkg=1000, inc=[r"tomate"],
-                   exc=[r"salsa|pasta|pure|triturad|cherry|deshidrat|ketchup|conserva|seco|lata|jugo|pelado|cubos|sopa|caja"],
+                   exc=[r"salsa|pasta|pure|triturad|cherry|deshidrat|ketchup|conserva|seco|lata|jugo|pelado|cubos|sopa|caja|picad|corte|congel"],
                    uni=["frutas-y-verduras/verduras/verduras"]),
     "lechuga": dict(q="lechuga", kind="un", pkg=1, inc=[r"lechuga"], exc=[r"mix|ensalada|bolsa|hidropon.*pack"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "zanahoria": dict(q="zanahoria", kind="kg", pkg=1000, inc=[r"zanahoria"],
-                      exc=[r"jugo|baby|rallada|congel|conserva|torta|bastones|papilla|colado|pure|crema"],
+                      exc=[r"jugo|baby|rallad|congel|conserva|torta|baston|papilla|colado|pure|crema|corte|juliana|cubos|picad|lista|dole"],
                       uni=["frutas-y-verduras/verduras/verduras"]),
     "brocoli": dict(q="brocoli", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "cebolla": dict(q="cebolla", kind="kg", pkg=1000, inc=[r"cebolla"],
-                    exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde"],
+                    exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde|cubos|picad|corte|pluma|lista|congel"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "palta": dict(q="palta hass", kind="kg", pkg=1000, inc=[r"palta"], exc=[r"aceite|guacamole|congel|pulpa|crema"],
                   uni=["frutas-y-verduras/frutas/fruta", "frutas-y-verduras/verduras/verduras"]),
@@ -410,7 +410,7 @@ def elegir(items, spec):
     eq = br[0] if br else eco
 
     def out(c):
-        o = dict(p=round(c["pn"]), n=c["n"][:90], img=c.get("img"), u=c.get("u"))
+        o = dict(p=round(c["pn"]), n=c["n"][:90], img=c.get("img"), u=c.get("u"), pv=round(c["p"]))
         if c.get("steps"):
             o["t"] = [[s[0], round(s[1] * c["pn"] / c["p"])] for s in c["steps"]]
         return o
@@ -445,6 +445,9 @@ def main():
             pick = elegir(items, spec) if items else None
             if pick:
                 res[pid][str(ci)] = pick
+            if pick and spec["kind"] == "kg":
+                hit = next((i for i in items if i["n"] == pick["eq"]["n"][:90] or i["n"].startswith(pick["eq"]["n"][:60])), {})
+                log(f"   (granel: precio de lista ${pick['eq']['pv']:,}, precio por kg informado: {hit.get('ppu')})")
             log(f"{pid:10s} {cadenas[ci]:8s} {e:14s} {len(items or []):3d} leídos  ",
                 (f"eq ${pick['eq']['p']:,} {pick['eq']['n'][:45]} | eco ${pick['eco']['p']:,} {pick['eco']['n'][:35]}" if pick else "—"))
             if e == "bloqueado" and ci == 0:
