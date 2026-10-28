@@ -1,0 +1,25 @@
+name: Diagnóstico Unimarc renderizado
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "diagnostico_unimarc_render.py"
+      - ".github/workflows/diagnostico-unimarc-render.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  diagnostico:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install playwright
+      - run: python -m playwright install --with-deps chromium
+      - run: python diagnostico_unimarc_render.py
