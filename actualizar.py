@@ -579,6 +579,9 @@ def main():
             if (cache_vigente(fecha_origen, ahora)
                     and (precio.get("eq") or {}).get("p", 0) > 0):
                 res[pid][ci] = {**precio, "capturado": fecha_origen}
+    from contextlib import ExitStack
+    navegadores = ExitStack()
+    uni_navegador = None
     solo = sys.argv[1:]  # opcional: limitar a algunos productos para probar
     for pid, spec in CAT.items():
         if solo and pid not in solo:
@@ -589,7 +592,15 @@ def main():
             if ci == 0:
                 items, e = lider_categoria(pid)
             elif ci == 1:
-                items, e = unimarc(spec)
+                try:
+                    if uni_navegador is None:
+                        from unimarc_browser import UnimarcBrowser, UNIMARC_BUSQUEDAS, filtrar_unimarc
+                        uni_navegador = navegadores.enter_context(UnimarcBrowser())
+                    items, e = uni_navegador.consultar(UNIMARC_BUSQUEDAS.get(pid, spec["q"]))
+                    items = filtrar_unimarc(pid, items)
+                except Exception as err:
+                    items, e = None, "error navegador"
+                    log("   Unimarc: fallo al iniciar Chromium:", type(err).__name__)
             elif ci == 2:
                 items, e = jumbo_like("https://www.jumbo.cl", spec["q"])
             elif ci == 3:
@@ -610,16 +621,17 @@ def main():
             if items and not pick:
                 log(f"   sin calce en {cadenas[ci]} para {pid}; leídos: " + " · ".join(f"{i['n'][:40]} ${int(i['p'] or 0):,}{'' if i.get('stock', True) else ' (sin stock)'}" for i in items[:8]))
             if pick:
-                res[pid][str(ci)] = {**pick, "capturado": capturado_hoy, **({"fuente": "categoria_publica"} if ci == 0 else {})}
+                res[pid][str(ci)] = {**pick, "capturado": capturado_hoy, **({"fuente": "categoria_publica"} if ci == 0 else {"fuente": "pagina_publica_chromium"} if ci == 1 else {})}
             if pick and spec["kind"] == "kg":
                 hit = next((i for i in items if i["n"] == pick["eq"]["n"][:90] or i["n"].startswith(pick["eq"]["n"][:60])), {})
                 log(f"   (granel: precio de lista ${pick['eq']['pv']:,}, precio por kg informado: {hit.get('ppu')})")
             log(f"{pid:10s} {cadenas[ci]:8s} {e:14s} {len(items or []):3d} leídos  ",
                 (f"eq ${pick['eq']['p']:,} {pick['eq']['n'][:45]} | eco ${pick['eco']['p']:,} {pick['eco']['n'][:35]}" if pick else "—"))
-            if es_bloqueo(e):
-                # Detener esta cadena en la primera denegación, sin reintentos.
+            if es_bloqueo(e) or (ci == 1 and e in ("timeout", "error lectura", "error navegador")):
+                # No repetir en el mismo día una cadena que falló o denegó acceso.
                 cadenas_bloq.add(ci)
-                log(f"   {cadenas[ci]}: acceso denegado; no se harán más consultas hoy")
+                log(f"   {cadenas[ci]}: lectura no disponible; no se harán más consultas hoy")
+    navegadores.close()
     data = dict(fecha=capturado_hoy,
                 estado={cadenas[k]: v for k, v in estado.items()},
                 p={k: v for k, v in res.items() if v})
