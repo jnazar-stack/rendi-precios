@@ -8,7 +8,9 @@ def main():
         items,status=a.lider_categoria(pid)
         pick=a.elegir(items,a.CAT[pid]) if items else None
         summary[pid]={"estado":status,"items":len(items or []),"valido":bool(pick),
-            "precio":(pick or {}).get("eq",{}).get("p")}
+            "precio":(pick or {}).get("eq",{}).get("p"),
+            "nombre_eq":(pick or {}).get("eq",{}).get("n"),
+            "nombre_eco":(pick or {}).get("eco",{}).get("n")}
         print(json.dumps({"producto":pid,**summary[pid]},ensure_ascii=False),flush=True)
         if a.es_bloqueo(status):
             print("Se detiene la prueba ante denegación de acceso.",flush=True)
