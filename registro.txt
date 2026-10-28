@@ -11,12 +11,11 @@ leche      tottus   http 403         0 leídos   —
 leche      alvi     http 403         0 leídos   —
 yogurt     unimarc  http 403         0 leídos   —
 yogurt     jumbo    ok              40 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
-   sin calce en sisa para yogurt; leídos: Yogurt Griego Danone Oikos Natural Sin E $600 · Yogurt Griego Danone Oikos Natural Endul $400 · Yogurt Colun Origen Natural 120 g $390 · Yogurt Natural Soprole Aflanado 155 g $470 · Yogurt Natural Colun Origen 150 g $470 · Yogurt Griego Danone Oikos Papaya 110 g $630 · Yogurt Griego Natural Endulzado Pote 800 $5,250 · Yogurt Griego Danone Oikos Durazno 110 g $630
-yogurt     sisa     ok              18 leídos   —
+yogurt     sisa     ok              18 leídos   eq $6,562 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,562 Yogurt Griego Natural Endulzado Pot
 yogurt     tottus   http 403         0 leídos   —
 yogurt     alvi     http 403         0 leídos   —
 pechuga    unimarc  http 403         0 leídos   —
-pechuga    jumbo    ok              19 leídos   eq $10,244 Pechuga de Pollo Deshuesada Sin Piel Al Natur | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
+pechuga    jumbo    ok              19 leídos   eq $6,990 Pechuga Deshuesada de Pollo Sadia 1 kg | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
 pechuga    sisa     ok               5 leídos   eq $7,528 Bistec de Pechuga Deshuesada 530 g | eco $7,528 Bistec de Pechuga Deshuesada 530 g
 pechuga    tottus   http 403         0 leídos   —
 pechuga    alvi     http 403         0 leídos   —
@@ -71,7 +70,7 @@ fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima
 fideos     tottus   http 403         0 leídos   —
 fideos     alvi     http 403         0 leídos   —
 quinoa     unimarc  http 403         0 leídos   —
-quinoa     jumbo    ok              19 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     jumbo    ok              17 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     sisa     ok              40 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     tottus   http 403         0 leídos   —
 quinoa     alvi     http 403         0 leídos   —
@@ -147,8 +146,8 @@ brocoli    sisa     ok               4 leídos   —
 brocoli    tottus   http 403         0 leídos   —
 brocoli    alvi     http 403         0 leídos   —
 cebolla    unimarc  http 403         0 leídos   —
-   (granel: precio de lista $1,990, precio por kg informado: (24875.0, 'kg'))
-cebolla    jumbo    ok              26 leídos   eq $24,875 Crutones Tribu Protein Cebolla 80 g | eco $24,875 Crutones Tribu Protein Cebolla 80 g
+   (granel: precio de lista $975, precio por kg informado: (1950.0, 'kg'))
+cebolla    jumbo    ok              26 leídos   eq $1,950 Cebolla Granel (1 a 2 un. Aprox) | eco $1,950 Cebolla Granel (1 a 2 un. Aprox)
    (granel: precio de lista $945, precio por kg informado: (1890.0, 'kg'))
 cebolla    sisa     ok              11 leídos   eq $1,890 Cebolla Granel (1 a 2 un. Aprox) | eco $1,890 Cebolla Granel (1 a 2 un. Aprox)
 cebolla    tottus   http 403         0 leídos   —
