@@ -335,26 +335,6 @@ def lider_categoria(pid):
     return items, "ok" if items else "sin resultados"
 
 
-def tottus(q):
-    st, t = get(f"https://www.tottus.cl/tottus-cl/buscar?Ntt={quote(q)}")
-    if st != 200:
-        return None, f"http {st}"
-    items = []
-    for L in ld_lists(t):
-        for el in L.get("itemListElement", []):
-            it = el.get("item") or {}
-            offs = it.get("offers") or []
-            offs = offs if isinstance(offs, list) else [offs]
-            ps = [num(o.get("price")) for o in offs if num(o.get("price"))]
-            if not ps:
-                continue
-            # La primera oferta es el precio que la página muestra; las otras suelen ser el precio normal.
-            items.append(dict(n=it.get("name") or "", p=ps[0], img=it.get("image"), u=it.get("url"), size=it.get("name") or "", stock=True))
-    if not items and BLOQUEO.search(t[:20000]):
-        return None, "bloqueado"
-    return items, "ok" if items else "sin resultados"
-
-
 def next_data(t):
     m = re.search(r'<script id="__NEXT_DATA__"[^>]*>(.*?)</script>', t, re.S)
     if not m:
@@ -565,7 +545,7 @@ def main():
             anterior = json.load(f)
     except (OSError, ValueError):
         anterior = {}
-    cadenas = {0: "lider", 1: "unimarc", 2: "jumbo", 3: "sisa", 4: "tottus", 5: "alvi"}
+    cadenas = {0: "lider", 1: "unimarc", 2: "jumbo", 3: "sisa", 5: "alvi"}  # índice 4 reservado; Tottus retirado del piloto
     estado = {k: {} for k in cadenas}
     res = {pid: {} for pid in CAT}
     # Conservar el último dato verificado durante 7 días, sin llamarlo precio de hoy.
@@ -605,8 +585,6 @@ def main():
                 items, e = jumbo_like("https://www.jumbo.cl", spec["q"])
             elif ci == 3:
                 items, e = jumbo_like("https://www.santaisabel.cl", spec["q"])
-            elif ci == 4:
-                items, e = tottus(spec["q"])
             else:
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
@@ -614,7 +592,7 @@ def main():
             if not pick and spec.get("q2") and ci not in (0, 1) and not es_bloqueo(e):
                 s2 = dict(spec, q=spec["q2"])
                 it2, e2 = (lider(s2["q"]) if ci == 0 else jumbo_like("https://www.jumbo.cl", s2["q"]) if ci == 2 else
-                           jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else tottus(s2["q"]) if ci == 4 else alvi(s2["q"]))
+                           jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else alvi(s2["q"]))
                 pick = elegir(it2, spec) if it2 else None
                 if pick:
                     items = it2
