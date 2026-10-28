@@ -138,7 +138,7 @@ CAT = {
     "zanahoria": dict(start=True, q="zanahoria", kind="kg", pkg=1000, inc=[r"zanahoria"],
                       exc=[r"jugo|baby|rallad|congel|conserva|torta|baston|papilla|colado|pure|crema|corte|juliana|cubos|picad|lista|dole"],
                       uni=["frutas-y-verduras/verduras/verduras"]),
-    "brocoli": dict(start=True, q="brocoli", q2="brócoli unidad", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
+    "brocoli": dict(start=True, q="brocoli", q2="brócoli unidad", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa|pote|brote"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "cebolla": dict(start=True, q="cebolla", kind="kg", pkg=1000, inc=[r"cebolla"],
                     exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde|cubos|picad|corte|pluma|lista|congel|anillo|tempura|apanad|crut|crouton|sopa|chips|snack"],
@@ -332,8 +332,10 @@ def lider_categoria(pid):
             url = producto.get("url")
             if isinstance(url, str) and url.startswith("/"):
                 url = base + url
+            # En Lider lo que se vende a granel muestra el precio por kilo aunque el nombre diga "500 g".
+            granel = bool(re.search(r"\bgranel\b", norm(nombre)))
             items.append(dict(n=nombre, p=p, img=foto, u=url or f"{base}/v/{slug}",
-                              size=nombre,
+                              size="granel" if granel else nombre, ppu=(p, "kg") if granel else None,
                               stock="OutOfStock" not in str(ofertas.get("availability", ""))))
     return items, "ok" if items else "sin resultados"
 
