@@ -71,7 +71,7 @@ fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima
 fideos     tottus   http 403         0 leídos   —
 fideos     alvi     ok              18 leídos   eq $610 Pasta spaghetti N°5 Aconcagua 400 g Pasta spa | eco $560 Pasta spaghetti N°5 Merkat 400 g Pa
 quinoa     unimarc  http 403         0 leídos   —
-quinoa     jumbo    ok              19 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     jumbo    ok              17 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     sisa     ok              40 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     tottus   http 403         0 leídos   —
    sin calce en alvi para quinoa; leídos: Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530 · Chocolate relleno guinda $1,590 · Jalea guinda pote $370 · Jalea Soprole sabor guinda pote 110 g Ja $270 · Jalea guinda Colun 100gr $280 (sin stock) · Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530
@@ -100,31 +100,32 @@ nueces     unimarc  http 403         0 leídos   —
 nueces     jumbo    ok              16 leídos   eq $5,612 Nueces Trozos 200 g | eco $5,612 Nueces Trozos 200 g
 nueces     sisa     ok               3 leídos   eq $6,100 Nuez Mariposa 200 g | eco $6,100 Nuez Mariposa 200 g
 nueces     tottus   http 403         0 leídos   —
-nueces     alvi     ok              12 leídos   eq $1,076 Yoghurt Gold lúcuma y nuez 165 g Yoghurt gold | eco $1,076 Yoghurt Gold lúcuma y nuez 165 g Yo
+   sin calce en alvi para nueces; leídos: Pasta mariposas Lucchetti 250 g Pasta ma $670 · Pasta mariposas Carozzi 250 g Pasta mari $840 · Yoghurt Gold lúcuma y nuez 165 g Yoghurt $710 · Helado Trendy lúcuma nuez y vainilla 1.8 $5,050 · Nuez moscada Nuestra Cocina molida 5 g $410 · Pan de molde calabaza nuez con masa madr $2,750 (sin stock) · Pasta mariposas Lucchetti 250 g Pasta ma $670 · Pasta mariposas Carozzi 250 g Pasta mari $840
+nueces     alvi     ok              12 leídos   —
 papas      unimarc  http 403         0 leídos   —
    (granel: precio de lista $3,450, precio por kg informado: (1725.0, 'kg'))
 papas      jumbo    ok               7 leídos   eq $3,450 Papa Malla 2 kg | eco $3,450 Papa Malla 2 kg
    (granel: precio de lista $3,690, precio por kg informado: (1845.0, 'kg'))
 papas      sisa     ok               4 leídos   eq $3,690 Papa Malla 2 kg | eco $3,690 Papa Malla 2 kg
 papas      tottus   http 403         0 leídos   —
-   (granel: precio de lista $1,610, precio por kg informado: None)
-papas      alvi     ok             100 leídos   eq $16,100 Crunchis sufles de papa Marco Polo 200 g | eco $16,100 Crunchis sufles de papa Marco Polo 
+   sin calce en alvi para papas; leídos: Beb. Pap, Lata 6 U X 350 Ml Bebida lata $960 · Toallas femeninas Ladysoft diurnas ultra $1,420 · Toalla higiénica ultrafina malla con ala $3,390 · Toalla femenina nocturna ultradelgadas m $1,090 · Chanfle sufles Fruna sabor papa 350 gr $2,860 · Papas fritas Lapotato sabor queso 10 un  $5,950 · Papas fritas Lapotato original 10 un de  $5,950 · Papas fritas Lapotato sabor cebolla 10 u $5,950
+papas      alvi     ok             100 leídos   —
 platano    unimarc  http 403         0 leídos   —
    (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
 platano    jumbo    ok              18 leídos   eq $1,450 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,450 Plátano Extra Granel (1 a 2 un. Apr
    (granel: precio de lista $745, precio por kg informado: (1490.0, 'kg'))
 platano    sisa     ok              15 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
 platano    tottus   http 403         0 leídos   —
-   (granel: precio de lista $5,390, precio por kg informado: None)
-platano    alvi     ok              22 leídos   eq $10,208 Tigretón plátano chocolate | eco $10,208 Tigretón plátano chocolate
+   sin calce en alvi para platano; leídos: Compota Vivo Mifrut plátano 90 g Compota $470 · Tigretón plátano chocolate $5,390 · Yoghurt Colun protein plus sin lactosa f $740 · Yoghurt batido Soprole sabor plátano 120 $270 · Chiquitín plátano $340 · Leche semidescremada Loncoleche sabor pl $530 · Tikisnack Tnogal plátano y almendra 30 g $1,420 · Jugo en polvo naranja plátano rinde 1 L $260
+platano    alvi     ok              22 leídos   —
 manzana    unimarc  http 403         0 leídos   —
    (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
 manzana    jumbo    ok              40 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
    (granel: precio de lista $1,890, precio por kg informado: (1890.0, 'kg'))
 manzana    sisa     ok              40 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
 manzana    tottus   http 403         0 leídos   —
-   (granel: precio de lista $3,590, precio por kg informado: None)
-manzana    alvi     ok              96 leídos   eq $5,983 Avena multisemillas pasas, manzana y linaza | eco $5,983 Avena multisemillas pasas, manzana 
+   sin calce en alvi para manzana; leídos: Trapero húmedo Virginia con ojal aroma m $2,520 · Shampoo Head and Shoulders control caspa $5,190 · Jabón líquido Kadus manzana miel 900 ml  $1,490 · Shampoo manzana doypack $1,340 · Trapero húmedo desinfectante manzana ver $2,130 · Avena multisemillas pasas, manzana y lin $3,590 · Vinagre de manzana $4,190 · Vinagre de manzana $880
+manzana    alvi     ok              96 leídos   —
 tomate     unimarc  http 403         0 leídos   —
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              38 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
