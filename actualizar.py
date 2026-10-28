@@ -67,9 +67,9 @@ CAT = {
                   exc=[r"polvo|lactosa|chocolate|frutilla|vainilla|cultivad|evaporad|condens|cereal|200 ?ml|proteina|batido|avena|almendra|soya"],
                   uni=["lacteos-huevos-y-refrigerados/leches-y-cremas/leches-blancas"]),
     "yogurt": dict(q="yogurt griego natural", kind="g", pkg=1000, inc=[r"griego"], lo=0.35,
-                   exc=[r"frutilla|berr|vainilla|mango|durazno|miel|coco|frambuesa|arandano|limon|maracuy|chocolate|cereal|frutos|pina|manjar|batido|bebible|endulzado"],
+                   exc=[r"frutilla|berr|vainilla|mango|durazno|miel|coco|frambuesa|arandano|limon|maracuy|chocolate|cereal|frutos|pina|manjar|batido|bebible|papaya|kiwi|guinda"],
                    uni=["lacteos-huevos-y-refrigerados/yoghurt"]),
-    "pechuga": dict(q="pechuga de pollo deshuesada", kind="g", pkg=1000, inc=[r"pechuga"], brand="super pollo",
+    "pechuga": dict(q="pechuga de pollo deshuesada", kind="g", pkg=1000, inc=[r"pechuga"],
                     exc=[r"pavo|apanad|nugget|empan|cocid|ahumad|jamon|hamburg|marinad|rellen|cordon|tender|crispy|asad|desmech"],
                     uni=["carnes/pollo/pechugas-y-filetitos"]),
     "trutro": dict(q="trutro entero de pollo", kind="g", pkg=1000, inc=[r"trutro"], exc=[r"pavo|apanad|cocid|asad|ahumad|marinad|alita"],
@@ -131,10 +131,10 @@ CAT = {
     "zanahoria": dict(q="zanahoria", kind="kg", pkg=1000, inc=[r"zanahoria"],
                       exc=[r"jugo|baby|rallad|congel|conserva|torta|baston|papilla|colado|pure|crema|corte|juliana|cubos|picad|lista|dole"],
                       uni=["frutas-y-verduras/verduras/verduras"]),
-    "brocoli": dict(q="brocoli", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
+    "brocoli": dict(q="brocoli", q2="brócoli unidad", kind="un", pkg=1, inc=[r"brocoli"], exc=[r"congel|pizza|crema|sopa|mix|florete|bolsa"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "cebolla": dict(q="cebolla", kind="kg", pkg=1000, inc=[r"cebolla"],
-                    exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde|cubos|picad|corte|pluma|lista|congel|anillo|tempura|apanad"],
+                    exc=[r"morada|perla|frita|deshidrat|polvo|caramel|crema|sopa|cebollin|aros|escabeche|en vinagre|verde|cubos|picad|corte|pluma|lista|congel|anillo|tempura|apanad|crut|crouton|sopa|chips|snack"],
                     uni=["frutas-y-verduras/verduras/verduras"]),
     "palta": dict(q="palta hass", kind="kg", pkg=1000, inc=[r"palta"], exc=[r"aceite|guacamole|congel|pulpa|crema"],
                   uni=["frutas-y-verduras/frutas/fruta", "frutas-y-verduras/verduras/verduras"]),
@@ -359,7 +359,9 @@ def precio_norm(it, spec):
             return None, None
         return it["p"] / q * pkg, q
     if kind == "kg":
-        if sz and sz[1] == "g" and sz[0] >= 200:
+        if sz and sz[1] == "g" and sz[0] < 200:
+            return None, None
+        if sz and sz[1] == "g":
             return it["p"] / sz[0] * pkg, sz[0]
         if ppu and ppu[1] in ("kg", "kilo", "kgs"):
             return ppu[0] * pkg / 1000, None
@@ -443,6 +445,13 @@ def main():
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
             pick = elegir(items, spec) if items else None
+            if not pick and spec.get("q2") and ci != 1:
+                s2 = dict(spec, q=spec["q2"])
+                it2, e2 = (lider(s2["q"]) if ci == 0 else jumbo_like("https://www.jumbo.cl", s2["q"]) if ci == 2 else
+                           jumbo_like("https://www.santaisabel.cl", s2["q"]) if ci == 3 else tottus(s2["q"]) if ci == 4 else alvi(s2["q"]))
+                pick = elegir(it2, spec) if it2 else None
+                if pick:
+                    items = it2
             if items and not pick:
                 log(f"   sin calce en {cadenas[ci]} para {pid}; leídos: " + " · ".join(f"{i['n'][:40]} ${int(i['p'] or 0):,}{'' if i.get('stock', True) else ' (sin stock)'}" for i in items[:8]))
             if pick:
