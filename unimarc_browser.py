@@ -61,7 +61,6 @@ class UnimarcBrowser:
             self.manager.stop()
 
     def consultar(self, q):
-        from actualizar import num
         url = "https://www.unimarc.cl/search?q=" + quote(q)
         try:
             response = self.page.goto(url,wait_until="domcontentloaded",timeout=22000)
@@ -85,7 +84,7 @@ class UnimarcBrowser:
                 brand=(x.get("brand") or "").strip()
                 full=(" ".join([name,brand])).strip()
                 text=x.get("raw") or ""
-                p=num(x.get("price"))
+                p=float(x.get("price") or 0)
                 if not p:
                     continue
                 items.append({
