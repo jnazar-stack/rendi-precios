@@ -443,6 +443,8 @@ def main():
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
             pick = elegir(items, spec) if items else None
+            if items and not pick:
+                log(f"   sin calce en {cadenas[ci]} para {pid}; leídos: " + " · ".join(f"{i['n'][:40]} ${int(i['p'] or 0):,}{'' if i.get('stock', True) else ' (sin stock)'}" for i in items[:8]))
             if pick:
                 res[pid][str(ci)] = pick
             if pick and spec["kind"] == "kg":
