@@ -248,6 +248,26 @@ def jumbo_like(base, q):
     return items, "ok" if items else "sin resultados"
 
 
+def lider_nombre_valido(pid, nombre):
+    """Exige el producto correcto, no solo una palabra en un producto relacionado."""
+    t = norm(nombre)
+    required = {
+        "salmon": [r"\bsalmon\b", r"\bfilete\b"],
+        "quinoa": [r"^\s*quinoa\b"],
+        "oliva": [r"\baceite\s+(?:de\s+)?oliva\b", r"\bextra\s+virgen\b"],
+        "arroz": [r"\bgrado\s*2\b"],
+        "avena": [r"\btradicional\b"],
+        "molida": [r"\b10\s*%\s*grasa\b"],
+        "pechuga": [r"\bdeshuesad"],
+        "trutro": [r"\bentero\b"],
+        "lechuga": [r"\blechuga\b", r"\b1\s*un\b"],
+        "papas": [r"\b2\s*kg\b"],
+        "nueces": [r"\bmariposas?\b"],
+        "platano": [r"\b1\s*kg\b"],
+    }
+    return all(re.search(r, t) for r in required.get(pid, []))
+
+
 def lider_categoria(pid):
     """Lee productos del ItemList público de una categoría de Líder.
 
@@ -286,6 +306,11 @@ def lider_categoria(pid):
             # quitar solo los prefijos conocidos de supermercados, no palabras arbitrarias.
             if CAT[pid].get("start"):
                 nombre = re.sub(r"^(?:multi ?marca|lider)\s+", "", nombre, flags=re.I)
+            if not lider_nombre_valido(pid, nombre):
+                continue
+            if pid == "lechuga":
+                # Una lechuga entera en bolsa no es lo mismo que hojas/ensalada envasadas.
+                nombre = re.sub(r"\bBolsa\s+(?=1\s*Un\b)", "", nombre, flags=re.I)
             foto = producto.get("image")
             if isinstance(foto, list):
                 foto = foto[0] if foto else None
