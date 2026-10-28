@@ -2,8 +2,6 @@ huevo      lider    ok              48 leídos   eq $7,490 Huevos Tradicionales 
 huevo      unimarc  ok              47 leídos   eq $6,100 Huevos fundo río alegre mediano blanco 30 un  | eco $6,100 Huevos fundo río alegre mediano bla
 huevo      jumbo    ok              11 leídos   eq $9,950 Huevos Coliumo Premium Grandes Blancos 30 un. | eco $8,690 Huevos Cuisine & Co Medianos Blanco
 huevo      sisa     ok               2 leídos   eq $9,975 Huevos de Gallina La Granja de Zenón Blancos  | eco $9,950 Huevos Cuisine & Co Grandes Blancos
-huevo      tottus   http 403         0 leídos   —
-   tottus: lectura no disponible; no se harán más consultas hoy
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Río Alegre mediano blanco 30 un | eco $8,990 Huevos Fundo Río Alegre mediano bla
 leche      lider    ok              48 leídos   eq $1,190 Leche Descremada Natural Caja 1 L 1 L Colun | eco $1,000 Leche Blanca Descremada Caja 1 L Li
 leche      unimarc  ok              35 leídos   eq $1,090 Leche descremada colun 1 l Colun | eco $990 Leche descremada fundo río alegre 1
@@ -80,7 +78,7 @@ quinoa     alvi     ok              12 leídos   —
 pan        lider    ok              48 leídos   eq $1,714 Pan De Molde Integral Xl 700 g Castaño | eco $1,714 Pan De Molde Integral Xl 700 g Cast
 pan        unimarc  ok              31 leídos   eq $1,714 Pan de molde pierre integral xl 700 g Pan Pie | eco $1,714 Pan de molde pierre integral xl 700
 pan        jumbo    ok              40 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-pan        sisa     ok              38 leídos   eq $1,940 Pan Molde Ideal Integral XL 770 g | eco $1,940 Pan Molde Ideal Integral XL 770 g
+pan        sisa     ok              40 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        alvi     ok              14 leídos   eq $2,112 Pan de molde Ideal integral tamaño XL 770 gr | eco $2,112 Pan de molde Ideal integral tamaño 
 aceite     lider    ok              42 leídos   eq $2,205 Aceite Vegetal Botella 1 L Belmont | eco $1,890 Aceite Vegetal Botella 900 ml Lider
 aceite     unimarc  ok               7 leídos   eq $2,781 Aceite belmont vegetal con canola 1 l Belmont | eco $1,650 Aceite merkat vegetal 900 ml Merkat
