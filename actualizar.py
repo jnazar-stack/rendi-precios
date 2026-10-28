@@ -261,7 +261,7 @@ def lider_nombre_valido(pid, nombre):
         "pechuga": [r"\bdeshuesad"],
         "trutro": [r"\bentero\b"],
         "lechuga": [r"\blechuga\b", r"\b1\s*un\b"],
-        "papas": [r"\b2\s*kg\b"],
+        "papas": [r"\bpapas?\s+malla\b", r"\b2\s*kg\b"],
         "nueces": [r"\bmariposas?\b"],
         "platano": [r"\b1\s*kg\b"],
     }
@@ -311,6 +311,14 @@ def lider_categoria(pid):
             if pid == "lechuga":
                 # Una lechuga entera en bolsa no es lo mismo que hojas/ensalada envasadas.
                 nombre = re.sub(r"\bBolsa\s+(?=1\s*Un\b)", "", nombre, flags=re.I)
+            # Evitar comparar el precio unitario de un envase muy distinto al
+            # que la app considera una unidad de compra.
+            if pid in ("salmon", "fideos", "yogurt"):
+                tam = size_of(nombre)
+                rangos = {"salmon": (400, 600), "fideos": (350, 550), "yogurt": (750, 1200)}
+                lo, hi = rangos[pid]
+                if not tam or tam[1] != "g" or not (lo <= tam[0] <= hi):
+                    continue
             foto = producto.get("image")
             if isinstance(foto, list):
                 foto = foto[0] if foto else None
