@@ -1,56 +1,68 @@
-"""Una consulta de diagnóstico a una categoría pública de Líder; sin reintentos."""
-import json
-import re
-import requests
-from actualizar import ld_lists, next_data, walk, num, elegir, CAT
+"""Validación única de siete categorías públicas de Líder.
 
-URL = "https://super.lider.cl/v/leches-descremadas-1-l"
-UA = "RendiBot/1.0 (+https://github.com/jnazar-stack/rendi-precios; lector de precios publicos)"
+Prueba producto y precio estructurados sin editar precios.json.
+No reintenta denegaciones.
+"""
+import json
+import time
+import requests
+import re
+from actualizar import ld_lists, num, elegir, CAT
+
+SITIOS={
+ "leche":"leches-descremadas-1-l",
+ "huevo":"huevos",
+ "pechuga":"pechuga-de-pollo",
+ "atun":"atun",
+ "arroz":"arroz",
+ "aceite":"aceite-vegetal",
+ "papas":"papas"
+}
+UA="RendiBot/1.0 (+https://github.com/jnazar-stack/rendi-precios; lector de precios publicos)"
+BLOCK=re.compile(r"robot or human|are you a robot|access denied|px-captcha",re.I)
+
+def items_de_pagina(html,pid):
+    resultado=[]
+    for collection in ld_lists(html):
+        for el in collection.get("itemListElement",[]):
+            it=(el.get("item") or {}) if isinstance(el,dict) else {}
+            if not isinstance(it,dict):
+                continue
+            o=it.get("offers") or {}
+            if isinstance(o,list):
+                o=o[0] if o else {}
+            p=num(o.get("price")) if isinstance(o,dict) else None
+            n=it.get("name") or el.get("name") or ""
+            if pid in ("papas","nueces","manzana","tomate","cebolla","palta","zanahoria","platano") and n.lower().startswith("multi marca "):
+                n=n[len("multi marca "):]
+            if p and n:
+                resultado.append(dict(n=n,p=p,img=it.get("image"),u=it.get("url"),size=n,
+                  stock="OutOfStock" not in str(o.get("availability",""))))
+    return resultado
 
 def main():
-    r = requests.get(URL, headers={"User-Agent":UA,"Accept-Language":"es-CL,es;q=0.9"},timeout=20)
-    if r.status_code != 200:
-        print(json.dumps({"status":r.status_code,"resultado":"no_disponible"}))
-        return
-    html = r.text
-    lists = ld_lists(html)
-    sample = []
-    for lst in lists:
-        for el in lst.get("itemListElement",[])[:10]:
-            product = el.get("item",{}) if isinstance(el,dict) else {}
-            if not isinstance(product,dict):
-                product = {}
-            offer = product.get("offers") or {}
-            if isinstance(offer,list):
-                offer=offer[0] if offer else {}
-            name=product.get("name") or el.get("name") or ""
-            price=offer.get("price") if isinstance(offer,dict) else None
-            sample.append({"nombre":str(name)[:75],"precio":price})
-    nd=next_data(html)
-    candidates=[]
-    if nd:
-        walk(nd,lambda o: "usItemId" in o and "priceInfo" in o and "name" in o,candidates)
-    prices=[]
-    for x in candidates:
-        pi=x.get("priceInfo") or {}
-        raw=pi.get("linePrice") or pi.get("itemPrice")
-        price=num(raw)
-        if price:
-            prices.append(dict(n=str(x.get("name") or ""),p=price,size=str(x.get("name") or ""),stock=True,
-                img=None,u=None))
-    chosen=elegir(prices,CAT["leche"])
-    print(json.dumps({
-      "status":r.status_code,
-      "bytes":len(r.content),
-      "jsonld_listas":len(lists),
-      "jsonld_elementos":sum(len(x.get("itemListElement",[])) for x in lists),
-      "jsonld_muestra":sample[:4],
-      "next_data":bool(nd),
-      "next_productos_con_priceinfo":len(prices),
-      "next_muestra":[{"n":x["n"][:75],"p":x["p"]} for x in prices[:4]],
-      "leche_seleccionada":bool(chosen),
-      "leche_eq":(chosen or {}).get("eq"),
-    },ensure_ascii=False),flush=True)
+    s=requests.Session()
+    s.headers.update({"User-Agent":UA,"Accept-Language":"es-CL,es;q=0.9"})
+    for i,(pid,slug) in enumerate(SITIOS.items()):
+        if i:
+            time.sleep(1.5)
+        try:
+            r=s.get("https://super.lider.cl/v/"+slug,timeout=20)
+            if r.status_code in (401,403,429) or (r.status_code==200 and BLOCK.search(r.text[:15000]) and not ld_lists(r.text)):
+                print(json.dumps({"producto":pid,"http":r.status_code,"estado":"bloqueado"}),flush=True)
+                break
+            if r.status_code!=200:
+                print(json.dumps({"producto":pid,"http":r.status_code,"estado":"http_invalido"}),flush=True)
+                continue
+            items=items_de_pagina(r.text,pid)
+            chosen=elegir(items,CAT[pid])
+            print(json.dumps({"producto":pid,"http":r.status_code,"items":len(items),
+             "coincide":bool(chosen),
+             "eq":(chosen or {}).get("eq",{}).get("n"),
+             "precio_eq":(chosen or {}).get("eq",{}).get("p")},ensure_ascii=False),flush=True)
+        except requests.RequestException as e:
+            print(json.dumps({"producto":pid,"error":type(e).__name__}),flush=True)
+            break
 
 if __name__=="__main__":
     main()
