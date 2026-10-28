@@ -50,7 +50,9 @@ class TestLiderCategoria(unittest.TestCase):
             items,estado=actualizar.lider_categoria("leche")
             self.assertIsNone(items)
             self.assertEqual(estado,"http 403")
-        with patch.object(actualizar,"get",side_effect=AssertionError("No consultar")):
+        # Un producto sin categoría asignada no debe consultar la web.
+        with patch.object(actualizar,"get",side_effect=AssertionError("No consultar")), \
+             patch.dict(actualizar.LIDER_CATEGORIAS, {}, clear=True):
             items,estado=actualizar.lider_categoria("zanahoria")
             self.assertEqual(items,[])
             self.assertEqual(estado,"sin fuente")
