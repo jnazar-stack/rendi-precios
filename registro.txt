@@ -70,13 +70,13 @@ fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima
 fideos     tottus   http 403         0 leídos   —
 fideos     alvi     http 403         0 leídos   —
 quinoa     unimarc  http 403         0 leídos   —
-quinoa     jumbo    ok              18 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     jumbo    ok              19 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     sisa     ok              40 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
 quinoa     tottus   http 403         0 leídos   —
 quinoa     alvi     http 403         0 leídos   —
 pan        unimarc  http 403         0 leídos   —
 pan        jumbo    ok              40 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-pan        sisa     ok              40 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
+pan        sisa     ok              38 leídos   eq $1,940 Pan Molde Ideal Integral XL 770 g | eco $1,940 Pan Molde Ideal Integral XL 770 g
 pan        tottus   http 403         0 leídos   —
 pan        alvi     http 403         0 leídos   —
 aceite     unimarc  http 403         0 leídos   —
@@ -109,8 +109,7 @@ papas      alvi     http 403         0 leídos   —
 platano    unimarc  http 403         0 leídos   —
    (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
 platano    jumbo    ok              18 leídos   eq $1,450 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,450 Plátano Extra Granel (1 a 2 un. Apr
-   (granel: precio de lista $745, precio por kg informado: (1490.0, 'kg'))
-platano    sisa     ok              15 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
+platano    sisa     ok              13 leídos   —
 platano    tottus   http 403         0 leídos   —
 platano    alvi     http 403         0 leídos   —
 manzana    unimarc  http 403         0 leídos   —
@@ -123,8 +122,8 @@ manzana    alvi     http 403         0 leídos   —
 tomate     unimarc  http 403         0 leídos   —
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              38 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
-   (granel: precio de lista $1,338, precio por kg informado: (6690.0, 'kg'))
-tomate     sisa     ok              40 leídos   eq $6,690 Tomate Cóctel Variedades Granel | eco $6,690 Tomate Cóctel Variedades Granel
+   (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
+tomate     sisa     ok              40 leídos   eq $1,990 Tomate Larga Vida Malla 1 kg | eco $1,990 Tomate Larga Vida Malla 1 kg
 tomate     tottus   http 403         0 leídos   —
 tomate     alvi     http 403         0 leídos   —
 lechuga    unimarc  http 403         0 leídos   —
@@ -145,8 +144,8 @@ brocoli    sisa     ok               4 leídos   —
 brocoli    tottus   http 403         0 leídos   —
 brocoli    alvi     http 403         0 leídos   —
 cebolla    unimarc  http 403         0 leídos   —
-   (granel: precio de lista $3,080, precio por kg informado: None)
-cebolla    jumbo    ok              26 leídos   eq $7,700 Anillos de Cebolla Cuisine & Co Tempura 400 g | eco $7,700 Anillos de Cebolla Cuisine & Co Tem
+   (granel: precio de lista $1,990, precio por kg informado: (24875.0, 'kg'))
+cebolla    jumbo    ok              26 leídos   eq $24,875 Crutones Tribu Protein Cebolla 80 g | eco $24,875 Crutones Tribu Protein Cebolla 80 g
    (granel: precio de lista $945, precio por kg informado: (1890.0, 'kg'))
 cebolla    sisa     ok              11 leídos   eq $1,890 Cebolla Granel (1 a 2 un. Aprox) | eco $1,890 Cebolla Granel (1 a 2 un. Aprox)
 cebolla    tottus   http 403         0 leídos   —
