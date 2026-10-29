@@ -233,6 +233,14 @@ def construir(registros):
                     p["e"] = r["ean"]
         por_vid[r["vid"]] = p
         poner(p, r)
+    def precio_calza(p, r):
+        """Al unir por nombre (sin código de barras), el precio tiene que ser parecido: evita juntar un pack con una unidad."""
+        vs = sorted(p["pr"].values())
+        if not vs:
+            return True
+        m = vs[len(vs) // 2]
+        return m * 0.45 <= r["p"] <= m * 2.2
+
     # 3) Unimarc: mismo nombre que en Alvi; si no, por similitud
     # 4) Lider: por marca, tamaño y nombre
     por_t = {}
@@ -240,6 +248,8 @@ def construir(registros):
         por_t.setdefault(q["t"], []).append(q)
     for r in [r for r in registros if r["ci"] in (1, 0)]:
         p = por_nombre_smu.get(key_name(r["n"])) if r["ci"] == 1 else None
+        if p and (str(r["ci"]) in p["pr"] or not precio_calza(p, r)):
+            p = None
         if not p:
             sz = size_key(r["n"])
             best, bs = None, 0
@@ -249,6 +259,8 @@ def construir(registros):
                 if sz and q.get("sz") and sz != q["sz"]:
                     continue
                 if q.get("b") and norm(q["b"]) not in norm(r["n"] + " " + (r.get("b") or "")):
+                    continue
+                if not precio_calza(q, r):
                     continue
                 s = similar(r["n"], q["n"])
                 if s > bs:
