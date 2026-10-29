@@ -10,7 +10,8 @@ leche      sisa     ok              12 leídos   eq $1,180 Leche Colun Descremad
 leche      alvi     ok             100 leídos   eq $1,250 Leche descremada Colun 1 L Leche descremada | eco $1,190 Leche Soprole descremada natural 1 
 yogurt     lider    ok               6 leídos   eq $6,238 Yoghurt Griego Natural Endulzado Pote 800 g Q | eco $6,238 Yoghurt Griego Natural Endulzado Po
 yogurt     unimarc  ok              21 leídos   eq $5,238 Yoghurt griego oikos danone balde 800 gr Oiko | eco $5,238 Yoghurt griego oikos danone balde 8
-yogurt     jumbo    ok              40 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
+   jumbo yogurt: +12 de la página 2
+yogurt     jumbo    ok              52 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
 yogurt     sisa     ok              19 leídos   eq $6,562 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,562 Yogurt Griego Natural Endulzado Pot
    sin calce en alvi para yogurt; leídos: Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $430 · Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $430
 yogurt     alvi     ok               4 leídos   —
@@ -21,7 +22,7 @@ pechuga    sisa     ok               5 leídos   eq $7,528 Bistec de Pechuga Des
 pechuga    alvi     ok              12 leídos   eq $5,425 Pechuga de pollo deshuesada Fundo Río Alegre  | eco $5,425 Pechuga de pollo deshuesada Fundo R
 trutro     lider    ok              10 leídos   eq $2,495 Pollo Trutro Entero Congelado 2 kg Seara | eco $2,495 Pollo Trutro Entero Congelado 2 kg 
 trutro     unimarc  ok               8 leídos   eq $2,795 Trutro entero de pollo fundo río alegre conge | eco $2,795 Trutro entero de pollo fundo río al
-trutro     jumbo    ok               9 leídos   eq $3,195 Trutro Entero de Pollo Super Pollo 2 kg | eco $3,195 Trutro Entero de Pollo Super Pollo 
+trutro     jumbo    ok               8 leídos   eq $3,195 Trutro Entero de Pollo Super Pollo 2 kg | eco $3,195 Trutro Entero de Pollo Super Pollo 
 trutro     sisa     ok               6 leídos   eq $3,890 Trutro Corto de Pollo Sin Marinar Congelado M | eco $3,890 Trutro Corto de Pollo Sin Marinar C
 trutro     alvi     ok             100 leídos   eq $3,850 Trutro largo de pollo Fundo Río Alegre congel | eco $3,850 Trutro largo de pollo Fundo Río Ale
 molida     lider    ok               1 leídos   eq $5,990 Carne Molida De Vacuno 10% Grasa Bandeja. 500 | eco $5,990 Carne Molida De Vacuno 10% Grasa Ba
@@ -37,7 +38,7 @@ atun       alvi     ok              12 leídos   eq $990 Atún lomito Nuestra Co
 salmon     lider    ok               2 leídos   eq $8,890 Salmón Filete Con Piel 500 g Selección | eco $8,890 Salmón Filete Con Piel 500 g Selecc
 salmon     unimarc  ok               5 leídos   eq $8,750 Filete de salmón atlántico aqua chile con pie | eco $8,750 Filete de salmón atlántico aqua chi
 salmon     jumbo    ok               7 leídos   eq $10,590 Salmón Filete Congelado 500 g | eco $10,590 Salmón Filete Congelado 500 g
-salmon     sisa     ok              16 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $9,990 Salmón Filete Congelado 500 g
+salmon     sisa     ok              17 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $9,990 Salmón Filete Congelado 500 g
 salmon     alvi     ok             100 leídos   eq $6,350 Salmón en trozos Azul Profundo 500 g Salmón e | eco $6,350 Salmón en trozos Azul Profundo 500 
 lentejas   lider    ok              39 leídos   eq $2,850 Lentejas 6mm Bolsa 1 Kg Iansa Agro | eco $2,590 Lentejas 5 Mm Bolsa 1 Kg Lider
 lentejas   unimarc  ok              20 leídos   eq $2,300 Lentejas 6mm los granos 1kg Los Granos | eco $2,300 Lentejas 6mm los granos 1kg Los Gra
@@ -72,13 +73,16 @@ fideos     alvi     ok              18 leídos   eq $610 Pasta spaghetti N°5 Ac
 quinoa     lider    ok              10 leídos   eq $5,238 Quínoa Bolsa 400 g Banquete | eco $4,488 Quinoa Bolsa 400 g Lider
 quinoa     unimarc  ok               9 leídos   eq $3,345 Quínoa blanca granel 200 g Frutas Y Verduras | eco $3,345 Quínoa blanca granel 200 g Frutas Y
 quinoa     jumbo    ok              17 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
-quinoa     sisa     ok              40 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+   sisa quinoa: +40 de la página 2
+quinoa     sisa     ok              80 leídos   eq $5,242 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
    sin calce en alvi para quinoa; leídos: Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530 · Chocolate relleno guinda $1,590 · Jalea guinda pote $370 · Jalea Soprole sabor guinda pote 110 g Ja $270 · Jalea guinda Colun 100gr $280 (sin stock) · Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530
 quinoa     alvi     ok              12 leídos   —
 pan        lider    ok              48 leídos   eq $1,714 Pan De Molde Integral Xl 700 g Castaño | eco $1,714 Pan De Molde Integral Xl 700 g Cast
 pan        unimarc  ok              31 leídos   eq $1,714 Pan de molde pierre integral xl 700 g Pan Pie | eco $1,714 Pan de molde pierre integral xl 700
-pan        jumbo    ok              40 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-pan        sisa     ok              40 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
+   jumbo pan: +21 de la página 2
+pan        jumbo    ok              61 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
+   sisa pan: +2 de la página 2
+pan        sisa     ok              42 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        alvi     ok              14 leídos   eq $2,112 Pan de molde Ideal integral tamaño XL 770 gr | eco $2,112 Pan de molde Ideal integral tamaño 
 aceite     lider    ok              42 leídos   eq $2,205 Aceite Vegetal Botella 1 L Belmont | eco $1,890 Aceite Vegetal Botella 900 ml Lider
 aceite     unimarc  ok               7 leídos   eq $2,781 Aceite belmont vegetal con canola 1 l Belmont | eco $1,650 Aceite merkat vegetal 900 ml Merkat
@@ -125,10 +129,12 @@ platano    alvi     ok              22 leídos   —
 manzana    lider    ok              48 leídos   eq $1,190 Manzana Cripps Pink Bolsa. 1 kg | eco $1,190 Manzana Cripps Pink Bolsa. 1 kg
    (granel: precio de lista $1,990, precio por kg informado: None)
 manzana    unimarc  ok              50 leídos   eq $1,990 Manzana royal gala bolsa 1 kg Guardian | eco $1,990 Manzana royal gala bolsa 1 kg Guard
+   jumbo manzana: +40 de la página 2
    (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
-manzana    jumbo    ok              40 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
+manzana    jumbo    ok              80 leídos   eq $1,990 Manzana Pink Lady Bolsa 1 kg | eco $1,990 Manzana Pink Lady Bolsa 1 kg
+   sisa manzana: +39 de la página 2
    (granel: precio de lista $1,890, precio por kg informado: (1890.0, 'kg'))
-manzana    sisa     ok              40 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
+manzana    sisa     ok              79 leídos   eq $1,890 Manzana Pink Lady Bolsa 1 kg | eco $1,890 Manzana Pink Lady Bolsa 1 kg
    sin calce en alvi para manzana; leídos: Trapero húmedo Virginia con ojal aroma m $2,520 · Shampoo Head and Shoulders control caspa $5,190 · Jabón líquido Kadus manzana miel 900 ml  $1,490 · Shampoo manzana doypack $1,340 · Trapero húmedo desinfectante manzana ver $2,130 · Avena multisemillas pasas, manzana y lin $3,590 · Vinagre de manzana $4,190 · Vinagre de manzana $880
 manzana    alvi     ok              96 leídos   —
    (granel: precio de lista $2,090, precio por kg informado: None)
@@ -137,20 +143,22 @@ tomate     lider    ok              48 leídos   eq $2,090 Tomate Larga Vida Mal
 tomate     unimarc  ok              50 leídos   eq $1,990 Tomate malla 1 kg Frutas Y Verduras | eco $1,990 Tomate malla 1 kg Frutas Y Verduras
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              37 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
+   sisa tomate: +2 de la página 2
    (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
-tomate     sisa     ok              40 leídos   eq $1,990 Tomate Larga Vida Malla 1 kg | eco $1,990 Tomate Larga Vida Malla 1 kg
+tomate     sisa     ok              42 leídos   eq $1,990 Tomate Larga Vida Malla 1 kg | eco $1,990 Tomate Larga Vida Malla 1 kg
    sin calce en alvi para tomate; leídos: Pack Salsa de tomate Pomarola italiana 6 $3,450 · Salsa de tomate San Remo italiana sachet $380 · Salsa de tomate Pomarola italiana 200 g  $780 · Salsa de tomate Lucchetti italiana 200 g $610 · Salsa de tomate Carozzi Toscana bolognes $880 · Salsa de tomate Maggi Tuco con carne lat $1,690 · Salsa de tomate italiana $3,220 · Salsa de tomate Malloa italiana 200 g Sa $910
 tomate     alvi     ok              82 leídos   —
 lechuga    lider    ok              15 leídos   eq $1,000 Lechuga Española 1 Un | eco $1,000 Lechuga Española 1 Un
 lechuga    unimarc  ok              14 leídos   eq $1,225 Lechuga española hidropónica 1 un Frutas Y Ve | eco $1,225 Lechuga española hidropónica 1 un F
-lechuga    jumbo    ok              40 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
+   jumbo lechuga: +19 de la página 2
+lechuga    jumbo    ok              59 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
 lechuga    sisa     ok              11 leídos   eq $1,345 Lechuga Escarola Bandeja 2 un. | eco $1,345 Lechuga Escarola Bandeja 2 un.
    sin calce en alvi para lechuga; leídos: Pechuga de pollo deshuesada congelada $23,990 · Pechuga deshuesada de pollo congelado Sa $23,140 · Pechuga cocida pollo pieza granel 2 Kg $17,840 · Pechuga de pollo deshuesada Fundo Río Al $4,340 · Pechuga deshuesada Super Pollo congelada $30,550 · Pechuga de pollo apanada Receta del Abue $1,160 · Pechuga deshuesado Super Pollo congelado $5,290 · Pechuga de Pavo Receta del Abuelo cocida $3,550
 lechuga    alvi     ok              42 leídos   —
    (granel: precio de lista $1,590, precio por kg informado: None)
 zanahoria  lider    ok              20 leídos   eq $1,590 Zanahoria Bolsa 1 Kg | eco $1,590 Zanahoria Bolsa 1 Kg
-   (granel: precio de lista $1,490, precio por kg informado: None)
-zanahoria  unimarc  ok              49 leídos   eq $1,490 Zanahoria bolsa 1 kg Frutas Y Verduras | eco $1,490 Zanahoria bolsa 1 kg Frutas Y Verdu
+   (granel: precio de lista $1,590, precio por kg informado: None)
+zanahoria  unimarc  ok              49 leídos   eq $1,590 Zanahoria bolsa 1 kg Frutas Y Verduras | eco $1,590 Zanahoria bolsa 1 kg Frutas Y Verdu
    (granel: precio de lista $1,390, precio por kg informado: (1390.0, 'kg'))
 zanahoria  jumbo    ok              11 leídos   eq $1,390 Zanahoria Bolsa 1 kg | eco $1,390 Zanahoria Bolsa 1 kg
    (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
@@ -165,8 +173,8 @@ brocoli    sisa     ok               4 leídos   —
 brocoli    alvi     sin resultados   0 leídos   —
    (granel: precio de lista $1,790, precio por kg informado: (1790.0, 'kg'))
 cebolla    lider    ok              22 leídos   eq $1,790 Cebolla Granel. 500 g (1 a 3 un aprox) | eco $1,790 Cebolla Granel. 500 g (1 a 3 un apr
-   (granel: precio de lista $1,950, precio por kg informado: None)
-cebolla    unimarc  ok              40 leídos   eq $1,950 Cebolla malla 1 kg Frutas Y Verduras | eco $1,950 Cebolla malla 1 kg Frutas Y Verdura
+   (granel: precio de lista $2,050, precio por kg informado: None)
+cebolla    unimarc  ok              40 leídos   eq $2,050 Cebolla malla 1 kg Frutas Y Verduras | eco $2,050 Cebolla malla 1 kg Frutas Y Verdura
    (granel: precio de lista $975, precio por kg informado: (1950.0, 'kg'))
 cebolla    jumbo    ok              26 leídos   eq $1,950 Cebolla Granel (1 a 2 un. Aprox) | eco $1,950 Cebolla Granel (1 a 2 un. Aprox)
    (granel: precio de lista $945, precio por kg informado: (1890.0, 'kg'))
