@@ -1,7 +1,8 @@
 huevo      lider    ok              48 leídos   eq $7,490 Huevos Tradicionales Mediano Blanco 30 Un Cin | eco $7,490 Huevos Tradicionales Mediano Blanco
 huevo      unimarc  ok              47 leídos   eq $6,100 Huevos fundo río alegre mediano blanco 30 un  | eco $6,100 Huevos fundo río alegre mediano bla
 huevo      jumbo    ok              11 leídos   eq $9,950 Huevos Coliumo Premium Grandes Blancos 30 un. | eco $8,690 Huevos Cuisine & Co Medianos Blanco
-huevo      sisa     ok               3 leídos   eq $9,975 Huevos de Gallina La Granja de Zenón Blancos  | eco $9,950 Huevos Cuisine & Co Grandes Blancos
+   sisa huevo: +24 buscando 'huevos'
+huevo      sisa     ok              27 leídos   eq $7,250 Huevos Medianos Santa Marta 30 un. | eco $7,250 Huevos Medianos Santa Marta 30 un.
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Río Alegre mediano blanco 30 un | eco $8,990 Huevos Fundo Río Alegre mediano bla
 leche      lider    ok              48 leídos   eq $1,190 Leche Descremada Natural Caja 1 L 1 L Colun | eco $1,000 Leche Blanca Descremada Caja 1 L Li
 leche      unimarc  ok              35 leídos   eq $1,090 Leche descremada colun 1 l Colun | eco $990 Leche descremada fundo río alegre 1
@@ -18,7 +19,8 @@ yogurt     alvi     ok               4 leídos   —
 pechuga    lider    ok              11 leídos   eq $4,990 Pollo Pechuga Deshuesada Congelada 1 kg El Bu | eco $4,990 Pollo Pechuga Deshuesada Congelada 
 pechuga    unimarc  ok              16 leídos   eq $5,862 Pechuga de pollo deshuesada fundo río alegre  | eco $5,862 Pechuga de pollo deshuesada fundo r
 pechuga    jumbo    ok              19 leídos   eq $6,990 Pechuga Deshuesada de Pollo Sadia 1 kg | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
-pechuga    sisa     ok               5 leídos   eq $7,528 Bistec de Pechuga Deshuesada 530 g | eco $7,528 Bistec de Pechuga Deshuesada 530 g
+   sisa pechuga: +37 buscando 'pechuga de pollo'
+pechuga    sisa     ok              42 leídos   eq $7,528 Bistec de Pechuga Deshuesada 530 g | eco $7,528 Bistec de Pechuga Deshuesada 530 g
 pechuga    alvi     ok              12 leídos   eq $5,425 Pechuga de pollo deshuesada Fundo Río Alegre  | eco $5,425 Pechuga de pollo deshuesada Fundo R
 trutro     lider    ok              10 leídos   eq $2,495 Pollo Trutro Entero Congelado 2 kg Seara | eco $2,495 Pollo Trutro Entero Congelado 2 kg 
 trutro     unimarc  ok               8 leídos   eq $2,795 Trutro entero de pollo fundo río alegre conge | eco $2,795 Trutro entero de pollo fundo río al
@@ -62,7 +64,8 @@ avena      sisa     ok               7 leídos   eq $3,929 Avena Quaker Tradicio
 avena      alvi     ok               6 leídos   eq $2,814 Avena tradicional caja | eco $2,814 Avena tradicional caja
 arroz      lider    ok               6 leídos   eq $1,790 Arroz Grado 2 Grano Largo Bolsa 1 kg Tucapel | eco $1,290 Arroz Grado 2 Grano Largo Y Delgado
 arroz      unimarc  ok               8 leídos   eq $1,290 Arroz tucapel gran selección g2 laminado 1 kg | eco $890 Arroz merkat largo delgado grado 2 
-arroz      jumbo    ok               9 leídos   eq $1,810 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Máxima Grano Largo An
+   jumbo arroz: +16 buscando 'arroz grado kg'
+arroz      jumbo    ok              25 leídos   eq $1,810 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Máxima Grano Largo An
 arroz      sisa     ok              11 leídos   eq $1,900 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $950 Arroz Grado 2 Máxima Grano Largo An
 arroz      alvi     ok               2 leídos   eq $890 Arroz Merkat largo delgado grado 2 1 Kg Arroz | eco $890 Arroz Merkat largo delgado grado 2 
 fideos     lider    ok              32 leídos   eq $1,030 Fideo Pasta Spaghetti N°5 Bolsa 400 g Lucchet | eco $760 Fideo Pasta Spaghetti N°5 Bolsa 400
@@ -92,7 +95,8 @@ aceite     alvi     ok             100 leídos   eq $2,529 Aceite Belmont vegeta
 oliva      lider    ok              38 leídos   eq $6,247 Aceite Oliva Extra Virgen Botella 500 ml Las  | eco $6,247 Aceite Oliva Extra Virgen Botella 5
 oliva      unimarc  ok              21 leídos   eq $6,955 Aceite de oliva chef extra virgen 500 ml Chef | eco $5,249 Aceite de oliva nuestra cocina extr
 oliva      jumbo    ok              22 leídos   eq $6,146 Aceite de Oliva Montecristo Extra Virgen 500  | eco $6,146 Aceite de Oliva Montecristo Extra V
-oliva      sisa     ok               8 leídos   eq $6,431 Aceite de Oliva Montecristo Extra Virgen 500  | eco $6,431 Aceite de Oliva Montecristo Extra V
+   sisa oliva: +32 buscando 'aceite de oliva'
+oliva      sisa     ok              40 leídos   eq $6,339 Aceite de Oliva Giada 500 ml | eco $6,339 Aceite de Oliva Giada 500 ml
 oliva      alvi     ok               6 leídos   eq $6,670 Aceite de oliva Banquete extra virgen 500 ml  | eco $6,670 Aceite de oliva Banquete extra virg
 mani       lider    ok              48 leídos   eq $2,593 Mantequilla De Maní Creamy 510 g American Cla | eco $2,593 Mantequilla De Maní Creamy 510 g Am
 mani       unimarc  ok              50 leídos   eq $2,346 Mantequilla de maní tento smooth pote 500 gr  | eco $2,346 Mantequilla de maní tento smooth po
@@ -143,9 +147,7 @@ tomate     lider    ok              48 leídos   eq $2,090 Tomate Larga Vida Mal
 tomate     unimarc  ok              50 leídos   eq $1,990 Tomate malla 1 kg Frutas Y Verduras | eco $1,990 Tomate malla 1 kg Frutas Y Verduras
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
 tomate     jumbo    ok              37 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
-   sisa tomate: +2 de la página 2
-   (granel: precio de lista $1,990, precio por kg informado: (1990.0, 'kg'))
-tomate     sisa     ok              42 leídos   eq $1,990 Tomate Larga Vida Malla 1 kg | eco $1,990 Tomate Larga Vida Malla 1 kg
+tomate     sisa     http 0           0 leídos   —
    sin calce en alvi para tomate; leídos: Pack Salsa de tomate Pomarola italiana 6 $3,450 · Salsa de tomate San Remo italiana sachet $380 · Salsa de tomate Pomarola italiana 200 g  $780 · Salsa de tomate Lucchetti italiana 200 g $610 · Salsa de tomate Carozzi Toscana bolognes $880 · Salsa de tomate Maggi Tuco con carne lat $1,690 · Salsa de tomate italiana $3,220 · Salsa de tomate Malloa italiana 200 g Sa $910
 tomate     alvi     ok              82 leídos   —
 lechuga    lider    ok              15 leídos   eq $1,000 Lechuga Española 1 Un | eco $1,000 Lechuga Española 1 Un
