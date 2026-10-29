@@ -227,8 +227,8 @@ def ld_lists(t):
     return out
 
 
-def jumbo_like(base, q):
-    st, t = get(f"{base}/busqueda?ft={quote(q)}")
+def jumbo_like(base, q, page=1):
+    st, t = get(f"{base}/busqueda?ft={quote(q)}" + (f"&page={page}" if page > 1 else ""))
     if st != 200:
         return None, f"http {st}"
     if BLOQUEO.search(t[:20000]) and "ItemList" not in t:
@@ -586,10 +586,19 @@ def main():
                 except Exception as err:
                     items, e = None, "error navegador"
                     log("   Unimarc: fallo al iniciar Chromium:", type(err).__name__)
-            elif ci == 2:
-                items, e = jumbo_like("https://www.jumbo.cl", spec["q"])
-            elif ci == 3:
-                items, e = jumbo_like("https://www.santaisabel.cl", spec["q"])
+            elif ci in (2, 3):
+                base = "https://www.jumbo.cl" if ci == 2 else "https://www.santaisabel.cl"
+                items, e = jumbo_like(base, spec["q"])
+                # La primera página a veces trae solo envases chicos (huevos de 6 o 12, carne de 250 g), que salen
+                # más caros por kilo; en la segunda suelen aparecer los envases grandes. Se suman sin repetir.
+                if e == "ok":
+                    it2, e2 = jumbo_like(base, spec["q"], page=2)
+                    if it2:
+                        vistos = {i["n"] for i in items}
+                        nuevos = [i for i in it2 if i["n"] not in vistos]
+                        items = items + nuevos
+                        if nuevos:
+                            log(f"   {cadenas[ci]} {pid}: +{len(nuevos)} de la página 2")
             else:
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
