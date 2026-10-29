@@ -514,6 +514,11 @@ PREMIUM = {
     "oliva": r"premium|reserva|gourmet|primera|seleccion|organic",
     "mani": r"100 ?%|natural|sin azucar|crunchy",
 }
+# Lo que no cuenta como versión premium del mismo producto (platos preparados, mezclas de colores).
+PREMIUM_NO = {
+    "quinoa": r"plato|listo|wok|vegetal|mix|ensalada|graneado",
+    "fideos": r"tricolor|mix|verde|espinaca|integral",
+}
 
 
 def elegir(items, spec):
@@ -546,11 +551,12 @@ def elegir(items, spec):
     pre = None
     pid = spec.get("_pid")
     if pid in PREMIUM:
-        hits = [c for c in cands if re.search(PREMIUM[pid], norm(c["n"])) and not MARCA_PROPIA.search(norm(c["n"]))]
+        ok = [c for c in cands if not MARCA_PROPIA.search(norm(c["n"])) and not (pid in PREMIUM_NO and re.search(PREMIUM_NO[pid], norm(c["n"])))]
+        hits = [c for c in ok if re.search(PREMIUM[pid], norm(c["n"]))]
         if hits:
             pre = hits[0]
-        elif br:
-            pre = br[min(len(br) - 1, (len(br) * 3) // 4)]
+        elif ok:
+            pre = ok[min(len(ok) - 1, (len(ok) * 3) // 4)]
 
     def out(c):
         o = dict(p=round(c["pn"]), n=c["n"][:90], img=c.get("img"), u=c.get("u"), pv=round(c["p"]))
