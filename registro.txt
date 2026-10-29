@@ -11,8 +11,7 @@ leche      sisa     ok              13 leídos   eq $1,180 Leche Colun Descremad
 leche      alvi     ok             100 leídos   eq $1,250 Leche descremada Colun 1 L Leche descremada | eco $1,190 Leche Soprole descremada natural 1 
 yogurt     lider    ok               6 leídos   eq $6,238 Yoghurt Griego Natural Endulzado Pote 800 g Q | eco $6,238 Yoghurt Griego Natural Endulzado Po
 yogurt     unimarc  ok              21 leídos   eq $5,238 Yoghurt griego oikos danone balde 800 gr Oiko | eco $5,238 Yoghurt griego oikos danone balde 8
-   jumbo yogurt: +10 de la página 2
-yogurt     jumbo    ok              50 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
+yogurt     jumbo    ok              33 leídos   eq $5,612 Yogurt Griego Natural Endulzado Pote 800 g | eco $5,612 Yogurt Griego Natural Endulzado Pot
 yogurt     sisa     ok              18 leídos   eq $6,562 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,562 Yogurt Griego Natural Endulzado Pot
    sin calce en alvi para yogurt; leídos: Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $430 · Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $430
 yogurt     alvi     ok               4 leídos   —
@@ -90,7 +89,7 @@ pan        alvi     ok              14 leídos   eq $2,112 Pan de molde Ideal in
 aceite     lider    ok              42 leídos   eq $2,205 Aceite Vegetal Botella 1 L Belmont | eco $1,890 Aceite Vegetal Botella 900 ml Lider
 aceite     unimarc  ok               7 leídos   eq $2,781 Aceite belmont vegetal con canola 1 l Belmont | eco $1,650 Aceite merkat vegetal 900 ml Merkat
 aceite     jumbo    ok              13 leídos   eq $2,925 Aceite Vegetal Belmont 1 L | eco $1,690 Aceite Vegetal 900 ml
-aceite     sisa     ok               8 leídos   eq $2,142 Aceite Vegetal Belmont 1 L | eco $1,590 Aceite Vegetal 900 ml
+aceite     sisa     http 404         0 leídos   —
 aceite     alvi     ok             100 leídos   eq $2,529 Aceite Belmont vegetal con canola 1 L Aceite  | eco $1,690 Aceite Merkat vegetal 900 ml Aceite
 oliva      lider    ok              38 leídos   eq $6,247 Aceite Oliva Extra Virgen Botella 500 ml Las  | eco $6,247 Aceite Oliva Extra Virgen Botella 5
 oliva      unimarc  ok              21 leídos   eq $6,891 Aceite de oliva trattoria extra virgen 500 ml | eco $6,431 Aceite de oliva nuestra cocina extr
