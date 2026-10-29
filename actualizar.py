@@ -147,6 +147,9 @@ CAT = {
                   uni=["frutas-y-verduras/frutas/fruta", "frutas-y-verduras/verduras/verduras"]),
 }
 
+for _k, _v in CAT.items():
+    _v["_pid"] = _k  # para saber qué producto se está eligiendo (opción premium)
+
 MARCA_PROPIA = re.compile(r"\b(cuisine ?& ?co|cuisine and co|jumbo|santa isabel|tottus|precio uno|merkat|unimarc|nuestra cocina|alvi|lider|great value|acuenta|mi tienda|seleccion unimarc|smu)\b")
 
 # ---------------------------------------------------------------- tamaño
@@ -494,6 +497,25 @@ def precio_norm(it, spec):
     return None, None
 
 
+# Opción premium para el plan Holgada: lo que la app muestra como "marca premium". Si hay productos que calzan
+# con la descripción, se toma el más barato de ellos; si no, uno de marca en el cuarto más caro de los encontrados.
+PREMIUM = {
+    "huevo": r"libre|campo|pastoreo|organic|omega|free",
+    "leche": r"sin lactosa|protein|proteina",
+    "yogurt": r"protein|proteina|0 ?%|oikos|skyr",
+    "pechuga": r"filetito|filete|file",
+    "molida": r"\b[3-7] ?%",
+    "atun": r"premium|aceite de oliva|ventresca|seleccion|gourmet",
+    "avena": r"integral|organica|premium|instantanea|quaker",
+    "arroz": r"grado ?1|premium|basmati|jazmin|pregraneado",
+    "fideos": r"barilla|de cecco|italian|bronce|semola|garofalo",
+    "quinoa": r"organic|tricolor|real",
+    "pan": r"semilla|multigrano|masa madre|chia|linaza|centeno",
+    "oliva": r"premium|reserva|gourmet|primera|seleccion|organic",
+    "mani": r"100 ?%|natural|sin azucar|crunchy",
+}
+
+
 def elegir(items, spec):
     cands = []
     for it in items or []:
@@ -521,13 +543,24 @@ def elegir(items, spec):
     else:
         br = [c for c in cands if not MARCA_PROPIA.search(norm(c["n"]))]
     eq = br[0] if br else eco
+    pre = None
+    pid = spec.get("_pid")
+    if pid in PREMIUM:
+        hits = [c for c in cands if re.search(PREMIUM[pid], norm(c["n"])) and not MARCA_PROPIA.search(norm(c["n"]))]
+        if hits:
+            pre = hits[0]
+        elif br:
+            pre = br[min(len(br) - 1, (len(br) * 3) // 4)]
 
     def out(c):
         o = dict(p=round(c["pn"]), n=c["n"][:90], img=c.get("img"), u=c.get("u"), pv=round(c["p"]))
         if c.get("steps"):
             o["t"] = [[s[0], round(s[1] * c["pn"] / c["p"])] for s in c["steps"]]
         return o
-    return dict(eq=out(eq), eco=out(eco), n=len(cands))
+    r = dict(eq=out(eq), eco=out(eco), n=len(cands))
+    if pre is not None:
+        r["pre"] = out(pre)
+    return r
 
 
 # ---------------------------------------------------------------- principal
