@@ -599,6 +599,17 @@ def main():
                         items = items + nuevos
                         if nuevos:
                             log(f"   {cadenas[ci]} {pid}: +{len(nuevos)} de la página 2")
+                # Si la búsqueda trae pocos resultados (Santa Isabel a veces trae 3 a 7), se prueba una búsqueda más amplia:
+                # "huevos 30 unidades" pasa a "huevos"; "pechuga de pollo deshuesada" a "pechuga de pollo".
+                corta = " ".join([w for w in spec["q"].split() if not re.search(r"\d", w) and w not in ("unidades", "un")][:3])
+                if e == "ok" and len(items) < 10 and corta and corta != spec["q"]:
+                    it3, e3 = jumbo_like(base, corta)
+                    if it3:
+                        vistos = {i["n"] for i in items}
+                        nuevos = [i for i in it3 if i["n"] not in vistos]
+                        items = items + nuevos
+                        if nuevos:
+                            log(f"   {cadenas[ci]} {pid}: +{len(nuevos)} buscando '{corta}'")
             else:
                 items, e = alvi(spec["q"])
             estado[ci][e] = estado[ci].get(e, 0) + 1
