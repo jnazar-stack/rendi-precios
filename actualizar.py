@@ -516,7 +516,7 @@ PREMIUM = {
 }
 # Lo que no cuenta como versión premium del mismo producto (platos preparados, mezclas de colores).
 PREMIUM_NO = {
-    "quinoa": r"plato|listo|wok|vegetal|mix|ensalada|graneado",
+    "quinoa": r"plato|listo|wok|vegetal|mix|ensalada|graneado|curry|champi|primavera|sabor|tomate|pesto|\bcon\b",
     "fideos": r"tricolor|mix|verde|espinaca|integral",
 }
 
