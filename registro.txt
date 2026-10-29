@@ -100,7 +100,7 @@ oliva      sisa     ok              40 leídos   eq $6,339 Aceite de Oliva Giada
 oliva      alvi     ok               6 leídos   eq $6,670 Aceite de oliva Banquete extra virgen 500 ml  | eco $6,670 Aceite de oliva Banquete extra virg
 mani       lider    ok              48 leídos   eq $2,593 Mantequilla De Maní Creamy 510 g American Cla | eco $2,593 Mantequilla De Maní Creamy 510 g Am
 mani       unimarc  ok              50 leídos   eq $2,346 Mantequilla de maní tento smooth pote 500 gr  | eco $2,346 Mantequilla de maní tento smooth po
-mani       jumbo    ok              17 leídos   eq $2,587 Pasta de Maní Natural King 485 g | eco $2,441 Pasta de Maní Cuisine & Co 500 g
+mani       jumbo    ok              17 leídos   eq $2,587 Pasta de Maní Natural King 485 g | eco $2,587 Pasta de Maní Natural King 485 g
 mani       sisa     ok              10 leídos   eq $2,324 Mantequilla de Maní Crunchy King 350 g | eco $2,324 Mantequilla de Maní Crunchy King 35
 mani       alvi     ok               4 leídos   eq $2,543 Mantequilla de maní Tento crunchy pote 500 gr | eco $2,543 Mantequilla de maní Tento crunchy p
 nueces     lider    ok               2 leídos   eq $6,625 Nueces Mariposas 100 g Lider | eco $6,625 Nueces Mariposas 100 g Lider
