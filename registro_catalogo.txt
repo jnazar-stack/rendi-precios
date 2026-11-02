@@ -1,164 +1,164 @@
-Lider: 20118 páginas de categoría públicas en su mapa del sitio
-leche descremada                152 registros
-leche semidescremada            348 registros
-leche entera                    492 registros
-leche sin lactosa               659 registros
-leche en polvo                  832 registros
-leche cultivada                 915 registros
-yogurt natural                 1052 registros
-yogurt griego                  1176 registros
-yogurt proteina                1268 registros
-yoghurt batido                 1413 registros
-huevos                         1580 registros
-queso gauda                    1731 registros
-queso mantecoso                1911 registros
-queso fresco                   2019 registros
-quesillo                       2122 registros
-queso parmesano                2231 registros
-queso crema                    2345 registros
-queso laminado                 2553 registros
-mantequilla                    2754 registros
-margarina                      2917 registros
-crema de leche                 3080 registros
-manjar                         3301 registros
-postre                         3518 registros
-leche chocolatada              3677 registros
-pechuga de pollo               3827 registros
-trutro de pollo                3938 registros
-pollo entero                   4010 registros
-alitas de pollo                4085 registros
-filetitos de pollo             4216 registros
-carne molida                   4326 registros
-posta negra                    4386 registros
-lomo vetado                    4512 registros
-lomo liso                      4638 registros
-asiento                        4761 registros
-sobrecostilla                  4784 registros
-plateada                       4906 registros
-punta de ganso                 4964 registros
-carne para guisar              5120 registros
-chuleta de cerdo               5164 registros
-lomo de cerdo                  5218 registros
-costillar de cerdo             5291 registros
-pavo                           5401 registros
-pechuga de pavo                5504 registros
-hamburguesa                    5706 registros
-vienesas                       5879 registros
-longaniza                      6020 registros
-chorizo                        6172 registros
-jamon de pavo                  6257 registros
-jamon de cerdo                 6301 registros
-salame                         6439 registros
-tocino                         6565 registros
-salmon                         6727 registros
-merluza                        6843 registros
-reineta                        6940 registros
-atun                           7132 registros
-jurel                          7161 registros
-sardinas                       7228 registros
-camarones                      7359 registros
-choritos                       7459 registros
-arroz                          7685 registros
-fideos                         7895 registros
-spaghetti                      8006 registros
-tallarines                     8152 registros
-lentejas                       8225 registros
-porotos                        8409 registros
-garbanzos                      8500 registros
-arvejas partidas               8569 registros
-quinoa                         8648 registros
-avena                          8877 registros
-harina                         9059 registros
-azucar                         9304 registros
-endulzante                     9510 registros
-sal                            9750 registros
-aceite vegetal                 9836 registros
-aceite de oliva                9986 registros
-vinagre                       10122 registros
-salsa de tomate               10300 registros
-pure de tomate                10359 registros
-mayonesa                      10561 registros
-ketchup                       10733 registros
-mostaza                       10875 registros
-caldo                         11031 registros
-sopa                          11232 registros
-cereal                        11475 registros
-granola                       11632 registros
-mantequilla de mani           11758 registros
-mermelada                     11979 registros
-miel                          12155 registros
-cafe                          12381 registros
-te                            12612 registros
-chocolate                     12862 registros
-galletas                      13100 registros
-pan de molde                  13283 registros
-pan integral                  13447 registros
-tortillas                     13600 registros
-pan pita                      13671 registros
-tostadas                      13765 registros
-galletas de arroz             13899 registros
-choclo                        14023 registros
-palmitos                      14090 registros
-aceitunas                     14235 registros
-champiñones en conserva       14335 registros
-duraznos en conserva          14534 registros
-salsa de soya                 14669 registros
-especias                      14799 registros
-polvo de hornear              14889 registros
-levadura                      14946 registros
-verduras congeladas           15201 registros
-papas prefritas               15290 registros
-frutillas congeladas          15329 registros
-pizza                         15506 registros
-empanadas                     15619 registros
-nuggets                       15769 registros
-helado                        16021 registros
-platano                       16133 registros
-manzana                       16374 registros
-naranja                       16595 registros
-mandarina                     16633 registros
-limon                         16816 registros
-palta                         16889 registros
-tomate                        17088 registros
-lechuga                       17196 registros
-zanahoria                     17265 registros
-cebolla                       17369 registros
-papa                          17610 registros
-brocoli                       17628 registros
-coliflor                      17637 registros
-zapallo italiano              17689 registros
-pimenton                      17784 registros
-pepino                        17800 registros
-espinaca                      17862 registros
-ajo                           17970 registros
-champiñon                     18085 registros
-frutilla                      18305 registros
-uva                           18377 registros
-pera                          18490 registros
-kiwi                          18536 registros
-pina                          18779 registros
-melon                         18846 registros
-betarraga                     18878 registros
-apio                          18891 registros
-repollo                       19012 registros
-camote                        19087 registros
-zapallo                       19190 registros
-nueces                        19290 registros
-almendras                     19474 registros
-mani                          19691 registros
-pasas                         19809 registros
-frutos secos                  19968 registros
-barra de cereal               20142 registros
-barra de proteina             20273 registros
-semillas de chia              20360 registros
-agua mineral                  20507 registros
-agua con gas                  20645 registros
-jugo                          20887 registros
-nectar                        21075 registros
-bebida zero                   21186 registros
-leche de almendras            21333 registros
-bebida de avena               21394 registros
-proteina whey                 21529 registros
-creatina                      21570 registros
-EAN de Jumbo/Santa Isabel: 450 nuevos hoy, 1844 conocidos, faltan 991
+Lider: 20114 páginas de categoría públicas en su mapa del sitio
+leche descremada                153 registros
+leche semidescremada            354 registros
+leche entera                    504 registros
+leche sin lactosa               676 registros
+leche en polvo                  853 registros
+leche cultivada                 940 registros
+yogurt natural                 1085 registros
+yogurt griego                  1208 registros
+yogurt proteina                1302 registros
+yoghurt batido                 1453 registros
+huevos                         1643 registros
+queso gauda                    1800 registros
+queso mantecoso                1989 registros
+queso fresco                   2099 registros
+quesillo                       2204 registros
+queso parmesano                2312 registros
+queso crema                    2436 registros
+queso laminado                 2654 registros
+mantequilla                    2859 registros
+margarina                      3024 registros
+crema de leche                 3189 registros
+manjar                         3412 registros
+postre                         3639 registros
+leche chocolatada              3799 registros
+pechuga de pollo               3960 registros
+trutro de pollo                4072 registros
+pollo entero                   4148 registros
+alitas de pollo                4221 registros
+filetitos de pollo             4355 registros
+carne molida                   4443 registros
+posta negra                    4503 registros
+lomo vetado                    4629 registros
+lomo liso                      4755 registros
+asiento                        4878 registros
+sobrecostilla                  4901 registros
+plateada                       5025 registros
+punta de ganso                 5087 registros
+carne para guisar              5243 registros
+chuleta de cerdo               5287 registros
+lomo de cerdo                  5339 registros
+costillar de cerdo             5416 registros
+pavo                           5530 registros
+pechuga de pavo                5636 registros
+hamburguesa                    5857 registros
+vienesas                       6031 registros
+longaniza                      6176 registros
+chorizo                        6333 registros
+jamon de pavo                  6420 registros
+jamon de cerdo                 6475 registros
+salame                         6615 registros
+tocino                         6741 registros
+salmon                         6903 registros
+merluza                        7019 registros
+reineta                        7116 registros
+atun                           7316 registros
+jurel                          7385 registros
+sardinas                       7452 registros
+camarones                      7585 registros
+choritos                       7685 registros
+arroz                          7911 registros
+fideos                         8124 registros
+spaghetti                      8237 registros
+tallarines                     8387 registros
+lentejas                       8460 registros
+porotos                        8649 registros
+garbanzos                      8740 registros
+arvejas partidas               8809 registros
+quinoa                         8888 registros
+avena                          9121 registros
+harina                         9315 registros
+azucar                         9560 registros
+endulzante                     9766 registros
+sal                           10006 registros
+aceite vegetal                10092 registros
+aceite de oliva               10246 registros
+vinagre                       10390 registros
+salsa de tomate               10586 registros
+pure de tomate                10645 registros
+mayonesa                      10858 registros
+ketchup                       11036 registros
+mostaza                       11185 registros
+caldo                         11349 registros
+sopa                          11559 registros
+cereal                        11801 registros
+granola                       11962 registros
+mantequilla de mani           12088 registros
+mermelada                     12314 registros
+miel                          12494 registros
+cafe                          12721 registros
+te                            12952 registros
+chocolate                     13201 registros
+galletas                      13437 registros
+pan de molde                  13639 registros
+pan integral                  13812 registros
+tortillas                     13972 registros
+pan pita                      14050 registros
+tostadas                      14143 registros
+galletas de arroz             14277 registros
+choclo                        14413 registros
+palmitos                      14483 registros
+aceitunas                     14631 registros
+champiñones en conserva       14731 registros
+duraznos en conserva          14927 registros
+salsa de soya                 15062 registros
+especias                      15200 registros
+polvo de hornear              15292 registros
+levadura                      15349 registros
+verduras congeladas           15606 registros
+papas prefritas               15695 registros
+frutillas congeladas          15739 registros
+pizza                         15920 registros
+empanadas                     16035 registros
+nuggets                       16194 registros
+helado                        16447 registros
+platano                       16561 registros
+manzana                       16754 registros
+naranja                       16977 registros
+mandarina                     17016 registros
+limon                         17199 registros
+palta                         17272 registros
+tomate                        17490 registros
+lechuga                       17613 registros
+zanahoria                     17721 registros
+cebolla                       17826 registros
+papa                          18069 registros
+brocoli                       18086 registros
+coliflor                      18095 registros
+zapallo italiano              18147 registros
+pimenton                      18243 registros
+pepino                        18261 registros
+espinaca                      18325 registros
+ajo                           18423 registros
+champiñon                     18534 registros
+frutilla                      18760 registros
+uva                           18842 registros
+pera                          18957 registros
+kiwi                          19005 registros
+pina                          19249 registros
+melon                         19316 registros
+betarraga                     19347 registros
+apio                          19360 registros
+repollo                       19480 registros
+camote                        19556 registros
+zapallo                       19663 registros
+nueces                        19765 registros
+almendras                     19952 registros
+mani                          20181 registros
+pasas                         20301 registros
+frutos secos                  20462 registros
+barra de cereal               20637 registros
+barra de proteina             20768 registros
+semillas de chia              20865 registros
+agua mineral                  21012 registros
+agua con gas                  21150 registros
+jugo                          21392 registros
+nectar                        21581 registros
+bebida zero                   21692 registros
+leche de almendras            21836 registros
+bebida de avena               21897 registros
+proteina whey                 22032 registros
+creatina                      22072 registros
+EAN de Jumbo/Santa Isabel: 450 nuevos hoy, 2291 conocidos, faltan 568
 Códigos escaneados: 0; por buscar: 0
