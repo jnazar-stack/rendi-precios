@@ -26,7 +26,8 @@ from zoneinfo import ZoneInfo
 import actualizar as A
 from actualizar import get, ld_lists, next_data, walk, norm, num, size_of, BLOQUEO, log, LOG
 
-EAN_POR_DIA = 450
+EAN_POR_DIA = 450          # páginas de producto nuevas por día (EAN + tabla nutricional)
+NUTRI_POR_DIA = 900        # páginas ya conocidas que se releen solo para la tabla nutricional
 CODIGOS_POR_DIA = 150
 SUPABASE = "https://dxtokqsxhqqqcvzeohqu.supabase.co"
 # Clave pública de la app (la misma que va dentro de Rendi). Solo permite leer la lista de códigos
@@ -153,17 +154,74 @@ def lider_v(slug):
     return out, "ok" if out else "sin resultados"
 
 
+NUTRI_FILAS = [("k", r"energ"), ("p", r"prote"), ("f", r"grasas? totales|^grasas? \("), ("s", r"saturad"),
+               ("c", r"hidratos|carbohidratos"), ("az", r"az[uú]car"), ("fi", r"fibra"), ("na", r"sodio")]
+
+
+def nutri_tabla(t):
+    """Tabla nutricional (por 100 g o 100 ml) de la página de producto de Jumbo/Santa Isabel. {} si no tiene."""
+    i = t.find("Información nutricional</span>")
+    j = t.find("<table", i) if i >= 0 else -1
+    k = t.find("</table>", j) if j >= 0 else -1
+    if k < 0:
+        return {}
+    filas = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", t[j:k], re.S):
+        celdas = [re.sub(r"<[^>]+>", "", c).strip() for c in re.findall(r"<t[hd][^>]*>(.*?)</t[hd]>", tr, re.S)]
+        if celdas:
+            filas.append(celdas)
+    col = None
+    for f in filas:
+        for n, c in enumerate(f):
+            if re.search(r"100\s*(g|ml)", c, re.I):
+                col = n
+                ml = "ml" in c.lower() and "g/ml" not in c.lower()
+        if col is not None:
+            break
+    if col is None:
+        return {}
+    out = {}
+    for f in filas:
+        if len(f) <= col:
+            continue
+        nombre = norm(f[0])
+        v = f[col].strip()
+        # "1.234,5" (Chile) · "3,3" · "3.3" · "1.200" (miles)
+        if "," in v:
+            v = v.replace(".", "").replace(",", ".")
+        elif re.fullmatch(r"\d{1,3}\.\d{3}", v):
+            v = v.replace(".", "")
+        try:
+            v = float(re.findall(r"-?\d+(?:\.\d+)?", v)[0])
+        except (IndexError, ValueError):
+            continue
+        for clave, pat in NUTRI_FILAS:
+            if clave not in out and re.search(pat, nombre):
+                if clave == "f" and re.search(r"saturad|trans|mono|poli", nombre):
+                    continue
+                out[clave] = round(v, 1)
+                break
+    if "k" not in out or out["k"] > 950 or not any(x in out for x in ("p", "c", "f")):
+        return {}
+    # Las calorías tienen que cuadrar con los macros (4·P + 4·C + 9·G, con margen por fibra y alcohol).
+    est = 4 * out.get("p", 0) + 4 * out.get("c", 0) + 9 * out.get("f", 0)
+    if out["k"] >= 20 and not (0.7 * out["k"] - 15 <= est <= 1.3 * out["k"] + 15):
+        return {}
+    return out
+
+
 def vtex_ean(slug, bases):
-    """EAN de un producto de Jumbo/Santa Isabel desde su página pública (una sola vez por producto)."""
+    """EAN y tabla nutricional de un producto de Jumbo/Santa Isabel desde su página pública (una vez por producto).
+    Devuelve (ean, nutricion) o None si la cadena negó el acceso."""
     for base in bases:
         st, t = get(f"{base}/{slug}/p")
         if st == 200:
             raw = t.replace('\\"', '"')
             m = re.search(r'"ean"\s*:\s*"(\d{8,14})"', raw) or re.search(r'"gtin"\s*:\s*"(\d{8,14})"', raw)
-            return m.group(1) if m else ""
+            return (m.group(1) if m else ""), nutri_tabla(t)
         if st in (403, 429):
             return None
-    return ""
+    return "", {}
 
 
 # ---------------------------------------------------------------- unir el mismo producto entre cadenas
@@ -212,6 +270,8 @@ def construir(registros):
             p["img"] = r["img"]
         if not p.get("b") and r.get("b"):
             p["b"] = r["b"]
+        if not p.get("nu") and r.get("nu"):
+            p["nu"] = r["nu"]
 
     # 1) Alvi: EAN directo
     for r in [r for r in registros if r["ci"] == 5]:
@@ -294,6 +354,10 @@ def main():
         cache = json.load(open("ean_vtex.json", encoding="utf-8"))
     except (OSError, ValueError):
         cache = {}
+    try:
+        nutri = json.load(open("nutri_vtex.json", encoding="utf-8"))
+    except (OSError, ValueError):
+        nutri = {}
     solo = int(sys.argv[1]) if len(sys.argv) > 1 else None
     terminos = TERMINOS[:solo] if solo else TERMINOS
     registros, estado, bloq = [], {k: {} for k in ("lider", "unimarc", "jumbo", "sisa", "alvi")}, set()
@@ -347,23 +411,33 @@ def main():
                 registros.append(r)
         log(f"{t:28s} {len(registros):6d} registros")
 
-    # EAN de Jumbo/Santa Isabel que aún no se conocen (pocos por día, quedan guardados)
-    faltan = [v for v in dict.fromkeys(r["vid"] for r in registros if r["ci"] in (2, 3)) if v not in cache]
-    leidos = 0
-    for vid in faltan[:EAN_POR_DIA]:
+    # EAN y tabla nutricional de Jumbo/Santa Isabel que aún no se conocen (pocos por día, quedan guardados).
+    # Primero los productos sin EAN; después, los que ya tienen EAN pero no tabla. El orden sigue la prioridad de TERMINOS.
+    vids = list(dict.fromkeys(r["vid"] for r in registros if r["ci"] in (2, 3)))
+    faltan = [v for v in vids if v not in cache][:EAN_POR_DIA] + [v for v in vids if v in cache and v not in nutri][:NUTRI_POR_DIA]
+    leidos = tablas = 0
+    for vid in faltan:
         if 2 in bloq and 3 in bloq:
             break
         slug, bases = vtex_slug[vid]
-        e = vtex_ean(slug, [b for b in ("https://www.jumbo.cl", "https://www.santaisabel.cl") if b in bases])
-        if e is None:
+        res = vtex_ean(slug, [b for b in ("https://www.jumbo.cl", "https://www.santaisabel.cl") if b in bases])
+        if res is None:
             log("   Jumbo/Santa Isabel: acceso denegado a la página de producto; se sigue mañana")
             break
-        cache[vid] = e
+        e, nu = res
+        if vid not in cache or (e and not cache.get(vid)):
+            cache[vid] = e
+        nutri[vid] = nu
         leidos += 1
+        tablas += bool(nu)
     for r in registros:
-        if r["ci"] in (2, 3) and cache.get(r["vid"]):
-            r["ean"] = cache[r["vid"]]
-    log(f"EAN de Jumbo/Santa Isabel: {leidos} nuevos hoy, {sum(1 for v in cache.values() if v)} conocidos, faltan {max(0, len(faltan) - leidos)}")
+        if r["ci"] in (2, 3):
+            if cache.get(r["vid"]):
+                r["ean"] = cache[r["vid"]]
+            if nutri.get(r["vid"]):
+                r["nu"] = nutri[r["vid"]]
+    log(f"Páginas de producto Jumbo/Santa Isabel: {leidos} leídas hoy ({tablas} con tabla nutricional); "
+        f"EAN conocidos {sum(1 for v in cache.values() if v)}, tablas conocidas {sum(1 for v in nutri.values() if v)}")
 
     # Códigos escaneados en la app: búsqueda por código en Alvi y Unimarc (las que lo permiten)
     codigos = codigos_escaneados()
@@ -398,9 +472,12 @@ def main():
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
     with open("ean_vtex.json", "w", encoding="utf-8") as f:
         json.dump(cache, f, separators=(",", ":"))
+    with open("nutri_vtex.json", "w", encoding="utf-8") as f:
+        json.dump(nutri, f, separators=(",", ":"))
     with open("registro_catalogo.txt", "w", encoding="utf-8") as f:
         f.write("\n".join(LOG) + "\n")
-    log(f"\nListo: {len(out)} productos de comida ({multi} con precio en 2 o más cadenas).")
+    con_nu = sum(1 for p in out if p.get("nu"))
+    log(f"\nListo: {len(out)} productos de comida ({multi} con precio en 2 o más cadenas, {con_nu} con tabla nutricional).")
 
 
 if __name__ == "__main__":
