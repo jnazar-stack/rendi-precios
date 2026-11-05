@@ -180,6 +180,15 @@ def nutri_tabla(t):
             break
     if col is None:
         return {}
+    # Columna "por 1 porción": con ella sale el tamaño de la porción (gramos = 100 × kcal porción / kcal 100 g).
+    pcol = None
+    for f in filas:
+        for n, c in enumerate(f):
+            if n != col and re.search(r"porci[oó]n", c, re.I):
+                pcol = n
+        if pcol is not None:
+            break
+    por = {}
     out = {}
     for f in filas:
         if len(f) <= col:
@@ -200,6 +209,13 @@ def nutri_tabla(t):
                 if clave == "f" and re.search(r"saturad|trans|mono|poli", nombre):
                     continue
                 out[clave] = round(v, 1)
+                if pcol is not None and len(f) > pcol:
+                    w = f[pcol].strip()
+                    w = w.replace(".", "").replace(",", ".") if "," in w else w
+                    try:
+                        por[clave] = float(re.findall(r"-?\d+(?:\.\d+)?", w)[0])
+                    except (IndexError, ValueError):
+                        pass
                 break
     if "k" not in out or out["k"] > 950 or not any(x in out for x in ("p", "c", "f")):
         return {}
@@ -207,6 +223,13 @@ def nutri_tabla(t):
     est = 4 * out.get("p", 0) + 4 * out.get("c", 0) + 9 * out.get("f", 0)
     if out["k"] >= 20 and not (0.7 * out["k"] - 15 <= est <= 1.3 * out["k"] + 15):
         return {}
+    # Porción en gramos o ml (0 = la tabla no la trae), calculada con la energía o, si no, con la proteína.
+    sv = 0
+    for clave in ("k", "p", "c"):
+        if out.get(clave) and por.get(clave):
+            sv = round(100 * por[clave] / out[clave])
+            break
+    out["sv"] = sv if 3 <= sv <= 1500 else 0
     return out
 
 
@@ -414,7 +437,7 @@ def main():
     # EAN y tabla nutricional de Jumbo/Santa Isabel que aún no se conocen (pocos por día, quedan guardados).
     # Primero los productos sin EAN; después, los que ya tienen EAN pero no tabla. El orden sigue la prioridad de TERMINOS.
     vids = list(dict.fromkeys(r["vid"] for r in registros if r["ci"] in (2, 3)))
-    faltan = [v for v in vids if v not in cache][:EAN_POR_DIA] + [v for v in vids if v in cache and v not in nutri][:NUTRI_POR_DIA]
+    faltan = [v for v in vids if v not in cache][:EAN_POR_DIA] + [v for v in vids if v in cache and (v not in nutri or (nutri[v] and "sv" not in nutri[v]))][:NUTRI_POR_DIA]
     leidos = tablas = 0
     for vid in faltan:
         if 2 in bloq and 3 in bloq:
