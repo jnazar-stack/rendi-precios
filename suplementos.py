@@ -183,9 +183,14 @@ def vtex_api(tid, nombre, base):
             prods = json.loads(t)
         except ValueError:
             return out, "bloqueado"
+        if not isinstance(prods, list):
+            log(f"  {nombre}: respuesta inesperada: {str(prods)[:200]}")
+            return out, ("ok" if out else "sin datos")
         if not prods:
             break
         for pr in prods:
+            if not isinstance(pr, dict):
+                continue
             titulo = pr.get("productName") or ""
             cats = " ".join(pr.get("categories") or [])
             cat = categoria(titulo + " " + cats)
@@ -332,7 +337,11 @@ def main():
     log(f"Suplementos {ahora:%Y-%m-%d %H:%M}")
     items, tiendas = [], {}
     for tid, nombre, doms in TIENDAS_SHOPIFY:
-        xs, est = shopify(tid, nombre, doms)
+        try:
+            xs, est = shopify(tid, nombre, doms)
+        except Exception as e:  # una tienda con un formato raro no debe dejar sin datos a las demás
+            log(f"  {nombre}: error {type(e).__name__}: {e}")
+            xs, est = [], "error"
         tiendas[tid] = {"n": nombre, "estado": est, "cuantos": len(xs)}
         items += xs
     xs, ests = supers()
