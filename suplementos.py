@@ -198,7 +198,7 @@ def vtex_api(tid, nombre, base):
                 continue
             cuerpo = texto_plano(pr.get("description") or "")
             # Ficha técnica: VTEX la guarda como especificaciones (listas de texto).
-            esp = " ".join(f"{k} {' '.join(v) if isinstance(v, list) else v}" for k, v in pr.items() if isinstance(v, list) and k not in ("items", "categories", "categoriesIds", "clusterHighlights", "productClusters", "searchableClusters", "allSpecifications", "allSpecificationsGroups"))
+            esp = " ".join(f"{k} {' '.join(x for x in v if isinstance(x, str))}" for k, v in pr.items() if isinstance(v, list) and k not in ("items", "categories", "categoriesIds", "clusterHighlights", "productClusters", "searchableClusters", "allSpecifications", "allSpecificationsGroups"))
             nu = nutricion(cuerpo + " " + esp)
             for sku in pr.get("items") or []:
                 off = (((sku.get("sellers") or [{}])[0] or {}).get("commertialOffer") or {})
