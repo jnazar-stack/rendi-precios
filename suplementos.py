@@ -110,11 +110,71 @@ def robots_ok(base, ruta):
     return rp.can_fetch(UA, base + ruta)
 
 
+PLATAFORMAS = [("woocommerce", r"woocommerce|wp-content/plugins/woo"), ("jumpseller", r"jumpseller"), ("bsale", r"bsale"),
+               ("vtex", r"vtex"), ("wix", r"wix\.com|wixstatic"), ("prestashop", r"prestashop"), ("magento", r"magento|mage/"),
+               ("tiendanube", r"tiendanube|nuvemshop"), ("wordpress", r"wp-content|wp-json")]
+
+
+def plataforma(base):
+    st, t = get(base + "/")
+    if st != 200:
+        return None, st
+    low = t[:200000].lower()
+    for nombre, rx in PLATAFORMAS:
+        if re.search(rx, low):
+            return nombre, st
+    m = re.search(r'<meta[^>]+name="generator"[^>]+content="([^"]+)"', t, re.I)
+    return (m.group(1) if m else "desconocida"), st
+
+
+def woo(tid, nombre, base):
+    """WooCommerce publica su catálogo en la Store API (/wp-json/wc/store/v1/products), sin clave."""
+    if not robots_ok(base, "/wp-json/wc/store/v1/products"):
+        return [], "robots"
+    out = []
+    for page in range(1, PAGINAS + 1):
+        st, t = get(f"{base}/wp-json/wc/store/v1/products?per_page=100&page={page}")
+        if st != 200:
+            log(f"  {nombre}: Store API página {page} -> http {st}")
+            return out, ("ok" if out else f"http {st}")
+        try:
+            prods = json.loads(t)
+        except ValueError:
+            return out, "bloqueado"
+        if not prods:
+            break
+        for pr in prods:
+            titulo = re.sub(r"&#8211;|&amp;", "-", pr.get("name") or "")
+            cats = " ".join(c.get("name", "") for c in pr.get("categories") or [])
+            cat = categoria(titulo + " " + cats)
+            if not cat:
+                continue
+            pri = pr.get("prices") or {}
+            dec = int(pri.get("currency_minor_unit") or 0)
+            p = num(pri.get("price")) / (10 ** dec) if pri.get("price") else 0
+            if not p:
+                continue
+            reg = num(pri.get("regular_price")) / (10 ** dec) if pri.get("regular_price") else 0
+            cuerpo = texto_plano((pr.get("description") or "") + " " + (pr.get("short_description") or ""))
+            marca = " ".join(b.get("name", "") for b in pr.get("brands") or []) if isinstance(pr.get("brands"), list) else ""
+            it = dict(t=tid, n=titulo, b=marca, cat=cat, p=p, g=gramos(titulo), serv=porciones(titulo) or porciones(cuerpo),
+                      img=((pr.get("images") or [{}])[0] or {}).get("src"), u=pr.get("permalink"), disp=bool(pr.get("is_in_stock", True)))
+            if reg > p:
+                it["antes"] = reg
+            it.update(nutricion(cuerpo))
+            out.append(it)
+        log(f"  {nombre}: Store API página {page}, {len(out)} suplementos hasta ahora")
+    return out, "ok" if out else "sin resultados"
+
+
 def shopify(tid, nombre, dominios):
     for base in dominios:
         st, t = get(base + "/products.json?limit=1")
         if st != 200 or not t.lstrip().startswith("{"):
-            log(f"  {nombre}: {base} no responde como tienda Shopify (http {st})")
+            pl, st2 = plataforma(base)
+            log(f"  {nombre}: {base} no es Shopify (http {st}); plataforma detectada: {pl} (http {st2})")
+            if pl in ("woocommerce", "wordpress"):
+                return woo(tid, nombre, base)
             continue
         if not robots_ok(base, "/products.json"):
             log(f"  {nombre}: robots.txt no permite leer el catálogo; se omite")
@@ -146,7 +206,7 @@ def shopify(tid, nombre, dominios):
                         continue
                     vt = v.get("title") or ""
                     n = titulo if vt in ("", "Default Title") else f"{titulo} · {vt}"
-                    g = gramos(n) or (round(v["grams"]) if (v.get("grams") or 0) >= 20 and cat not in ("barra",) else None)
+                    g = gramos(n)  # el peso de despacho de Shopify (grams) incluye envase: no sirve
                     it = dict(t=tid, n=n, b=pr.get("vendor") or "", cat=cat, p=p, g=g,
                               serv=porciones(n) or porciones(cuerpo), img=img,
                               u=f"{base}/products/{pr.get('handle')}" + (f"?variant={v.get('id')}" if len(pr.get("variants") or []) > 1 else ""),
@@ -195,12 +255,24 @@ def supers():
     return out, estados
 
 
+# Proteína típica por cada 100 g de polvo, para estimar cuando la tienda no publica la tabla en texto.
+PROTE_TIPICA = [(r"isolat|iso\b|isofit|iso cool|zero carb|isopure", 0.85), (r"hidroliz|hydro", 0.80),
+                (r"vegan|vegetal|plant|arveja|pea", 0.70), (r"casein|caseina", 0.75), (r"whey|suero|proteina|protein", 0.72)]
+
+
 def metricas(it):
-    """Lo que de verdad sirve para comparar: costo por gramo de proteína y por dosis de creatina (5 g)."""
+    """Lo que de verdad sirve para comparar: costo por gramo de proteína y por dosis de creatina (5 g).
+    Si la tienda no publica la proteína por porción, se estima con la típica del tipo de proteína (marcado "est")."""
     if it["cat"] in ("proteina", "ganador") and it.get("ps") and it.get("serv"):
         it["pg"] = round(it["p"] / (it["ps"] * it["serv"]), 1)
     elif it["cat"] in ("proteina",) and it.get("g") and it.get("ps") and it.get("sv"):
         it["pg"] = round(it["p"] / (it["g"] / it["sv"] * it["ps"]), 1)
+    elif it["cat"] == "proteina" and it.get("g") and it["g"] >= 300:
+        t = norm(it["n"])
+        f = next((v for rx, v in PROTE_TIPICA if re.search(rx, t)), None)
+        if f:
+            it["pg"] = round(it["p"] / (it["g"] * f), 1)
+            it["est"] = 1
     if it["cat"] == "creatina" and it.get("g"):
         it["pd"] = round(it["p"] / (it["g"] / 5))
     return it
