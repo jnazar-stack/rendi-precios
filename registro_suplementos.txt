@@ -1,4 +1,4 @@
-Suplementos 2026-11-11 12:50
+Suplementos 2026-11-11 12:51
   Allnutrition: página 1, 36 suplementos hasta ahora
   Allnutrition: página 2, 61 suplementos hasta ahora
   Allnutrition: página 3, 222 suplementos hasta ahora
@@ -7,8 +7,14 @@ Suplementos 2026-11-11 12:50
   Allnutrition: página 6, 741 suplementos hasta ahora
   Allnutrition: página 7, 852 suplementos hasta ahora
   Supletech: https://www.supletech.cl no es Shopify (http 200); plataforma detectada: vtex (http 200)
-  Supletech: error TypeError: sequence item 0: expected str instance, dict found
+  Supletech: catálogo hasta 49, 104 suplementos
+  Supletech: catálogo hasta 99, 159 suplementos
+  Supletech: catálogo hasta 149, 224 suplementos
+  Supletech: catálogo hasta 199, 287 suplementos
+  Supletech: catálogo hasta 249, 346 suplementos
+  Supletech: catálogo hasta 299, 414 suplementos
+  Supletech: catálogo hasta 349, 463 suplementos
   Allnutrition: ok, 852 productos
-  Supletech: error, 0 productos
+  Supletech: ok, 463 productos
   Jumbo: ok, 69 productos
   Lider: bloqueado, 0 productos
