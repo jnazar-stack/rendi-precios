@@ -42,7 +42,7 @@ CATS = [  # (categoría, palabras), en orden: la primera que calza gana
     ("quemador", ["quemador", "burner", "termogen", "carnitin", "cla "]),
     ("multivitaminico", ["multivit", "multi vit", "vitamin", "magnesio", "zinc", "colageno", "collagen", "melatonin"]),
 ]
-NO_SUPLE = ["shaker", "polera", "botella", "toalla", "guante", "cinturon", "mochila", "bolso", "straps", "muñequera", "gift card", "tarjeta de regalo"]
+NO_SUPLE = ["perro", "gato", "mascota", "alimento seco", "alimento humedo", "semi humedo", "cereal", "texturizada", "proteina de soya", "shaker", "polera", "botella", "toalla", "guante", "cinturon", "mochila", "bolso", "straps", "muñequera", "gift card", "tarjeta de regalo"]
 
 
 def categoria(texto):
@@ -167,6 +167,52 @@ def woo(tid, nombre, base):
     return out, "ok" if out else "sin resultados"
 
 
+def vtex_api(tid, nombre, base):
+    """VTEX publica su catálogo en /api/catalog_system/pub/products/search, de a 50 productos."""
+    ruta = "/api/catalog_system/pub/products/search"
+    if not robots_ok(base, ruta):
+        log(f"  {nombre}: robots.txt no permite leer {ruta}; se omite")
+        return [], "robots"
+    out = []
+    for i in range(0, 2500, 50):
+        st, t = get(f"{base}{ruta}?_from={i}&_to={i + 49}")
+        if st not in (200, 206):
+            log(f"  {nombre}: catálogo desde {i} -> http {st}")
+            return out, ("ok" if out else f"http {st}")
+        try:
+            prods = json.loads(t)
+        except ValueError:
+            return out, "bloqueado"
+        if not prods:
+            break
+        for pr in prods:
+            titulo = pr.get("productName") or ""
+            cats = " ".join(pr.get("categories") or [])
+            cat = categoria(titulo + " " + cats)
+            if not cat:
+                continue
+            cuerpo = texto_plano(pr.get("description") or "")
+            # Ficha técnica: VTEX la guarda como especificaciones (listas de texto).
+            esp = " ".join(f"{k} {' '.join(v) if isinstance(v, list) else v}" for k, v in pr.items() if isinstance(v, list) and k not in ("items", "categories", "categoriesIds", "clusterHighlights", "productClusters", "searchableClusters", "allSpecifications", "allSpecificationsGroups"))
+            nu = nutricion(cuerpo + " " + esp)
+            for sku in pr.get("items") or []:
+                off = (((sku.get("sellers") or [{}])[0] or {}).get("commertialOffer") or {})
+                p = num(off.get("Price"))
+                if not p:
+                    continue
+                n = sku.get("nameComplete") or sku.get("name") or titulo
+                it = dict(t=tid, n=n, b=pr.get("brand") or "", cat=cat, p=p, g=gramos(n) or gramos(titulo),
+                          serv=porciones(n) or porciones(cuerpo), img=((sku.get("images") or [{}])[0] or {}).get("imageUrl"),
+                          u=pr.get("link") or "", disp=(off.get("AvailableQuantity") or 0) > 0)
+                lp = num(off.get("ListPrice"))
+                if lp and lp > p:
+                    it["antes"] = lp
+                it.update(nu)
+                out.append(it)
+        log(f"  {nombre}: catálogo hasta {i + 49}, {len(out)} suplementos")
+    return out, "ok" if out else "sin resultados"
+
+
 def shopify(tid, nombre, dominios):
     for base in dominios:
         st, t = get(base + "/products.json?limit=1")
@@ -175,6 +221,8 @@ def shopify(tid, nombre, dominios):
             log(f"  {nombre}: {base} no es Shopify (http {st}); plataforma detectada: {pl} (http {st2})")
             if pl in ("woocommerce", "wordpress"):
                 return woo(tid, nombre, base)
+            if pl == "vtex":
+                return vtex_api(tid, nombre, base)
             continue
         if not robots_ok(base, "/products.json"):
             log(f"  {nombre}: robots.txt no permite leer el catálogo; se omite")
@@ -257,7 +305,8 @@ def supers():
 
 # Proteína típica por cada 100 g de polvo, para estimar cuando la tienda no publica la tabla en texto.
 PROTE_TIPICA = [(r"isolat|iso\b|isofit|iso cool|zero carb|isopure", 0.85), (r"hidroliz|hydro", 0.80),
-                (r"vegan|vegetal|plant|arveja|pea", 0.70), (r"casein|caseina", 0.75), (r"whey|suero|proteina|protein", 0.72)]
+                (r"(vegan|vegetal|plant|arveja|pea).*(protein|proteina)|(protein|proteina).*(vegan|vegetal|plant|arveja)", 0.70),
+                (r"casein|caseina", 0.75), (r"whey|suero de leche", 0.72)]
 
 
 def metricas(it):
