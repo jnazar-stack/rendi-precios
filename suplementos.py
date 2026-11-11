@@ -309,8 +309,8 @@ def supers():
 
 
 # Proteína típica por cada 100 g de polvo, para estimar cuando la tienda no publica la tabla en texto.
-PROTE_TIPICA = [(r"isolat|iso\b|isofit|iso cool|zero carb|isopure", 0.85), (r"hidroliz|hydro", 0.80),
-                (r"(vegan|vegetal|plant|arveja|pea).*(protein|proteina)|(protein|proteina).*(vegan|vegetal|plant|arveja)", 0.70),
+PROTE_TIPICA = [(r"(vegan|vegetal|plant|arveja|pea).*(protein|proteina)|(protein|proteina).*(vegan|vegetal|plant|arveja)", 0.72),
+                (r"isolat|iso\b|isofit|iso cool|zero carb|isopure", 0.85), (r"hidroliz|hydro", 0.80),
                 (r"casein|caseina", 0.75), (r"whey|suero de leche", 0.72)]
 
 
