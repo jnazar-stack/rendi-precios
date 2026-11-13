@@ -1,20 +1,20 @@
-Suplementos 2026-11-12 15:57
+Suplementos 2026-11-13 15:21
   Allnutrition: página 1, 30 suplementos hasta ahora
   Allnutrition: página 2, 61 suplementos hasta ahora
-  Allnutrition: página 3, 210 suplementos hasta ahora
+  Allnutrition: página 3, 208 suplementos hasta ahora
   Allnutrition: página 4, 349 suplementos hasta ahora
-  Allnutrition: página 5, 533 suplementos hasta ahora
-  Allnutrition: página 6, 724 suplementos hasta ahora
-  Allnutrition: página 7, 852 suplementos hasta ahora
+  Allnutrition: página 5, 532 suplementos hasta ahora
+  Allnutrition: página 6, 720 suplementos hasta ahora
+  Allnutrition: página 7, 853 suplementos hasta ahora
   Supletech: https://www.supletech.cl no es Shopify (http 200); plataforma detectada: vtex (http 200)
-  Supletech: catálogo hasta 49, 104 suplementos
-  Supletech: catálogo hasta 99, 169 suplementos
-  Supletech: catálogo hasta 149, 228 suplementos
-  Supletech: catálogo hasta 199, 291 suplementos
-  Supletech: catálogo hasta 249, 351 suplementos
-  Supletech: catálogo hasta 299, 415 suplementos
+  Supletech: catálogo hasta 49, 102 suplementos
+  Supletech: catálogo hasta 99, 161 suplementos
+  Supletech: catálogo hasta 149, 229 suplementos
+  Supletech: catálogo hasta 199, 290 suplementos
+  Supletech: catálogo hasta 249, 350 suplementos
+  Supletech: catálogo hasta 299, 414 suplementos
   Supletech: catálogo hasta 349, 462 suplementos
-  Allnutrition: ok, 852 productos
+  Allnutrition: ok, 853 productos
   Supletech: ok, 462 productos
-  Jumbo: ok, 70 productos
-  Lider: bloqueado, 0 productos
+  Jumbo: ok, 71 productos
+  Lider: ok, 187 productos
