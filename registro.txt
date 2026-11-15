@@ -10,16 +10,16 @@ leche      sisa     ok              13 leídos   eq $1,180 Leche Colun Descremad
 leche      alvi     ok             100 leídos   eq $1,250 Leche descremada Colun 1 L Leche descremada | eco $1,190 Leche Soprole descremada natural 1 
 yogurt     lider    ok               7 leídos   eq $6,238 Yoghurt Griego Natural Endulzado Pote 800 g Q | eco $6,238 Yoghurt Griego Natural Endulzado Po
 yogurt     unimarc  ok              21 leídos   eq $5,112 Yoghurt griego oikos danone balde 800 gr Oiko | eco $5,112 Yoghurt griego oikos danone balde 8
-   jumbo yogurt: +7 de la página 2
-yogurt     jumbo    ok              47 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
+   jumbo yogurt: +6 de la página 2
+yogurt     jumbo    ok              46 leídos   eq $5,612 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,612 Yogurt Griego Quillayes Proteína Na
 yogurt     sisa     ok              26 leídos   eq $6,688 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,688 Yogurt Griego Natural Endulzado Pot
    sin calce en alvi para yogurt; leídos: Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $450 · Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $450
 yogurt     alvi     ok               4 leídos   —
-pechuga    lider    ok              11 leídos   eq $5,990 Pollo Pechuga Deshuesada Congelada 1 kg El Bu | eco $5,990 Pollo Pechuga Deshuesada Congelada 
+pechuga    lider    ok              10 leídos   eq $5,990 Pollo Pechuga Deshuesada Congelada 1 kg El Bu | eco $5,990 Pollo Pechuga Deshuesada Congelada 
 pechuga    unimarc  ok              17 leídos   eq $5,862 Pechuga de pollo deshuesada fundo río alegre  | eco $5,862 Pechuga de pollo deshuesada fundo r
 pechuga    jumbo    ok              19 leídos   eq $6,990 Pechuga Deshuesada de Pollo Sadia 1 kg | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
-   sisa pechuga: +37 buscando 'pechuga de pollo'
-pechuga    sisa     ok              41 leídos   eq $7,557 Filetitos de Pechuga Congelado 700 g | eco $7,557 Filetitos de Pechuga Congelado 700 
+   sisa pechuga: +16 buscando 'pechuga de pollo'
+pechuga    sisa     ok              18 leídos   eq $7,557 Filetitos de Pechuga Congelado 700 g | eco $7,557 Filetitos de Pechuga Congelado 700 
 pechuga    alvi     ok              12 leídos   eq $5,425 Pechuga de pollo deshuesada Fundo Río Alegre  | eco $5,425 Pechuga de pollo deshuesada Fundo R
 trutro     lider    ok              10 leídos   eq $2,945 Pollo Trutro Entero Congelado 2 kg Seara | eco $2,945 Pollo Trutro Entero Congelado 2 kg 
 trutro     unimarc  ok               8 leídos   eq $2,795 Trutro entero de pollo fundo río alegre conge | eco $2,795 Trutro entero de pollo fundo río al
@@ -36,10 +36,10 @@ atun       unimarc  ok               6 leídos   eq $1,990 Atún lomito van camp
 atun       jumbo    ok              16 leídos   eq $1,290 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,290 Atún Lomitos en Agua 104 g drenado,
 atun       sisa     ok              12 leídos   eq $1,690 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,690 Atún Lomitos en Agua 104 g drenado,
 atun       alvi     ok              12 leídos   eq $890 Atún lomito en agua contenido neto 140G Conte | eco $890 Atún lomito en agua contenido neto 
-salmon     lider    ok               3 leídos   eq $8,890 Salmón Filete Con Piel 500 g Selección | eco $8,890 Salmón Filete Con Piel 500 g Selecc
+salmon     lider    ok               2 leídos   eq $8,990 Salmón Filete Atlántico 500 gr Aqua | eco $8,990 Salmón Filete Atlántico 500 gr Aqua
 salmon     unimarc  ok               5 leídos   eq $8,750 Filete de salmón atlántico aqua chile con pie | eco $8,750 Filete de salmón atlántico aqua chi
 salmon     jumbo    ok               6 leídos   eq $10,590 Salmón Filete Congelado 500 g | eco $10,590 Salmón Filete Congelado 500 g
-salmon     sisa     ok              12 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $9,990 Salmón Filete Congelado 500 g
+salmon     sisa     ok               8 leídos   eq $9,990 Salmón Filete Congelado 500 g | eco $4,988 Varita de Salmón Cuisine & Co 400 g
 salmon     alvi     ok             100 leídos   eq $6,350 Salmón en trozos Azul Profundo 500 g Salmón e | eco $6,350 Salmón en trozos Azul Profundo 500 
 lentejas   lider    ok              32 leídos   eq $2,850 Lentejas 6mm Bolsa 1 Kg Iansa Agro | eco $2,590 Lentejas 5 Mm Bolsa 1 Kg Lider
 lentejas   unimarc  ok              18 leídos   eq $2,300 Lentejas 6mm los granos 1kg Los Granos | eco $2,300 Lentejas 6mm los granos 1kg Los Gra
@@ -67,7 +67,7 @@ arroz      unimarc  ok               8 leídos   eq $1,290 Arroz tucapel gran se
 arroz      jumbo    ok              25 leídos   eq $1,890 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Máxima Grano Largo An
 arroz      sisa     ok              10 leídos   eq $1,900 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Cuisine & Co Largo y 
 arroz      alvi     ok               2 leídos   eq $890 Arroz Merkat largo delgado grado 2 1 Kg Arroz | eco $890 Arroz Merkat largo delgado grado 2 
-fideos     lider    ok              33 leídos   eq $1,030 Fideo Pasta Spaghetti N°5 Bolsa 400 g Lucchet | eco $750 Fideo Pasta Spaghetti N°5 Bolsa 400
+fideos     lider    ok              34 leídos   eq $1,030 Fideo Pasta Spaghetti N°5 Bolsa 400 g Lucchet | eco $750 Fideo Pasta Spaghetti N°5 Bolsa 400
 fideos     unimarc  ok              13 leídos   eq $1,050 Pasta spaghetti n° 5 carozzi 400 g Carozzi | eco $520 Pasta spaghetti n°5 merkat 400 g Me
 fideos     jumbo    ok              22 leídos   eq $450 Tallarín N°77 Máxima 400 g | eco $450 Tallarín N°77 Máxima 400 g
 fideos     sisa     ok              15 leídos   eq $430 Spaghetti N° 5 Máxima 400 g | eco $430 Spaghetti N° 5 Máxima 400 g
@@ -76,15 +76,14 @@ quinoa     lider    ok              12 leídos   eq $5,238 Quínoa Bolsa 400 g B
 quinoa     unimarc  ok               9 leídos   eq $3,345 Quínoa blanca granel 200 g Frutas Y Verduras | eco $3,345 Quínoa blanca granel 200 g Frutas Y
 quinoa     jumbo    ok              19 leídos   eq $5,362 Quinoa Banquete 400 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
    sisa quinoa: +40 de la página 2
-quinoa     sisa     ok              80 leídos   eq $5,542 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
+quinoa     sisa     ok              79 leídos   eq $5,542 Quinoa Lavada Mi Tierra 600 g | eco $3,780 Quinoa Natural Cuisine & Co 250 g
    sin calce en alvi para quinoa; leídos: Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530 · Chocolate relleno guinda $1,590 · Jalea guinda pote $370 · Jalea Soprole sabor guinda pote 110 g Ja $270 · Jalea guinda Colun 100gr $280 · Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530
 quinoa     alvi     ok              12 leídos   —
 pan        lider    ok              48 leídos   eq $1,714 Pan De Molde Integral Xl 700 g Castaño | eco $1,714 Pan De Molde Integral Xl 700 g Cast
 pan        unimarc  ok              31 leídos   eq $1,714 Pan de molde pierre integral xl 700 g Pan Pie | eco $1,714 Pan de molde pierre integral xl 700
    jumbo pan: +20 de la página 2
 pan        jumbo    ok              60 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-   sisa pan: +4 de la página 2
-pan        sisa     ok              44 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
+pan        sisa     ok              34 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        alvi     ok              14 leídos   eq $2,040 Pan molde Amada Masa integral XL 750 g | eco $2,040 Pan molde Amada Masa integral XL 75
 aceite     lider    ok              42 leídos   eq $2,205 Aceite Vegetal Botella 1 L Belmont | eco $1,890 Aceite Vegetal Botella 900 ml Lider
 aceite     unimarc  ok               7 leídos   eq $2,781 Aceite belmont vegetal con canola 1 l Belmont | eco $1,650 Aceite merkat vegetal 900 ml Merkat
@@ -94,8 +93,8 @@ aceite     alvi     ok             100 leídos   eq $2,529 Aceite Belmont vegeta
 oliva      lider    ok              39 leídos   eq $6,247 Aceite Oliva Extra Virgen Botella 500 ml Las  | eco $6,247 Aceite Oliva Extra Virgen Botella 5
 oliva      unimarc  ok              21 leídos   eq $6,955 Aceite de oliva chef extra virgen 500 ml Chef | eco $6,431 Aceite de oliva nuestra cocina extr
 oliva      jumbo    ok              25 leídos   eq $4,745 Aceite de Oliva Extra Virgen Bacio 500 ml | eco $4,745 Aceite de Oliva Extra Virgen Bacio 
-   sisa oliva: +32 buscando 'aceite de oliva'
-oliva      sisa     ok              40 leídos   eq $6,339 Aceite de Oliva Giada 500 ml | eco $6,339 Aceite de Oliva Giada 500 ml
+   sisa oliva: +21 buscando 'aceite de oliva'
+oliva      sisa     ok              29 leídos   eq $6,339 Aceite de Oliva Giada 500 ml | eco $6,339 Aceite de Oliva Giada 500 ml
 oliva      alvi     ok               6 leídos   eq $6,670 Aceite de oliva Banquete extra virgen 500 ml  | eco $6,670 Aceite de oliva Banquete extra virg
 mani       lider    ok              48 leídos   eq $2,593 Mantequilla De Maní Creamy 510 g American Cla | eco $2,593 Mantequilla De Maní Creamy 510 g Am
 mani       unimarc  ok              50 leídos   eq $2,346 Mantequilla de maní tento smooth pote 500 gr  | eco $2,346 Mantequilla de maní tento smooth po
@@ -116,7 +115,7 @@ papas      unimarc  ok               3 leídos   eq $3,490 Papas pequeñas malla
 papas      jumbo    ok               7 leídos   eq $3,590 Papas Souflé Malla 2 kg | eco $3,590 Papas Souflé Malla 2 kg
    (granel: precio de lista $3,950, precio por kg informado: (1975.0, 'kg'))
 papas      sisa     ok               8 leídos   eq $3,950 Papa Malla 2 kg | eco $3,950 Papa Malla 2 kg
-   sin calce en alvi para papas; leídos: Beb. Pap, Lata 6 U X 350 Ml Bebida lata $960 · Toallas femeninas Ladysoft diurnas ultra $1,420 · Toalla higiénica ultrafina malla con ala $3,390 · Toalla femenina nocturna ultradelgadas m $1,090 · Chanfle sufles Fruna sabor papa 350 gr $2,860 · Papas fritas Lapotato original 10 un de  $5,950 · Papas fritas Lapotato sabor queso 10 un  $5,950 · Papas fritas Lapotato sabor cebolla 10 u $5,950
+   sin calce en alvi para papas; leídos: Beb. Pap, Lata 6 U X 350 Ml Bebida lata $960 · Toallas femeninas Ladysoft diurnas ultra $1,420 · Toalla higiénica ultrafina malla con ala $3,390 · Toalla femenina nocturna ultradelgadas m $1,090 · Chanfle sufles Fruna sabor papa 350 gr $2,860 · Papas fritas Lapotato sabor cebolla 10 u $5,950 · Papas fritas Lapotato original 10 un de  $5,950 · Papas fritas Lapotato sabor queso 10 un  $5,950
 papas      alvi     ok             100 leídos   —
    (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
 platano    lider    ok              48 leídos   eq $1,450 Plátano Granel 500 g (3 a 4 un aprox) | eco $1,450 Plátano Granel 500 g (3 a 4 un apro
@@ -125,7 +124,7 @@ platano    unimarc  ok              17 leídos   eq $1,490 Plátano granel 500 g
    (granel: precio de lista $725, precio por kg informado: (1450.0, 'kg'))
 platano    jumbo    ok              19 leídos   eq $1,450 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,450 Plátano Extra Granel (1 a 2 un. Apr
    (granel: precio de lista $745, precio por kg informado: (1490.0, 'kg'))
-platano    sisa     ok              15 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
+platano    sisa     ok              14 leídos   eq $1,490 Plátano Extra Granel (1 a 2 un. Aprox) | eco $1,490 Plátano Extra Granel (1 a 2 un. Apr
    sin calce en alvi para platano; leídos: Compota Vivo Mifrut plátano 90 g Compota $470 · Tigretón plátano chocolate $5,390 · Yoghurt Colun protein plus sin lactosa f $740 · Yoghurt batido Soprole sabor plátano 120 $270 · Chiquitín plátano $340 · Leche semidescremada Loncoleche sabor pl $530 · Jugo en polvo naranja plátano rinde 1 L $260 · Chips de plátano salado Samai 34 gr Chip $590
 platano    alvi     ok              20 leídos   —
    (granel: precio de lista $1,190, precio por kg informado: None)
@@ -144,18 +143,17 @@ manzana    alvi     ok              92 leídos   —
 tomate     lider    ok              48 leídos   eq $2,090 Tomate Larga Vida Malla 1 Kg | eco $2,090 Tomate Larga Vida Malla 1 Kg
    (granel: precio de lista $2,090, precio por kg informado: None)
 tomate     unimarc  ok              50 leídos   eq $2,090 Tomate malla 1 kg Frutas Y Verduras | eco $2,090 Tomate malla 1 kg Frutas Y Verduras
-   (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
-tomate     jumbo    ok              36 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
-   sisa tomate: +1 de la página 2
+   (granel: precio de lista $1,315, precio por kg informado: (2630.0, 'kg'))
+tomate     jumbo    ok              35 leídos   eq $2,630 Tomate San Marzano Granel | eco $2,630 Tomate San Marzano Granel
    (granel: precio de lista $995, precio por kg informado: (1990.0, 'kg'))
-tomate     sisa     ok              41 leídos   eq $1,990 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $1,990 Tomate Larga Vida Granel (1 a 2 un.
+tomate     sisa     ok              40 leídos   eq $1,990 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $1,990 Tomate Larga Vida Granel (1 a 2 un.
    sin calce en alvi para tomate; leídos: Pack Salsa de tomate Pomarola italiana 6 $3,450 · Salsa de tomate San Remo italiana sachet $380 · Salsa de tomate Pomarola italiana 200 g  $780 · Salsa de tomate Lucchetti italiana 200 g $610 · Triple concentrado de tomate $3,480 · Salsa de tomate Carozzi Toscana bolognes $880 · Salsa de tomate Maggi Tuco con carne lat $1,690 · Salsa de tomate italiana $3,220
 tomate     alvi     ok              82 leídos   —
-lechuga    lider    ok              14 leídos   eq $1,390 Lechuga Escarola 1 Un | eco $1,390 Lechuga Escarola 1 Un
+lechuga    lider    ok              13 leídos   eq $1,390 Lechuga Escarola 1 Un | eco $1,390 Lechuga Escarola 1 Un
 lechuga    unimarc  ok              12 leídos   eq $1,390 Lechuga costina nacional 1 un Frutas Y Verdur | eco $1,390 Lechuga costina nacional 1 un Fruta
-   jumbo lechuga: +24 de la página 2
-lechuga    jumbo    ok              64 leídos   eq $1,000 Lechuga Costina Feria Orgánica 1 un. | eco $1,000 Lechuga Costina Feria Orgánica 1 un
-lechuga    sisa     ok               6 leídos   eq $990 Lechuga Costina 1 un. | eco $990 Lechuga Costina 1 un.
+   jumbo lechuga: +22 de la página 2
+lechuga    jumbo    ok              62 leídos   eq $1,000 Lechuga Costina Feria Orgánica 1 un. | eco $1,000 Lechuga Costina Feria Orgánica 1 un
+lechuga    sisa     ok               5 leídos   eq $990 Lechuga Costina 1 un. | eco $990 Lechuga Costina 1 un.
    sin calce en alvi para lechuga; leídos: Pechuga de pollo deshuesada congelada $23,990 · Pechuga deshuesada de pollo congelado Sa $23,140 · Pechuga pavo cocida pieza $23,000 · Pechuga pavo asada pieza $32,000 · Pechuga pavo ahumada pieza $21,490 · Pechuga cocida pollo pieza granel 2 Kg $17,840 · Pechuga de pollo deshuesada Fundo Río Al $4,340 · Pechuga deshuesada Super Pollo congelada $30,550
 lechuga    alvi     ok              42 leídos   —
    (granel: precio de lista $1,590, precio por kg informado: None)
@@ -168,10 +166,11 @@ zanahoria  jumbo    ok              11 leídos   eq $1,590 Zanahoria Bolsa 1 kg 
 zanahoria  sisa     ok               3 leídos   eq $1,550 Zanahoria Bolsa 1 kg | eco $1,550 Zanahoria Bolsa 1 kg
    sin calce en alvi para zanahoria; leídos: Compota fruta y veggies naranja zanahori $810 · Picado Nestlé Naturnes carne papas zanah $2,290 · Picado naturnes pollo zanahoria y arroz $2,290 · Compota fruta y veggies naranja zanahori $810 · Picado Nestlé Naturnes carne papas zanah $2,290 · Picado naturnes pollo zanahoria y arroz $2,290
 zanahoria  alvi     ok               6 leídos   —
-brocoli    lider    ok              11 leídos   eq $1,590 Brócoli 1 Un | eco $1,590 Brócoli 1 Un
+brocoli    lider    ok              10 leídos   eq $1,590 Brócoli 1 Un | eco $1,590 Brócoli 1 Un
 brocoli    unimarc  ok               2 leídos   eq $1,590 Brócoli nacional 1 un Frutas Y Verduras | eco $1,590 Brócoli nacional 1 un Frutas Y Verd
-brocoli    jumbo    ok               3 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
-brocoli    sisa     ok               6 leídos   eq $1,490 Brócoli Films 1 un. | eco $1,490 Brócoli Films 1 un.
+brocoli    jumbo    ok               2 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
+   sin calce en sisa para brocoli; leídos: Pasta Bruschetta de Alcachofas Buka 295  $3,630 · Cabellos de Ángel Vitaminizado 400 g $790 · Mix Vegetales Rústicos Marco Polo 150 g $2,250 · Pasta Coliseo Farfalle Speciale 400 g $740 · Baba Ganoush Suk 175 g $3,130
+brocoli    sisa     ok               5 leídos   —
 brocoli    alvi     sin resultados   0 leídos   —
    (granel: precio de lista $1,850, precio por kg informado: (1850.0, 'kg'))
 cebolla    lider    ok              23 leídos   eq $1,850 Cebolla Granel. 500 g (1 a 3 un aprox) | eco $1,850 Cebolla Granel. 500 g (1 a 3 un apr
