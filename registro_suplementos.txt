@@ -1,14 +1,14 @@
-Suplementos 2026-11-19 16:38
-  Allnutrition: página 1, 17 suplementos hasta ahora
-  Allnutrition: página 2, 74 suplementos hasta ahora
-  Allnutrition: página 3, 126 suplementos hasta ahora
-  Allnutrition: página 4, 290 suplementos hasta ahora
-  Allnutrition: página 5, 493 suplementos hasta ahora
-  Allnutrition: página 6, 625 suplementos hasta ahora
-  Allnutrition: página 7, 867 suplementos hasta ahora
+Suplementos 2026-11-20 16:09
+  Allnutrition: página 1, 15 suplementos hasta ahora
+  Allnutrition: página 2, 72 suplementos hasta ahora
+  Allnutrition: página 3, 125 suplementos hasta ahora
+  Allnutrition: página 4, 288 suplementos hasta ahora
+  Allnutrition: página 5, 491 suplementos hasta ahora
+  Allnutrition: página 6, 623 suplementos hasta ahora
+  Allnutrition: página 7, 865 suplementos hasta ahora
   Supletech: página 1, 219 suplementos hasta ahora
   Supletech: página 2, 403 suplementos hasta ahora
-  Allnutrition: ok, 867 productos
+  Allnutrition: ok, 865 productos
   Supletech: ok, 403 productos
-  Jumbo: ok, 75 productos
+  Jumbo: ok, 73 productos
   Lider: ok, 191 productos
