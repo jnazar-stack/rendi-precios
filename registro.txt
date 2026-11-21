@@ -6,7 +6,7 @@ huevo      jumbo    ok              10 leídos   eq $9,950 Huevos Coliumo Premiu
 huevo      sisa     ok              27 leídos   eq $6,900 Huevos Medianos Santa Marta 30 un. | eco $6,900 Huevos Medianos Santa Marta 30 un.
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Rio Alegre grande color 30 un | eco $8,990 Huevos Fundo Rio Alegre grande colo
 leche      unimarc  ok              35 leídos   eq $1,190 Leche descremada colun 1 l Colun | eco $980 Leche descremada loncoleche sin tap
-leche      jumbo    ok              29 leídos   eq $1,190 Leche Colun Descremada 1 L | eco $1,000 Leche Cuisine & Co Descremada 1 L
+leche      jumbo    ok              29 leídos   eq $1,080 Leche Colun Descremada 1 L | eco $1,000 Leche Cuisine & Co Descremada 1 L
 leche      sisa     ok              13 leídos   eq $1,180 Leche Colun Descremada 1 L | eco $990 Leche Loncoleche Descremada 1 L
 leche      alvi     ok             100 leídos   eq $1,250 Leche descremada Colun 1 L Leche descremada | eco $1,190 Leche Soprole descremada natural 1 
 yogurt     unimarc  ok              21 leídos   eq $5,112 Yoghurt griego oikos danone balde 800 gr Oiko | eco $5,112 Yoghurt griego oikos danone balde 8
@@ -127,14 +127,14 @@ tomate     sisa     ok              39 leídos   eq $1,990 Tomate Larga Vida Gra
 tomate     alvi     ok              82 leídos   eq $1,950 Tomate malla 1 Kg | eco $1,950 Tomate malla 1 Kg
 lechuga    unimarc  ok              12 leídos   eq $1,390 Lechuga costina nacional 1 un Frutas Y Verdur | eco $1,390 Lechuga costina nacional 1 un Fruta
    jumbo lechuga: +22 de la página 2
-lechuga    jumbo    ok              62 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
+lechuga    jumbo    ok              62 leídos   eq $1,360 Lechuga Escarola Bandeja 2 un. | eco $1,360 Lechuga Escarola Bandeja 2 un.
 lechuga    sisa     ok               3 leídos   eq $1,390 Lechuga Escarola 1 un. | eco $1,390 Lechuga Escarola 1 un.
 lechuga    alvi     ok               6 leídos   eq $1,290 Lechuga costina nacional 1 un | eco $1,290 Lechuga costina nacional 1 un
    (granel: precio de lista $1,590, precio por kg informado: None)
 zanahoria  unimarc  ok              49 leídos   eq $1,590 Zanahoria bolsa 1 kg Frutas Y Verduras | eco $1,590 Zanahoria bolsa 1 kg Frutas Y Verdu
    (granel: precio de lista $1,590, precio por kg informado: (1590.0, 'kg'))
 zanahoria  jumbo    ok              11 leídos   eq $1,590 Zanahoria Bolsa 1 kg | eco $1,590 Zanahoria Bolsa 1 kg
-   sin calce en sisa para zanahoria; leídos: Picado Naturnes Pollo Zanahoria Arroz 21 $2,570
+   sin calce en sisa para zanahoria; leídos: Picado Naturnes Pollo Zanahoria Arroz 21 $2,570 (sin stock)
 zanahoria  sisa     ok               1 leídos   —
    (granel: precio de lista $1,450, precio por kg informado: None)
 zanahoria  alvi     ok               8 leídos   eq $1,450 Zanahoria bolsa 1 Kg | eco $1,450 Zanahoria bolsa 1 Kg
