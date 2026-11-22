@@ -1,7 +1,7 @@
 huevo      lider    bloqueado        0 leídos   —
    lider: lectura no disponible; no se harán más consultas hoy
 huevo      unimarc  ok              50 leídos   eq $6,990 Huevos santa marta mediano blanco 30 un Santa | eco $6,990 Huevos santa marta mediano blanco 3
-huevo      jumbo    ok              10 leídos   eq $9,950 Huevos Coliumo Premium Grandes Blancos 30 un. | eco $8,890 Huevos Cuisine & Co Medianos Blanco
+huevo      jumbo    ok              10 leídos   eq $9,950 Huevos Santa Marta Grandes Blancos 30 un. | eco $8,890 Huevos Cuisine & Co Medianos Blanco
    sisa huevo: +26 buscando 'huevos'
 huevo      sisa     ok              27 leídos   eq $6,900 Huevos Medianos Santa Marta 30 un. | eco $6,900 Huevos Medianos Santa Marta 30 un.
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Rio Alegre grande color 30 un | eco $8,990 Huevos Fundo Rio Alegre grande colo
@@ -48,7 +48,7 @@ garbanzos  unimarc  ok              22 leídos   eq $2,690 Garbanzos sin piel lo
 garbanzos  jumbo    ok               7 leídos   eq $2,990 Garbanzos Pelados 1 kg | eco $2,990 Garbanzos Pelados 1 kg
 garbanzos  sisa     ok               7 leídos   eq $2,890 Garbanzos Pelados 1 kg | eco $2,890 Garbanzos Pelados 1 kg
 garbanzos  alvi     ok               6 leídos   eq $3,070 Garbanzos sin piel Bonanza 1 Kg Garbanzos sin | eco $2,930 Garbanzos Nuestra Cocina sin piel b
-avena      unimarc  ok               5 leídos   eq $2,000 Avena tradicional oso 500 gr Oso | eco $2,000 Avena tradicional oso 500 gr Oso
+avena      unimarc  ok               5 leídos   eq $2,300 Avena tradicional oso 500 gr Oso | eco $2,300 Avena tradicional oso 500 gr Oso
 avena      jumbo    ok              14 leídos   eq $2,843 Avena Vivo Tradicional 700 g | eco $2,843 Avena Vivo Tradicional 700 g
 avena      sisa     ok               7 leídos   eq $4,071 Avena Quaker Tradicional 700 g | eco $3,000 Avena Tradicional Cuisine & Co 750 
 avena      alvi     ok               6 leídos   eq $2,814 Avena tradicional caja | eco $2,814 Avena tradicional caja
@@ -74,7 +74,7 @@ pan        jumbo    ok              58 leídos   eq $1,620 Pan Pierre Integral X
 pan        sisa     ok              41 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        alvi     ok              14 leídos   eq $2,040 Pan molde Amada Masa integral XL 750 g | eco $2,040 Pan molde Amada Masa integral XL 75
 aceite     unimarc  ok               7 leídos   eq $2,835 Aceite belmont vegetal con canola 1 l Belmont | eco $1,690 Aceite merkat vegetal 900 ml Merkat
-aceite     jumbo    ok              15 leídos   eq $2,925 Aceite Vegetal Belmont 1 L | eco $1,690 Aceite Vegetal 900 ml
+aceite     jumbo    ok              15 leídos   eq $2,925 Aceite Vegetal Belmont 1 L | eco $1,890 Aceite Vegetal Cuisine & Co 900 ml
 aceite     sisa     ok               6 leídos   eq $2,142 Aceite Vegetal Belmont 1 L | eco $1,650 Aceite Vegetal 900 ml
 aceite     alvi     ok             100 leídos   eq $2,529 Aceite Belmont vegetal con canola 1 L Aceite  | eco $1,690 Aceite Merkat vegetal 900 ml Aceite
 oliva      unimarc  ok              21 leídos   eq $6,955 Aceite de oliva chef extra virgen 500 ml Chef | eco $6,431 Aceite de oliva nuestra cocina extr
@@ -127,20 +127,20 @@ tomate     sisa     ok              39 leídos   eq $1,990 Tomate Larga Vida Gra
 tomate     alvi     ok              82 leídos   eq $1,950 Tomate malla 1 Kg | eco $1,950 Tomate malla 1 Kg
 lechuga    unimarc  ok              12 leídos   eq $1,390 Lechuga costina nacional 1 un Frutas Y Verdur | eco $1,390 Lechuga costina nacional 1 un Fruta
    jumbo lechuga: +22 de la página 2
-lechuga    jumbo    ok              62 leídos   eq $1,360 Lechuga Escarola Bandeja 2 un. | eco $1,360 Lechuga Escarola Bandeja 2 un.
+lechuga    jumbo    ok              62 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
 lechuga    sisa     ok               3 leídos   eq $1,390 Lechuga Escarola 1 un. | eco $1,390 Lechuga Escarola 1 un.
 lechuga    alvi     ok               6 leídos   eq $1,290 Lechuga costina nacional 1 un | eco $1,290 Lechuga costina nacional 1 un
    (granel: precio de lista $1,590, precio por kg informado: None)
 zanahoria  unimarc  ok              49 leídos   eq $1,590 Zanahoria bolsa 1 kg Frutas Y Verduras | eco $1,590 Zanahoria bolsa 1 kg Frutas Y Verdu
    (granel: precio de lista $1,590, precio por kg informado: (1590.0, 'kg'))
 zanahoria  jumbo    ok              11 leídos   eq $1,590 Zanahoria Bolsa 1 kg | eco $1,590 Zanahoria Bolsa 1 kg
-   sin calce en sisa para zanahoria; leídos: Picado Naturnes Pollo Zanahoria Arroz 21 $2,570 (sin stock)
+   sin calce en sisa para zanahoria; leídos: Picado Naturnes Pollo Zanahoria Arroz 21 $2,570
 zanahoria  sisa     ok               1 leídos   —
    (granel: precio de lista $1,450, precio por kg informado: None)
 zanahoria  alvi     ok               8 leídos   eq $1,450 Zanahoria bolsa 1 Kg | eco $1,450 Zanahoria bolsa 1 Kg
 brocoli    unimarc  ok               2 leídos   eq $1,590 Brócoli nacional 1 un Frutas Y Verduras | eco $1,590 Brócoli nacional 1 un Frutas Y Verd
-brocoli    jumbo    ok               3 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
-   sin calce en sisa para brocoli; leídos: Farfalle 100% Trigo Duro 400 g $840 · Pasta Coliseo Farfalle Speciale 400 g $740 · Cabellos de Ángel Vitaminizado 400 g $790 · Mix Vegetales Rústicos Marco Polo 150 g $2,250 · Baba Ganoush Suk 175 g $3,130
+brocoli    jumbo    ok               2 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
+   sin calce en sisa para brocoli; leídos: Farfalle 100% Trigo Duro 400 g $840 · Cabellos de Ángel Vitaminizado 400 g $790 · Pasta Coliseo Farfalle Speciale 400 g $740 · Mix Vegetales Rústicos Marco Polo 150 g $2,250 · Baba Ganoush Suk 175 g $3,130
 brocoli    sisa     ok               5 leídos   —
 brocoli    alvi     ok               2 leídos   eq $1,550 Brócoli nacional 1 un | eco $1,550 Brócoli nacional 1 un
    (granel: precio de lista $2,090, precio por kg informado: None)
