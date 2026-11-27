@@ -2,8 +2,8 @@ huevo      lider    bloqueado        0 leídos   —
    lider: lectura no disponible; no se harán más consultas hoy
 huevo      unimarc  ok              50 leídos   eq $5,523 Huevos fundo rio alegre mediano blanco 30 un  | eco $5,523 Huevos fundo rio alegre mediano bla
 huevo      jumbo    ok              11 leídos   eq $8,290 Huevos Santa Marta Grandes Color 30 un. | eco $8,290 Huevos Santa Marta Grandes Color 30
-   sisa huevo: +29 buscando 'huevos'
-huevo      sisa     ok              30 leídos   eq $6,900 Huevos Medianos Santa Marta 30 un. | eco $6,900 Huevos Medianos Santa Marta 30 un.
+   sisa huevo: +32 buscando 'huevos'
+huevo      sisa     ok              33 leídos   eq $6,900 Huevos Medianos Santa Marta 30 un. | eco $6,900 Huevos Medianos Santa Marta 30 un.
 huevo      alvi     ok             100 leídos   eq $8,990 Huevos Fundo Rio Alegre grande color 30 un | eco $8,990 Huevos Fundo Rio Alegre grande colo
 leche      unimarc  ok              35 leídos   eq $1,190 Leche descremada colun 1 l Colun | eco $890 Leche descremada loncoleche sin tap
 leche      jumbo    ok              29 leídos   eq $1,080 Leche Colun Descremada 1 L | eco $1,000 Leche Loncoleche Descremada 1 L
@@ -12,13 +12,13 @@ leche      alvi     ok             100 leídos   eq $1,250 Leche descremada Colu
 yogurt     unimarc  ok              21 leídos   eq $3,631 Yoghurt griego oikos danone balde 800 gr Oiko | eco $3,631 Yoghurt griego oikos danone balde 8
    jumbo yogurt: +8 de la página 2
 yogurt     jumbo    ok              48 leídos   eq $5,688 Yogurt Griego Quillayes Proteína Natural 800  | eco $5,688 Yogurt Griego Quillayes Proteína Na
-yogurt     sisa     ok              26 leídos   eq $6,688 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,688 Yogurt Griego Natural Endulzado Pot
+yogurt     sisa     ok              28 leídos   eq $6,688 Yogurt Griego Natural Endulzado Pote 800 g | eco $6,688 Yogurt Griego Natural Endulzado Pot
    sin calce en alvi para yogurt; leídos: Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $450 · Yoghurt griego Danone Oikos natural no e $550 · Yoghurt griego Nestle natural sin endulz $450
 yogurt     alvi     ok               4 leídos   —
 pechuga    unimarc  ok              23 leídos   eq $5,862 Pechuga de pollo deshuesada fundo río alegre  | eco $5,862 Pechuga de pollo deshuesada fundo r
 pechuga    jumbo    ok              19 leídos   eq $6,990 Pechuga Deshuesada de Pollo Sadia 1 kg | eco $6,990 Pechuga Deshuesada de Pollo Sadia 1
-   sisa pechuga: +16 buscando 'pechuga de pollo'
-pechuga    sisa     ok              22 leídos   eq $5,986 Filetitos de Pechuga Congelado 700 g | eco $5,986 Filetitos de Pechuga Congelado 700 
+   sisa pechuga: +19 buscando 'pechuga de pollo'
+pechuga    sisa     ok              25 leídos   eq $5,986 Filetitos de Pechuga Congelado 700 g | eco $5,986 Filetitos de Pechuga Congelado 700 
 pechuga    alvi     ok              12 leídos   eq $5,425 Pechuga de pollo deshuesada Fundo Río Alegre  | eco $5,425 Pechuga de pollo deshuesada Fundo R
 trutro     unimarc  ok               8 leídos   eq $2,590 Trutro entero de pollo super pollo granel 800 | eco $2,590 Trutro entero de pollo super pollo 
 trutro     jumbo    ok               8 leídos   eq $4,990 Trutro Corto de Pollo Sadia 1 kg | eco $4,990 Trutro Corto de Pollo Sadia 1 kg
@@ -29,13 +29,14 @@ molida     jumbo    ok              21 leídos   eq $5,890 Molida Fiesta ATM 500
 molida     sisa     ok               7 leídos   eq $5,980 Carne Molida Vacuno 10% Grasa 250 gr | eco $5,980 Carne Molida Vacuno 10% Grasa 250 g
 molida     alvi     ok              12 leídos   eq $2,840 Carne molida vacuno 250Gr | eco $2,840 Carne molida vacuno 250Gr
 atun       unimarc  ok               6 leídos   eq $1,990 Atún lomito van camp's en agua 142 g neto - 9 | eco $950 Atún lomitos en agua merkat 140 g n
-atun       jumbo    ok              16 leídos   eq $1,208 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,208 Atún Lomitos en Agua 104 g drenado,
+   sin calce en jumbo para atun; leídos: Atún Lomitos en Agua 91 g drenado, 140 g $1,592 · Atún Lomitos en Agua 91 g drenado, 140 g $1,000 · Atún Lomitos en Agua 91 g drenado, 140 g $1,490 · Atún Lomitos en Agua Reducido en Sodio 9 $1,592 · Atún Lomitos en Agua Pouch 475 g drenado $6,190 · Atún Lomitos en Agua 104 g drenado, 160  $1,208 (sin stock) · Atún Lomitos en Agua 92 g drenado, 142 g $1,490 · Pack 3 un. Atún Lomitos en Agua 56 g dre $3,000
+atun       jumbo    ok              16 leídos   —
 atun       sisa     ok              12 leídos   eq $1,352 Atún Lomitos en Agua 104 g drenado, 160 g net | eco $1,352 Atún Lomitos en Agua 104 g drenado,
 atun       alvi     ok              12 leídos   eq $890 Atún lomito en agua contenido neto 140G Conte | eco $890 Atún lomito en agua contenido neto 
 salmon     unimarc  ok               5 leídos   eq $10,150 Filete de salmón atlántico aqua chile con pie | eco $10,150 Filete de salmón atlántico aqua chi
 salmon     jumbo    ok               6 leídos   eq $7,990 Salmón Filete Aqua 500 g | eco $7,990 Salmón Filete Aqua 500 g
 salmon     sisa     ok               6 leídos   eq $11,990 Salmón Filete Aqua 500 g | eco $4,988 Varita de Salmón Cuisine & Co 400 g
-salmon     alvi     ok             100 leídos   eq $6,350 Salmón en trozos Azul Profundo 500 g Salmón e | eco $6,350 Salmón en trozos Azul Profundo 500 
+salmon     alvi     ok             100 leídos   eq $6,950 Salmón en trozos Azul Profundo 500 g Salmón e | eco $6,950 Salmón en trozos Azul Profundo 500 
 lentejas   unimarc  ok              20 leídos   eq $2,590 Lentejas 6mm los granos 1kg Los Granos | eco $2,490 Lentejas nuestra cocina g2 5mm 1 kg
 lentejas   jumbo    ok              11 leídos   eq $2,490 Lentejas 6 mm Máxima 1 kg | eco $2,490 Lentejas 6 mm Máxima 1 kg
 lentejas   sisa     ok              11 leídos   eq $2,830 Lentejas 6 mm Máxima 1 kg | eco $2,690 Lentejas 5 mm Cuisine & Co 1 kg
@@ -55,7 +56,7 @@ avena      alvi     ok               6 leídos   eq $2,814 Avena tradicional caj
 arroz      unimarc  ok               7 leídos   eq $1,950 Arroz tucapel blue bonnet g2 1 kg Tucapel | eco $990 Arroz merkat largo delgado grado 2 
    jumbo arroz: +16 buscando 'arroz grado kg'
 arroz      jumbo    ok              25 leídos   eq $1,890 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $990 Arroz Grado 2 Máxima Grano Largo An
-arroz      sisa     ok              10 leídos   eq $1,900 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $1,050 Arroz Coliseo Grado 2 - 1 kg
+arroz      sisa     ok              11 leídos   eq $1,900 Arroz Grado 2 Tucapel Blue Grano Largo y Delg | eco $950 Arroz Grado 2 Máxima Grano Largo An
 arroz      alvi     ok               2 leídos   eq $870 Arroz Merkat largo delgado grado 2 1 Kg Arroz | eco $870 Arroz Merkat largo delgado grado 2 
 fideos     unimarc  ok              13 leídos   eq $1,050 Pasta spaghetti n° 5 carozzi 400 g Carozzi | eco $520 Pasta spaghetti n°5 merkat 400 g Me
 fideos     jumbo    ok              22 leídos   eq $550 Spaghetti N° 5 Máxima 400 g | eco $550 Spaghetti N° 5 Máxima 400 g
@@ -68,13 +69,13 @@ quinoa     sisa     ok              80 leídos   eq $5,542 Quinoa Lavada Mi Tier
    sin calce en alvi para quinoa; leídos: Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530 · Chocolate relleno guinda $1,590 · Jalea guinda pote $370 · Jalea Soprole sabor guinda pote 110 g Ja $270 · Jalea guinda Colun 100gr $280 · Mermelada guinda $5,090 · Mermelada Watts guinda doypack 1 Kg Merm $3,530
 quinoa     alvi     ok              12 leídos   —
 pan        unimarc  ok              31 leídos   eq $1,714 Pan de molde pierre integral xl 700 g Pan Pie | eco $1,714 Pan de molde pierre integral xl 700
-   jumbo pan: +18 de la página 2
-pan        jumbo    ok              58 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
-   sisa pan: +1 de la página 2
-pan        sisa     ok              38 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
+   jumbo pan: +19 de la página 2
+pan        jumbo    ok              59 leídos   eq $1,620 Pan Pierre Integral XL 700 g | eco $1,620 Pan Pierre Integral XL 700 g
+   sisa pan: +4 de la página 2
+pan        sisa     ok              44 leídos   eq $1,534 Pan Pierre Integral XL 700 g | eco $1,534 Pan Pierre Integral XL 700 g
 pan        alvi     ok              14 leídos   eq $2,040 Pan molde Amada Masa integral XL 750 g | eco $2,040 Pan molde Amada Masa integral XL 75
 aceite     unimarc  ok               7 leídos   eq $2,835 Aceite belmont vegetal con canola 1 l Belmont | eco $1,690 Aceite merkat vegetal 900 ml Merkat
-aceite     jumbo    ok              14 leídos   eq $2,421 Aceite Vegetal Belmont 1 L | eco $1,690 Aceite Vegetal 900 ml
+aceite     jumbo    ok              14 leídos   eq $2,421 Aceite Vegetal Belmont 1 L | eco $1,790 Aceite Vegetal Cuisine & Co 900 ml
 aceite     sisa     ok               6 leídos   eq $1,971 Aceite Vegetal Belmont 1 L | eco $1,650 Aceite Vegetal 900 ml
 aceite     alvi     ok             100 leídos   eq $2,529 Aceite Belmont vegetal con canola 1 L Aceite  | eco $1,740 Aceite Merkat vegetal 900 ml Aceite
 oliva      unimarc  ok              21 leídos   eq $5,787 Aceite de oliva chef extra virgen 500 ml Chef | eco $5,249 Aceite de oliva nuestra cocina extr
@@ -88,7 +89,7 @@ mani       sisa     ok              13 leídos   eq $2,905 Mantequilla de Maní 
 mani       alvi     ok               4 leídos   eq $2,543 Mantequilla de maní Tento crunchy pote 500 gr | eco $2,543 Mantequilla de maní Tento crunchy p
 nueces     unimarc  ok               5 leídos   eq $5,498 Nuez mariposa blanca 100gr Frutas Y Verduras | eco $5,498 Nuez mariposa blanca 100gr Frutas Y
 nueces     jumbo    ok              19 leídos   eq $5,612 Nueces Trozos 200 g | eco $5,612 Nueces Trozos 200 g
-nueces     sisa     ok               4 leídos   eq $6,112 Nuez Mariposa 200 g | eco $6,112 Nuez Mariposa 200 g
+nueces     sisa     ok               5 leídos   eq $6,112 Nuez Mariposa 200 g | eco $6,112 Nuez Mariposa 200 g
    sin calce en alvi para nueces; leídos: Pasta mariposas Lucchetti 250 g Pasta ma $670 · Pasta mariposas Carozzi 250 g Pasta mari $840 · Helado Trendy lúcuma nuez y vainilla 1.8 $5,050 · Yoghurt Gold lúcuma y nuez 165 g Yoghurt $710 · Pan de molde calabaza nuez con masa madr $2,890 · Nuez moscada Nuestra Cocina molida 5 g $410 · Pasta mariposas Lucchetti 250 g Pasta ma $670 · Pasta mariposas Carozzi 250 g Pasta mari $840
 nueces     alvi     ok              12 leídos   —
    (granel: precio de lista $2,154, precio por kg informado: None)
@@ -104,43 +105,42 @@ platano    unimarc  ok              17 leídos   eq $894 Plátano granel 500 g F
    (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
 platano    jumbo    ok              19 leídos   eq $1,450 Plátano Extra Granel (5 a 6 un. Aprox) | eco $1,450 Plátano Extra Granel (5 a 6 un. Apr
    (granel: precio de lista $1,450, precio por kg informado: (1450.0, 'kg'))
-platano    sisa     ok              15 leídos   eq $1,450 Plátano Extra Granel (5 a 6 un. Aprox) | eco $1,450 Plátano Extra Granel (5 a 6 un. Apr
+platano    sisa     ok              14 leídos   eq $1,450 Plátano Extra Granel (5 a 6 un. Aprox) | eco $1,450 Plátano Extra Granel (5 a 6 un. Apr
    (granel: precio de lista $675, precio por kg informado: None)
 platano    alvi     ok              24 leídos   eq $1,350 Plátano granel 500 g | eco $1,350 Plátano granel 500 g
    (granel: precio de lista $1,314, precio por kg informado: None)
 manzana    unimarc  ok              50 leídos   eq $1,314 Manzana royal gala bolsa 1 kg Guardian | eco $1,314 Manzana royal gala bolsa 1 kg Guard
    jumbo manzana: +40 de la página 2
-   (granel: precio de lista $2,290, precio por kg informado: (2290.0, 'kg'))
-manzana    jumbo    ok              80 leídos   eq $2,290 Manzana Pink Lady Bolsa 1 kg | eco $2,290 Manzana Pink Lady Bolsa 1 kg
+   (granel: precio de lista $995, precio por kg informado: (1990.0, 'kg'))
+manzana    jumbo    ok              80 leídos   eq $1,990 Manzana Sugarbee Granel | eco $1,990 Manzana Sugarbee Granel
    sisa manzana: +37 de la página 2
    (granel: precio de lista $2,190, precio por kg informado: (2190.0, 'kg'))
-manzana    sisa     ok              76 leídos   eq $2,190 Manzana Jazz Export 1 kg | eco $2,190 Manzana Jazz Export 1 kg
+manzana    sisa     ok              75 leídos   eq $2,190 Manzana Jazz Export 1 kg | eco $2,190 Manzana Jazz Export 1 kg
    (granel: precio de lista $1,225, precio por kg informado: None)
 manzana    alvi     ok              94 leídos   eq $2,450 Manzana verde granel 500 g | eco $2,450 Manzana verde granel 500 g
    (granel: precio de lista $1,254, precio por kg informado: None)
 tomate     unimarc  ok              50 leídos   eq $1,254 Tomate malla 1 kg Frutas Y Verduras | eco $1,254 Tomate malla 1 kg Frutas Y Verduras
    (granel: precio de lista $1,045, precio por kg informado: (2090.0, 'kg'))
-tomate     jumbo    ok              39 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
-   sisa tomate: +2 de la página 2
-   (granel: precio de lista $3,360, precio por kg informado: (9882.0, 'kg'))
-tomate     sisa     ok              42 leídos   eq $9,882 Tomate Romanita 340 g | eco $9,882 Tomate Romanita 340 g
+tomate     jumbo    ok              38 leídos   eq $2,090 Tomate Larga Vida Granel (1 a 2 un. Aprox) | eco $2,090 Tomate Larga Vida Granel (1 a 2 un.
+   sin calce en sisa para tomate; leídos: Tomate Cóctel Pote 250 g $1,890 · Salsa de Tomate Carozzi Toscana Boloñesa $980 (sin stock) · Tomate Cóctel Variedades Granel $1,338 (sin stock) · Salsa de Tomate Carozzi Toscana Al Pesto $980 · Salsa de Tomate Pomarola Italiana 200 g $840 · Salsa de Tomate Pomarola Natural 200 g $840 · Salsa de Tomates Lucchetti Italiana Pack $3,190 (sin stock) · Salsa de Tomate Coliseo Italiana 200 g $370
+tomate     sisa     ok              39 leídos   —
    (granel: precio de lista $1,950, precio por kg informado: None)
 tomate     alvi     ok              82 leídos   eq $1,950 Tomate malla 1 Kg | eco $1,950 Tomate malla 1 Kg
 lechuga    unimarc  ok              12 leídos   eq $834 Lechuga costina nacional 1 un Frutas Y Verdur | eco $834 Lechuga costina nacional 1 un Fruta
-   jumbo lechuga: +21 de la página 2
-lechuga    jumbo    ok              61 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
-lechuga    sisa     ok               7 leídos   eq $1,390 Lechuga Escarola 1 un. | eco $1,390 Lechuga Escarola 1 un.
+   jumbo lechuga: +22 de la página 2
+lechuga    jumbo    ok              62 leídos   eq $1,250 Lechuga Española 1 un. | eco $1,250 Lechuga Española 1 un.
+lechuga    sisa     ok              11 leídos   eq $1,345 Lechuga Escarola Bandeja 2 un. | eco $1,345 Lechuga Escarola Bandeja 2 un.
 lechuga    alvi     ok               6 leídos   eq $1,290 Lechuga costina nacional 1 un | eco $1,290 Lechuga costina nacional 1 un
    (granel: precio de lista $954, precio por kg informado: None)
 zanahoria  unimarc  ok              49 leídos   eq $954 Zanahoria bolsa 1 kg Frutas Y Verduras | eco $954 Zanahoria bolsa 1 kg Frutas Y Verdu
    (granel: precio de lista $1,590, precio por kg informado: (1590.0, 'kg'))
 zanahoria  jumbo    ok              12 leídos   eq $1,590 Zanahoria Bolsa 1 kg | eco $1,590 Zanahoria Bolsa 1 kg
-   sin calce en sisa para zanahoria; leídos: Picado Naturnes Pollo Zanahoria Arroz 21 $2,570
-zanahoria  sisa     ok               1 leídos   —
+   (granel: precio de lista $1,590, precio por kg informado: (1590.0, 'kg'))
+zanahoria  sisa     ok               4 leídos   eq $1,590 Zanahoria Bolsa 1 kg | eco $1,590 Zanahoria Bolsa 1 kg
    (granel: precio de lista $1,450, precio por kg informado: None)
 zanahoria  alvi     ok               8 leídos   eq $1,450 Zanahoria bolsa 1 Kg | eco $1,450 Zanahoria bolsa 1 Kg
 brocoli    unimarc  ok               2 leídos   eq $954 Brócoli nacional 1 un Frutas Y Verduras | eco $954 Brócoli nacional 1 un Frutas Y Verd
-brocoli    jumbo    ok               3 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
+brocoli    jumbo    ok               4 leídos   eq $1,590 Brócoli Films 1 un. | eco $1,590 Brócoli Films 1 un.
 brocoli    sisa     ok               6 leídos   eq $1,490 Brócoli Films 1 un. | eco $1,490 Brócoli Films 1 un.
 brocoli    alvi     ok               2 leídos   eq $1,550 Brócoli nacional 1 un | eco $1,550 Brócoli nacional 1 un
    (granel: precio de lista $1,254, precio por kg informado: None)
@@ -148,7 +148,7 @@ cebolla    unimarc  ok              43 leídos   eq $1,254 Cebolla malla 1 kg Fr
    (granel: precio de lista $995, precio por kg informado: (1990.0, 'kg'))
 cebolla    jumbo    ok              27 leídos   eq $1,990 Cebolla Granel (1 a 2 un. Aprox) | eco $1,990 Cebolla Granel (1 a 2 un. Aprox)
    (granel: precio de lista $975, precio por kg informado: (1950.0, 'kg'))
-cebolla    sisa     ok              11 leídos   eq $1,950 Cebolla Granel (1 a 2 un. Aprox) | eco $1,950 Cebolla Granel (1 a 2 un. Aprox)
+cebolla    sisa     ok               9 leídos   eq $1,950 Cebolla Granel (1 a 2 un. Aprox) | eco $1,950 Cebolla Granel (1 a 2 un. Aprox)
    (granel: precio de lista $925, precio por kg informado: None)
 cebolla    alvi     ok              24 leídos   eq $1,850 Cebollas granel 500 g | eco $1,850 Cebollas granel 500 g
    (granel: precio de lista $2,550, precio por kg informado: None)
